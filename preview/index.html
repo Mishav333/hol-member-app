@@ -833,18 +833,21 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 .sess.lift .sets{margin-bottom:32px}
 #sLift{margin-top:auto}
 .sess.lift .btn{margin-top:20px}
-.lgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:12px}
 .lc{min-width:0}
 .ll{display:block;font-size:12px;line-height:16px;color:var(--muted);margin-bottom:8px}
 .lstp,.lfix{height:60px;border:1px solid rgba(217,201,174,.38);border-radius:3px}
-.lstp{display:grid;grid-template-columns:46px 1fr 46px;align-items:stretch}
-.lb{position:relative;width:46px;height:100%;color:var(--gold-soft)}
+.lstp{display:grid;grid-template-columns:42px 1fr 42px;align-items:stretch}
+.lb{position:relative;width:42px;height:100%;color:var(--gold-soft)}
 .lb::before,.lb.pl::after{content:'';position:absolute;left:50%;top:50%;width:14px;height:1.5px;margin:-.75px 0 0 -7px;background:currentColor;border-radius:1px}
 .lb.pl::after{transform:rotate(90deg)}
 .lb:active{background:rgba(217,201,174,.08)}
-.lval{display:flex;justify-content:center;align-items:baseline;gap:4px;align-self:center;min-width:0;cursor:text}
-.lval input{width:40px;min-width:0;background:none;border:0;padding:0;margin:0;color:var(--bone);font-family:var(--display);font-weight:500;font-size:30px;line-height:1;text-align:center;outline:none;font-variant-numeric:lining-nums tabular-nums}
+.lval{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;align-self:stretch;cursor:text}
+.lgrp{display:flex;align-items:baseline;gap:4px;white-space:nowrap}
+.lnum{font-family:var(--display);font-weight:500;font-size:30px;line-height:1;color:var(--bone);font-variant-numeric:lining-nums tabular-nums;padding-bottom:9px;margin-bottom:-9px;border-bottom:1px solid transparent}
+.lval.edit .lnum{border-bottom-color:var(--gold-soft)}
 .lval em{font-style:normal;font-size:13px;line-height:1;color:var(--muted)}
+.lval input{position:absolute;inset:0;width:100%;height:100%;opacity:0;font-size:16px;border:0;padding:0;margin:0;background:none;color:transparent;caret-color:transparent}
 .lfix{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:500;font-size:19px;color:var(--limestone)}
 .lnote{font-size:13px;line-height:1.45;color:var(--muted);margin-top:12px}
 .lnote b{font-weight:500;color:var(--gold-soft)}
@@ -869,6 +872,20 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 .tdh .dots i.gap{border:1.5px dashed rgba(217,201,174,.9)}
 .sess .sets i span.now{color:var(--gold-soft)}
 .sess .sets i:not(.f) span.now~*{display:none}
+.lsee{display:block;margin-top:8px;font-size:13px;color:var(--gold-soft);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.bsheet.over{z-index:86}
+#bdim.over{z-index:85}
+.sess-h.wh{margin-top:34px}
+#wlist{margin:4px 24px 0}
+.wrow{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:15px 0;border-bottom:1px solid var(--line)}
+.wrow:last-child{border-bottom:0}
+.wn{flex:1;min-width:0}
+.wn b{display:block;font-weight:400;font-size:15.5px;line-height:1.3}
+.wn span{display:block;font-size:12.5px;line-height:1.35;color:var(--muted);margin-top:3px}
+.wv{font-family:var(--display);font-weight:500;font-size:24px;line-height:1;color:var(--bone);white-space:nowrap}
+.wv em{font-family:var(--sans);font-style:normal;font-size:12px;color:var(--muted);margin-left:3px}
+.wrow .ico{flex:none;color:var(--muted)}
+.bsheet.over~.sess .x{opacity:0;pointer-events:none}
 
 </style>
 </head>
@@ -1223,6 +1240,8 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
         <div class="blocks"><i class="f"></i><i class="f"></i><i class="c"></i><i></i><i></i><i></i><i></i><i></i></div>
         <div class="wk"><span><b>Week 3 of 8</b> of Rob&rsquo;s programme</span></div>
         <div id="trows"></div>
+        <div class="sess-h wh"><b>Your weights</b><span>Tap a move for every session</span></div>
+        <div id="wlist"></div>
         <div class="marcus"><img src="a/coachface.jpg?v=2" alt=""><p><b>Marcus put you on Rob&rsquo;s programme</b> after your August review. Strength three times a week, two easy Zone 2 sessions for your heart, and one short mobility session. At home or at your own gym.</p></div>
       </section>
 
@@ -1414,7 +1433,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
   function tick(k,label){return '<button class="tick" data-act="tick"'+(k?' data-sync="'+k+'"':'')+' aria-label="'+(label||'Mark done')+'">'+CHK+'</button>';}
   var tt;function toast(m){var el=$('#ptoast');el.textContent=m;el.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){el.classList.remove('on')},2600);}
   function openSheet(html,dark){$('#bsheetIn').innerHTML=html;var s=$('#bsheet');s.classList.toggle('dark',!!dark);s.scrollTop=0;s.classList.add('on');$('#bdim').classList.add('on');applyState();}
-  function closeSheet(){$('#bsheet').classList.remove('on');$('#bdim').classList.remove('on');}
+  function closeSheet(){$('#bsheet').classList.remove('on');$('#bdim').classList.remove('on');setTimeout(function(){if(!$('#bsheet').classList.contains('on')){$('#bsheet').classList.remove('over');$('#bdim').classList.remove('over');}},600);}
   $('#bsheetX').onclick=closeSheet;$('#bdim').onclick=closeSheet;
   function closeAll(){closeSheet();$('#sess').classList.remove('on');}
   function go(id){var a=document.createElement('a');a.setAttribute('data-go',id);a.style.display='none';$('#s-'+cur()).appendChild(a);a.click();a.remove();}
@@ -1647,24 +1666,39 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
     $('#sess').classList.add('lift');
     var lt=lastTime(m.n,sessDate(SI));
     function box(lab,inner,cls){return '<div class="lc"><span class="ll">'+lab+'</span><div class="'+(cls||'lstp')+'">'+inner+'</div></div>';}
-    var w=L.bw?box('Weight','Bodyweight','lfix'):box('Weight','<button class="lb mi" data-lk="-1" aria-label="Less weight"></button><label class="lval"><input id="lkg" inputmode="decimal" value="'+kg(cv.kg)+'" aria-label="Weight in kg"><em>kg</em></label><button class="lb pl" data-lk="1" aria-label="More weight"></button>');
+    /* the number you see is real text, so it can never be clipped; a clear input sits over it for typing */
+    function val(id,v,unit,lab){return '<label class="lval"><span class="lgrp"><span class="lnum" id="'+id+'V">'+v+'</span>'+(unit?'<em>'+unit+'</em>':'')+'</span><input id="'+id+'" inputmode="'+(unit?'decimal':'numeric')+'" value="'+v+'" aria-label="'+lab+'" autocomplete="off"></label>';}
+    var w=L.bw?box('Weight','Bodyweight','lfix'):box('Weight','<button class="lb mi" data-lk="-1" aria-label="Less weight"></button>'+val('lkg',kg(cv.kg),'kg','Weight in kg')+'<button class="lb pl" data-lk="1" aria-label="More weight"></button>');
     var dm=(m.r.match(/(\d+)\s*metres/)||[])[1];
-    var r=L.c?box('Distance',(dm?dm+' m':m.r),'lfix'):box('Reps','<button class="lb mi" data-lr="-1" aria-label="Fewer reps"></button><label class="lval"><input id="lrp" inputmode="numeric" value="'+cv.rp+'" aria-label="Reps"></label><button class="lb pl" data-lr="1" aria-label="More reps"></button>');
+    var r=L.c?box('Distance',(dm?dm+' m':m.r),'lfix'):box('Reps','<button class="lb mi" data-lr="-1" aria-label="Fewer reps"></button>'+val('lrp',cv.rp,'','Reps')+'<button class="lb pl" data-lr="1" aria-label="More reps"></button>');
     var note=L.bw?('Last time '+(lt?lt.s.map(function(s){return s[1]}).join(', ')+' reps':'new')+'. <b>Rob&rsquo;s target '+L.r+' reps</b>'):('Last time '+(lt?kg(best(lt))+' kg':'new')+'. <b>Rob&rsquo;s target '+kg(L.t)+' kg</b>');
-    $('#sLift').innerHTML='<div class="lgrid">'+w+r+'</div><p class="lnote">'+note+'</p>';fitAll();}
-  /* size each number field to its digits so number and unit centre together as one group */
-  var FITC=document.createElement('canvas').getContext('2d');
-  function fit(inp){if(!inp)return;var cs=getComputedStyle(inp);FITC.font=cs.fontWeight+' '+cs.fontSize+' '+cs.fontFamily;inp.style.width=Math.ceil(FITC.measureText(inp.value||'0').width+2)+'px';}
-  function fitAll(){fit($('#lkg'));fit($('#lrp'));}
-  document.addEventListener('input',function(e){if(e.target.id==='lkg'||e.target.id==='lrp')fit(e.target);});
+    $('#sLift').innerHTML='<div class="lgrid">'+w+r+'</div><p class="lnote">'+note+'</p><button class="lsee" data-lift="'+m.n+'">See your weights for this move</button>';fitAll();}
+  /* copy the typed value into the visible number, then shrink the number if it would not fit its box */
+  function fitAll(){['lkg','lrp'].forEach(function(id){var inp=document.getElementById(id),sp=document.getElementById(id+'V');if(!inp||!sp)return;
+    sp.textContent=inp.value===''?'0':inp.value;var lv=sp.closest('.lval'),room=lv.clientWidth-8,fs=30;sp.style.fontSize=fs+'px';
+    while(fs>16&&(sp.offsetWidth+(sp.nextElementSibling&&sp.nextElementSibling.tagName==='EM'?sp.nextElementSibling.offsetWidth+4:0))>room){fs--;sp.style.fontSize=fs+'px';}});}
+  document.addEventListener('input',function(e){if(e.target.id==='lkg'||e.target.id==='lrp')fitAll();});
+  document.addEventListener('focusin',function(e){if(e.target.id==='lkg'||e.target.id==='lrp'){e.target.closest('.lval').classList.add('edit');setTimeout(function(){try{e.target.select();}catch(x){}},0);}});
+  document.addEventListener('focusout',function(e){if(e.target.id==='lkg'||e.target.id==='lrp'){e.target.closest('.lval').classList.remove('edit');readCv();e.target.value=e.target.id==='lkg'?kg(cv.kg):cv.rp;fitAll();}});
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitAll);
+  window.addEventListener('resize',fitAll);
+  /* weights sheet for any lift, from the Move page, the session page or mid-workout */
+  function liftSheet(name){var mv=null,ss=null;SESS.forEach(function(s){if(s&&s.moves)s.moves.forEach(function(m){if(!mv&&m.n===name){mv=m;ss=s;}})});if(!mv)return;
+    var img=mv.im?IMG[mv.im]:IMG[ss.img],pos=mv.pos||ss.pos;
+    openSheet('<div class="sh-img" style="height:'+(mv.im?300:200)+'px"><img src="'+img+'" alt="" style="object-position:'+pos+'"></div><div class="sh-body"><h2>'+name+'</h2><p class="sub">'+mv.r+'</p>'+liftChart(name)+'<h3>How Rob coaches it</h3><p style="font-size:15px;line-height:1.55">'+mv.c+'</p></div>',true);
+    $('#bsheet').classList.toggle('over',$('#sess').classList.contains('on'));$('#bdim').classList.toggle('over',$('#sess').classList.contains('on'));}
+  function renderWeights(){var el=$('#wlist');if(!el||typeof LIFTS==='undefined'||!LIFTS)return;var seen={},rows=[];
+    SESS.forEach(function(s){if(s&&s.moves)s.moves.forEach(function(m){var L=LIFTS[m.n];if(!L||L.bw||seen[m.n])return;seen[m.n]=1;var lt=lastTime(m.n),b=lt?best(lt):0;
+      rows.push('<button class="wrow" data-lift="'+m.n+'"><span class="wn"><b>'+m.n+'</b><span>'+(b>=L.t?'On Rob&rsquo;s target':'Rob&rsquo;s target '+kg(L.t)+' kg')+'</span></span><span class="wv">'+(lt?kg(b):'&ndash;')+'<em>kg</em></span>'+CHEV+'</button>');})});
+    el.innerHTML=rows.join('');}
   function readCv(){var a=$('#lkg'),b=$('#lrp');if(a){var v=parseFloat(String(a.value).replace(',','.'));if(!isNaN(v)&&v>=0)cv.kg=v;}if(b){var w=parseInt(b.value,10);if(!isNaN(w)&&w>=0)cv.rp=w;}}
   function logSet(m){var L=LIFTS[m.n];if(!L)return;readCv();(RUN[m.n]=RUN[m.n]||[]).push([L.bw?0:cv.kg,L.c?0:cv.rp]);
     var d=sessDate(SI);LOG[m.n]=(LOG[m.n]||[]).filter(function(e){return e.d!==d});LOG[m.n].push({d:d,s:RUN[m.n].slice()});
-    try{localStorage.setItem(LKEY,JSON.stringify(LOG));}catch(e){}}
+    try{localStorage.setItem(LKEY,JSON.stringify(LOG));}catch(e){}renderWeights();}
   document.addEventListener('click',function(e){var b=e.target.closest('[data-lk],[data-lr]');if(!b)return;readCv();
     if(b.dataset.lk){cv.kg=Math.max(0,Math.round((cv.kg+2.5*b.dataset.lk)*10)/10);$('#lkg').value=kg(cv.kg);}
     else{cv.rp=Math.max(0,cv.rp+(+b.dataset.lr));$('#lrp').value=cv.rp;}fitAll();});
+  document.addEventListener('click',function(e){var b=e.target.closest('[data-lift]');if(b){e.stopPropagation();liftSheet(b.dataset.lift);}},true);
 
   /* ---------- counting ---------- */
   var DAY=['p-e2','v-am','m-1-b','m-1-l','t-1','m-1-d','v-pm','p-rx'];
@@ -1684,7 +1718,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
     $$('#yd .row').forEach(function(r){var t=r.querySelector('[data-sync]');r.classList.toggle('isdone',!!(t&&done[t.dataset.sync]));});
     $$('#yd .ydg').forEach(function(g){g.classList.toggle('alldone',!g.querySelector('.row:not(.isdone)'));});
     $('#ydClear').classList.toggle('on',all);
-    var pp=n(CAT.p),pt=pp===4?'All 4 taken today':pp+' of 4 taken';$('#pmProto').innerHTML='Today: <em>'+pt+'</em>';$('#prCount').textContent=pp+' of 4';$('#trWk').textContent=(3+pp)+' of 32 taken';renderTrNow();
+    var pp=n(CAT.p),pt=pp===4?'All 4 taken today':pp+' of 4 taken';renderWeights();$('#pmProto').innerHTML='Today: <em>'+pt+'</em>';$('#prCount').textContent=pp+' of 4';$('#trWk').textContent=(3+pp)+' of 32 taken';renderTrNow();
     $('#pmMeal').innerHTML=done['m-1-d']?'Tonight: <em>miso salmon, eaten</em>':'Tonight: <em>miso salmon</em>';
     var sc=sessCount();$('#pmTrain').innerHTML=done['t-1']?'Today: <em>lower body, done</em>':'Today: <em>lower body, 40 min</em>';
     $('#trCount').textContent=sc[0]+' of '+sc[1]+' done';
