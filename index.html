@@ -10,6 +10,7 @@
 <meta name="theme-color" content="#1a1714">
 <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png?v=house2">
 <link rel="manifest" href="manifest.webmanifest?v=house2">
+
 <meta name="robots" content="noindex, nofollow">
 <title>House of Longevity member app, concept</title>
 <style>
@@ -657,6 +658,270 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 .ship .now.lit .runner{animation:run 2.8s ease-in-out 1.5s infinite}
 @keyframes run{0%{top:17px;opacity:0}15%{opacity:1}75%{opacity:1}100%{top:calc(100% - 6px);opacity:0}}
 
+/* ===== Alex feedback build: Your day, four plan sections ===== */
+/* section switcher, shared by Protocols, Vitamins, Meals, Training */
+.psw{display:flex;margin:18px 24px 0;border-bottom:1px solid var(--line)}
+.psw button{flex:1;padding:10px 0 11px;font-size:13.5px;color:var(--muted);border-bottom:1px solid transparent;margin-bottom:-1px}
+.psw button.on{color:var(--bone);border-bottom-color:var(--gold-soft)}
+.paper .psw{border-bottom-color:var(--line-paper);margin-top:22px}
+.paper .psw button{color:var(--muted-paper)}
+.paper .psw button.on{color:var(--charcoal);border-bottom-color:var(--gold)}
+
+/* Today: your day */
+.yd .yd-head{display:flex;justify-content:space-between;align-items:baseline}
+.yd .yd-head span{font-size:13px;color:var(--gold-soft)}
+.ydt{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:4px}
+.ydt button{background:var(--night);padding:14px 4px 12px 0;text-align:left}
+.ydt button+button{padding-left:12px}
+.ydt b{display:block;font-family:var(--display);font-weight:500;font-size:30px;line-height:1;color:var(--bone)}
+.ydt b small{font-size:17px;color:var(--muted)}
+.ydt span{display:block;font-size:12px;color:var(--muted);margin-top:5px}
+.ydt i{display:block;height:2px;margin-top:9px;background:rgba(217,201,174,.22);margin-right:8px}
+.ydt em{display:block;height:100%;background:var(--gold-soft);transition:width .5s var(--e)}
+.ydt .full b{color:var(--gold-soft)}
+.ydf{display:flex;gap:8px;margin-top:16px}
+.ydf button{height:32px;padding:0 14px;border-radius:16px;font-size:13px;color:var(--muted);border:1px solid var(--line)}
+.ydf button.on{color:var(--charcoal);background:var(--gold-soft);border-color:var(--gold-soft)}
+.ydg{margin-top:6px}
+.ydslot{font-family:var(--display);font-style:italic;font-size:19px;color:var(--limestone);padding:16px 0 0}
+.yd .row .main{text-align:left;display:block}
+.yd .row .k{display:block;font-size:11.5px;color:var(--gold-soft);margin-bottom:2px}
+.yd .row .t{display:block}.yd .row .s{display:block}
+.yd .row:last-child{border-bottom:1px solid var(--line)}
+.yd .row.isdone .t{color:var(--muted)}
+.yd.todo .row.isdone,.yd.todo .ydg.alldone{display:none}
+.yd-clear{display:none;font-family:var(--display);font-style:italic;font-size:21px;color:var(--gold-soft);padding:20px 0 4px}
+.yd.todo .yd-clear.on{display:block}
+
+/* Protocol cards */
+.proto{margin:22px 24px 0;padding-top:16px;border-top:1px solid var(--gold)}
+.proto .ph{display:flex;justify-content:space-between;align-items:baseline;width:100%;text-align:left}
+.proto h3{font-family:var(--display);font-weight:500;font-size:28px;line-height:1.05}
+.proto .st,.stack .st{font-size:12.5px;color:var(--muted);flex:none}
+.proto .st.ok,.stack .st.ok{color:var(--gold-soft)}
+.proto .by,.stack .by{font-size:13px;color:var(--muted);margin-top:4px}
+.proto .goal{font-size:14.5px;line-height:1.5;color:var(--limestone);margin:12px 0 4px}
+.bar{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:12px;color:var(--muted)}
+.bar span{flex:none}
+.bar i{flex:1;height:2px;background:rgba(217,201,174,.22)}
+.bar em{display:block;height:100%;background:var(--gold-soft)}
+.proto .dz{width:100%;margin:0}
+.proto .foot{display:flex;justify-content:space-between;align-items:center;padding:12px 0 0;font-size:12.5px;color:var(--muted)}
+.proto .foot .link-gold{font-size:13px}
+
+/* Vitamin stacks */
+.vit-hero img{object-position:50% 50%}
+.stack{margin:14px 24px 0;padding:16px 0 4px;border-top:1px solid var(--gold)}
+.stack .ph{display:flex;justify-content:space-between;align-items:baseline}
+.stack h3{font-family:var(--display);font-weight:500;font-size:26px;line-height:1.05}
+.stack ul{list-style:none;margin-top:8px}
+.stack li button{display:flex;justify-content:space-between;align-items:baseline;width:100%;text-align:left;padding:11px 0;border-bottom:1px solid var(--line)}
+.stack li b{font-weight:400;font-size:15px}
+.stack li span{font-size:13px;color:var(--muted)}
+.stack .take{display:flex;justify-content:space-between;align-items:center;padding:14px 0 10px;font-size:14px}
+.stack.soon{border-top-color:var(--line)}
+.stack.soon .st{color:var(--gold-soft)}
+#s-vitamins .pship{margin:6px 24px 0}
+
+/* Meals: the week */
+.shop{display:flex;align-items:center;justify-content:space-between;gap:12px;width:calc(100% - 48px);margin:20px 24px 0;padding:16px 18px;background:var(--charcoal);color:var(--bone);border-radius:3px;text-align:left}
+.shop b{display:block;font-family:var(--display);font-weight:500;font-size:22px;line-height:1.1}
+.shop .t span{display:block;font-size:12.5px;color:var(--muted);margin-top:4px}
+.wkm{margin:8px 24px 0}
+.wday{padding-top:22px}
+.wdh{display:flex;align-items:baseline;gap:10px;padding-bottom:6px;border-bottom:1px solid var(--charcoal)}
+.wdh b{font-family:var(--display);font-weight:500;font-size:24px;color:var(--charcoal)}
+.wdh span{font-size:12px;color:var(--charcoal);background:var(--gold-soft);padding:3px 9px;border-radius:11px}
+.mrow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-paper)}
+.mrow .mm{flex:1;display:flex;align-items:center;gap:12px;text-align:left;min-width:0}
+.mrow img{width:52px;height:52px;object-fit:cover;border-radius:2px;flex:none}
+.mrow .tx{min-width:0}
+.mrow small{display:block;font-family:var(--display);font-style:italic;font-size:15px;color:var(--gold)}
+.mrow .tx b{display:block;font-weight:400;font-size:15px;line-height:1.25;color:var(--charcoal)}
+.mrow .tx span{display:block;font-size:12.5px;color:var(--muted-paper);margin-top:2px}
+.paper .tick{border-color:rgba(34,30,25,.35)}
+.paper .tick.done{background:var(--gold);border-color:var(--gold)}
+.paper .tick.done svg{stroke:var(--bone)}
+.wday.now .wdh{border-bottom-color:var(--gold)}
+
+/* Shopping list sheet */
+.shl h2{margin-top:2px}
+.shbtns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:18px}
+.shbtns .btn{margin:0;height:46px;font-size:14px}
+.bsheet .shbtns .btn-line{color:var(--charcoal);border-color:rgba(34,30,25,.35)}
+.shl li{padding:0}
+.shl li button{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:9px 0;font-size:14.5px;color:var(--charcoal)}
+.shl li i{width:16px;height:16px;border:1px solid rgba(34,30,25,.4);border-radius:2px;flex:none;position:relative}
+.shl li span{flex:1}
+.shl li em{font-style:normal;font-size:13.5px;color:var(--muted-paper)}
+.shl li .got span,.shl li .got em{text-decoration:line-through;color:rgba(34,30,25,.4)}
+.shl li .got i{background:var(--gold);border-color:var(--gold)}
+
+/* Training: the week */
+.tnow{margin:18px 24px 0}
+.tnow .k{font-family:var(--display);font-style:italic;font-size:19px;color:var(--limestone)}
+.tnow .tn{display:flex;align-items:center;justify-content:space-between;width:100%;text-align:left;padding:6px 0 14px}
+.tnow .tn b{display:block;font-family:var(--display);font-weight:500;font-size:32px;line-height:1.05}
+.tnow .tn .tx span{display:block;font-size:13px;color:var(--muted);margin-top:4px}
+.tnow .btn{margin-top:0}
+.tnow+.blocks{margin-top:26px}
+#trows{margin:10px 24px 0}
+.trow{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+.trow .tm{flex:1;display:flex;align-items:center;gap:12px;text-align:left;padding:13px 0;min-width:0}
+.trow .dd{width:84px;flex:none;font-size:12.5px;color:var(--muted)}
+.trow .dd em{display:block;font-style:normal;color:var(--gold-soft);margin-top:2px}
+.trow .tx{flex:1;min-width:0}
+.trow .tx b{display:block;font-weight:400;font-size:15.5px}
+.trow .tx span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.trow.rest{padding:13px 0;gap:12px}
+.trow.rest .tx b{color:var(--muted)}
+.trow.now .tx b{color:var(--gold-soft)}
+
+/* One session */
+.ssmeta{margin-top:16px}
+.sstart{padding:12px 24px 0}
+.ssd{display:flex;justify-content:space-between;align-items:center;margin:14px 24px 0;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14px}
+#s-session .pr-set{margin:14px 24px 0;font-size:14.5px;line-height:1.5;color:var(--limestone)}
+.mv .th.num{display:grid;place-items:center;border:1px solid var(--line);background:rgba(217,201,174,.06)}
+.mv .th.num span{font-family:var(--display);font-weight:500;font-size:26px;color:var(--gold-soft)}
+
+/* QA pass 1 fixes */
+.yd .tick,.proto .tick,.stack .tick,.trow .tick,.ssd .tick,.mv .tick{border-color:rgba(217,201,174,.75)}
+.bar i,.ydt i{background:rgba(217,201,174,.3)}
+.shbtns .btn{width:auto;min-width:0;padding:0}
+.menu-top h1,.marcus p,.proto .goal{text-wrap:balance}
+.ydslot{color:var(--bone)}
+.yd .row .k{font-size:12px}
+.mrow .tx b,.trow .tx b,.yd .row .t{text-wrap:pretty}
+
+/* treatment stack sheet */
+.stl{list-style:none;margin-top:6px}
+.stl li button{display:flex;justify-content:space-between;align-items:baseline;gap:12px;width:100%;text-align:left;padding:12px 0;border-bottom:1px solid rgba(217,201,174,.18)}
+.stl li b{font-weight:400;font-size:15.5px}.stl li span{font-size:13px;color:var(--muted);flex:none}
+
+/* ===== round 3: same shape for all three, plus weights ===== */
+.wkh{margin-top:30px}
+.paper .pr-day{border-bottom-color:var(--gold)}.paper .pr-day b{color:var(--charcoal)}.paper .pr-day span{color:var(--gold)}
+.paper .tnow .k{color:var(--gold)}.paper .tnow .tn b{color:var(--charcoal)}.paper .tnow .tn .tx span{color:var(--muted-paper)}
+.tnow .btn.added{opacity:.75}
+.tweek{margin:0 24px}
+.tday{padding:14px 0;border-bottom:1px solid var(--line)}
+.tdh{display:flex;align-items:center;gap:10px}
+.tdh b{font-weight:400;font-size:15.5px}
+.tdh em{font-style:normal;font-size:12px;color:var(--charcoal);background:var(--gold-soft);padding:3px 9px;border-radius:11px}
+.tdh .dots{display:flex;gap:6px;margin-left:auto}
+.tdh .dots i{width:9px;height:9px;border-radius:50%;background:var(--gold-soft)}
+.tdh .dots i.o{background:none;border:1px solid rgba(217,201,174,.6)}
+.tdh .dots i.gap{background:none;border:1px dashed rgba(217,201,174,.7)}
+.tdh .tc{font-size:12.5px;color:var(--muted);min-width:44px;text-align:right;margin-left:auto}
+.tdh .dots+.tc{margin-left:0}
+.tday.future .tdh b{color:var(--limestone)}
+.tgap{font-size:13px;line-height:1.45;color:var(--muted);margin-top:6px}
+.tday.now{border-bottom-color:var(--gold-soft)}
+.tday.now .tdh b{color:var(--gold-soft)}
+.tday .slot{margin:14px 0 0}
+.tday .dz{margin:0;width:100%}
+.tday .dz:last-child{border-bottom:0;padding-bottom:2px}
+.tev{list-style:none;margin-top:8px}
+.tev button{display:flex;gap:10px;align-items:center;text-align:left;font-size:13.5px;line-height:1.4;color:var(--limestone);padding:3px 0}
+.tev button::before{content:'';width:10px;height:1px;background:var(--gold-soft);flex:none}
+.mv .t .lw{display:block;font-size:12px;color:var(--gold-soft);margin-top:3px}
+/* workout logger: one balanced unit, sits just above the button */
+.sess.lift .sv{height:auto;flex:1 1 auto;min-height:28%}
+.sess.lift .sb{flex:0 0 auto}
+.sess .sets i{position:relative}
+.sess .sets i span{position:absolute;top:11px;left:0;right:0;text-align:center;font-size:11.5px;line-height:14px;color:var(--limestone);white-space:nowrap}
+.sess.lift .sets{margin-bottom:32px}
+#sLift{margin-top:auto}
+.sess.lift .btn{margin-top:20px}
+.lgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:12px}
+.lc{min-width:0}
+.ll{display:block;font-size:12px;line-height:16px;color:var(--muted);margin-bottom:8px}
+.lstp,.lfix{height:60px;border:1px solid rgba(217,201,174,.38);border-radius:3px}
+.lstp{display:grid;grid-template-columns:42px 1fr 42px;align-items:stretch}
+.lb{position:relative;width:42px;height:100%;color:var(--gold-soft)}
+.lb::before,.lb.pl::after{content:'';position:absolute;left:50%;top:50%;width:14px;height:1.5px;margin:-.75px 0 0 -7px;background:currentColor;border-radius:1px}
+.lb.pl::after{transform:rotate(90deg)}
+.lb:active{background:rgba(217,201,174,.08)}
+.lval{position:relative;display:flex;align-items:center;justify-content:center;min-width:0;align-self:stretch;cursor:text}
+.lgrp{display:flex;align-items:baseline;gap:4px;white-space:nowrap}
+.lnum{font-family:var(--display);font-weight:500;font-size:30px;line-height:1;color:var(--bone);font-variant-numeric:lining-nums tabular-nums;padding-bottom:9px;margin-bottom:-9px;border-bottom:1px solid transparent}
+.lval.edit .lnum{border-bottom-color:var(--gold-soft)}
+.lval em{font-style:normal;font-size:13px;line-height:1;color:var(--muted)}
+.lval input{position:absolute;inset:0;width:100%;height:100%;opacity:0;font-size:16px;border:0;padding:0;margin:0;background:none;color:transparent;caret-color:transparent}
+.lfix{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:500;font-size:19px;color:var(--limestone)}
+.lnote{font-size:13px;line-height:1.45;color:var(--muted);margin-top:12px}
+.lnote b{font-weight:500;color:var(--gold-soft)}
+/* weights chart: baseline under the bars, dates clear below it */
+.lchart{position:relative;display:flex;align-items:flex-end;gap:10px;height:150px;margin-top:12px}
+.lchart::after{content:'';position:absolute;left:0;right:0;bottom:25px;height:1px;background:rgba(217,201,174,.3)}
+.lchart div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.lchart i{display:block;width:100%;max-width:34px;background:var(--gold-soft);border-radius:2px 2px 0 0}
+.lchart em{font-style:normal;font-size:12.5px;line-height:15px;color:var(--bone);margin-bottom:6px}
+.lchart span{font-size:11px;line-height:14px;color:var(--muted);white-space:nowrap;margin-top:12px}
+.lchart .tg i{background:none;border:1px dashed var(--gold-soft);border-bottom:0}
+.lchart .tg em{color:var(--gold-soft)}
+.lhist{list-style:none;margin-top:18px}
+.lhist li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid rgba(217,201,174,.15);font-size:14px;line-height:1.35}
+.lhist li span{color:var(--muted)}
+.lhist li b{font-weight:400;text-align:right}
+.lhist li.hd{padding:0 0 8px;font-size:11.5px}
+.lgoal{font-size:14px;color:var(--gold-soft);margin-top:14px}
+
+/* round 3 QA fixes */
+.tgap{text-wrap:pretty}
+.tdh .dots i.gap{border:1.5px dashed rgba(217,201,174,.9)}
+.sess .sets i span.now{color:var(--gold-soft)}
+.sess .sets i:not(.f) span.now~*{display:none}
+.lsee{display:block;margin-top:8px;font-size:13px;color:var(--gold-soft);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.bsheet.over{z-index:86}
+#bdim.over{z-index:85}
+.sess-h.wh{margin-top:34px}
+#wlist{margin:4px 24px 0}
+.wrow{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:15px 0;border-bottom:1px solid var(--line)}
+.wrow:last-child{border-bottom:0}
+.wn{flex:1;min-width:0}
+.wn b{display:block;font-weight:400;font-size:15.5px;line-height:1.3}
+.wn span{display:block;font-size:12.5px;line-height:1.35;color:var(--muted);margin-top:3px}
+.wv{font-family:var(--display);font-weight:500;font-size:24px;line-height:1;color:var(--bone);white-space:nowrap}
+.wv em{font-family:var(--sans);font-style:normal;font-size:12px;color:var(--muted);margin-left:3px}
+.wrow .ico{flex:none;color:var(--muted)}
+.bsheet.over~.sess .x{opacity:0;pointer-events:none}
+
+/* note from Marcus or Dr Reyes, at the top of each page, above the thing to do */
+.cnote{display:flex;gap:14px;margin:22px 24px 0;padding:18px 18px 14px;background:var(--dusk);border-radius:2px}
+.cnote img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none}
+.cnote .cn{flex:1;min-width:0}
+.cnote .q{font-family:var(--display);font-style:italic;font-size:18px;line-height:1.35;color:var(--bone);text-wrap:pretty}
+.cnote .by{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:2px 0 8px;font-size:12.5px;line-height:1.4;color:var(--muted)}
+.cnote .by b{font-weight:500;color:var(--limestone)}
+.cnote .by button{flex:none;font-size:12.5px;color:var(--gold-soft);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;padding:6px 0;margin:-6px 0}
+.paper .cnote{background:#E9DDC8;box-shadow:inset 0 0 0 1px rgba(34,30,25,.10)}
+.paper .cnote .q{color:var(--charcoal)}
+.paper .cnote .by{color:var(--muted-paper)}.paper .cnote .by b{color:var(--charcoal)}
+.paper .cnote .by button{color:var(--gold)}
+.cnote+.tnow{margin-top:22px}
+.cnote+.sstart{padding-top:18px}
+.pr-set.bg{margin-top:30px;padding-top:16px;border-top:1px solid var(--line)}
+.paper .pr-set.bg{border-top-color:var(--line-paper)}
+
+/* small phones (iPhone SE and similar): shorter photo so the note and the button both fit on the first screen */
+@media (max-height:740px){
+  .pr-hero{height:224px}
+  .m1-hero{height:256px}
+  .m1-head h1,.pr-head h1{font-size:34px}
+  #s-eat .menu-top{padding-top:104px}
+  .menu-top h1{font-size:34px}
+  .cnote{margin-top:16px;padding:14px 16px 12px;gap:12px}
+  .cnote img{width:34px;height:34px}
+  .cnote .q{font-size:16.5px}
+  .cnote+.tnow{margin-top:16px}
+  .cnote+.sstart{padding-top:14px}
+}
+.cnote .nd{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold-soft);margin-right:8px;vertical-align:1px}
+.paper .cnote .nd{background:var(--gold)}
+.paper .cnote .by button{color:#7A5A2B}.paper .cnote .nd{background:#9A7232}
+
 </style>
 </head>
 <body>
@@ -677,8 +942,8 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 
       <!-- 1 GATE -->
       <section class="scr gate on" id="s-gate" data-tone="dark">
-        <img class="poster" src="a/gateposter.jpg?v=1" alt="">
-        <video id="gatevid" muted playsinline preload="auto" poster="a/gateposter.jpg?v=1"><source src="a/gate.mp4?v=1" type="video/mp4"></video>
+        <img class="poster" src="a/gateposter.jpg?v=2" alt="">
+        <video id="gatevid" muted playsinline preload="auto" poster="a/gateposter.jpg?v=2"><source src="a/gate.mp4?v=2" type="video/mp4"></video>
         <div class="g-scrim"></div>
         <div class="g-panel">
           <div class="g-mark">House of Longevity</div>
@@ -695,8 +960,8 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 
       <!-- 2 TODAY -->
       <section class="scr has-tabs" id="s-today" data-tab="today">
-        <div class="hero t-hero"><img src="a/today.jpg?v=1" alt=""><div class="fade"></div>
-          <button class="avatar" data-go="profile" aria-label="Your account"><img src="a/avatarface.jpg?v=1" alt="">Account</button>
+        <div class="hero t-hero"><img src="a/today.jpg?v=2" alt=""><div class="fade"></div>
+          <button class="avatar" data-go="profile" aria-label="Your account"><img src="a/avatarface.jpg?v=2" alt="">Account</button>
           <div class="t-copy"><p class="date">Tuesday 3 November</p><h1 class="h-display">Good evening, Claire.</h1></div>
         </div>
         <a class="letter" data-go="reveal">
@@ -705,12 +970,29 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
           <p>Marcus has read every marker and left you a note.</p>
           <div class="go"><span>Open your results</span><svg class="ico" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div>
         </a>
-        <div class="t-block">
-          <h2 class="sec">Tonight</h2>
-          <div class="row"><div class="main"><div class="t">Magnesium glycinate, 400 mg</div><div class="s">With dinner</div></div><button class="tick" data-act="tick" data-sync="mg" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-          <div class="row" data-go="eat"><div class="main"><div class="t">Dinner: miso salmon, sesame greens</div><div class="s">25 minutes, from your menu</div></div><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
-          <div class="row" data-go="protocol"><div class="main"><div class="t">Progesterone, 100 mg</div><div class="s">At bedtime, part of your hormone therapy</div></div><span class="due" data-rx>Due at 10 pm</span></div>
-          <div class="row"><div class="main"><div class="t">Lights out by 10.30</div><div class="s">Part of your sleep plan</div></div><button class="tick" data-act="tick" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+        <div class="t-block yd" id="yd">
+          <div class="yd-head"><h2 class="sec">Your day</h2><span id="ydCount">4 of 8 done</span></div>
+          <div class="ydt">
+            <button data-go="protocol" data-cat="p"><b>2<small>/4</small></b><span>Treatment</span><i><em></em></i></button>
+            <button data-go="eat" data-cat="m"><b>2<small>/3</small></b><span>Eat</span><i><em></em></i></button>
+            <button data-go="move" data-cat="t"><b>0<small>/1</small></b><span>Move</span><i><em></em></i></button>
+          </div>
+          <div class="ydf"><button class="on" data-ydf="all">Everything</button><button data-ydf="todo">Still to do</button></div>
+          <div class="ydg"><p class="ydslot">Morning</p>
+          <div class="row" data-cat="p"><button class="main" data-why="e2"><span class="k">Treatment</span><span class="t">Estradiol gel, 2 pumps</span><span class="s">Hormone therapy, after your shower</span></button><button class="tick" data-act="tick" data-sync="p-e2" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          <div class="row" data-cat="p"><button class="main" data-stack="am"><span class="k">Treatment</span><span class="t">Morning stack</span><span class="s">Vitamin D3 and omega 3, with breakfast</span></button><button class="tick" data-act="tick" data-sync="v-am" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          <div class="row" data-cat="m"><button class="main" data-recipe="eggs"><span class="k">Eat</span><span class="t">Breakfast: jammy eggs, greens, sourdough</span><span class="s">12 minutes</span></button><button class="tick" data-act="tick" data-sync="m-1-b" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          </div>
+          <div class="ydg"><p class="ydslot">Midday</p>
+          <div class="row" data-cat="m"><button class="main" data-recipe="lent" data-note="From Monday&rsquo;s leftovers"><span class="k">Eat</span><span class="t">Lunch: puy lentils, roast pumpkin</span><span class="s">From Monday&rsquo;s leftovers</span></button><button class="tick" data-act="tick" data-sync="m-1-l" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          <div class="row" data-cat="t"><button class="main" data-sess="1"><span class="k">Move</span><span class="t">Lower body strength, 40 min</span><span class="s">Week 3 of Rob&rsquo;s programme</span></button><button class="tick" data-act="tick" data-sync="t-1" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          </div>
+          <div class="ydg"><p class="ydslot">Evening</p>
+          <div class="row" data-cat="m"><button class="main" data-recipe="salmon"><span class="k">Eat</span><span class="t">Dinner: miso salmon, sesame greens</span><span class="s">25 minutes</span></button><button class="tick" data-act="tick" data-sync="m-1-d" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          <div class="row" data-cat="p"><button class="main" data-stack="pm"><span class="k">Treatment</span><span class="t">Evening stack</span><span class="s">Magnesium and L-theanine, with dinner</span></button><button class="tick" data-act="tick" data-sync="v-pm" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          <div class="row" data-cat="p"><button class="main" data-why="rx"><span class="k">Treatment</span><span class="t">Progesterone, 100 mg</span><span class="s">Hormone therapy, at bedtime</span></button><button class="tick" data-act="tick" data-sync="p-rx" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          </div>
+          <p class="yd-clear" id="ydClear">Nothing left to do today. Nicely done.</p>
         </div>
         <div class="t-block">
           <h2 class="sec">Coming up</h2>
@@ -718,14 +1000,14 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
           <div class="upnext" data-go="coach" style="border-bottom:0"><div class="day"><b>6</b><span>Fri Nov</span></div><div class="main" style="flex:1"><div class="t" style="font-size:15.5px">Check-in with Marcus</div><div class="s" style="font-size:13px;color:var(--muted);margin-top:3px">7.00 am, phone call</div></div><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
         </div>
         <a class="journal-tease" data-go="story">
-          <div class="img"><img src="a/read.jpg?v=1" alt=""></div>
+          <div class="img"><img src="a/read.jpg?v=2" alt=""></div>
           <div class="cap"><p class="k">This week in the Journal</p><h3>Why we test ApoB, not just cholesterol</h3><p class="s">4 minute read, with a short film</p></div>
         </a>
       </section>
 
       <!-- 3 RESULTS -->
       <section class="scr has-tabs" id="s-results" data-tab="results">
-        <div class="hero r-hero"><img src="a/results.jpg?v=1" alt=""><div class="fade"></div>
+        <div class="hero r-hero"><img src="a/results.jpg?v=2" alt=""><div class="fade"></div>
           <div class="r-head"><h1 class="h-display">Your results</h1><p>November panel, 42 markers.<br>Loaded from the lab and reviewed by Marcus on 3 November.</p></div>
         </div>
         <a class="newnote" data-go="reveal"><span class="dot"></span><span class="t"><b>New this morning.</b> Read Marcus's note</span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></a>
@@ -772,7 +1054,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
           <button class="move ln" data-go="detail" style="animation-delay:1s"><span class="tag talk">Let's talk</span><h2>ApoB</h2><p>1.1 g/L. Moving the right way, but still a little above where we'd like it.</p><span class="more">See the detail <svg class="ico" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M9 6l6 6-6 6"/></svg></span></button>
           <div class="note ln" style="animation-delay:1.15s">
             <p>"Your Vitamin D work has paid off. I'd love 45 minutes with you to talk through ApoB and what we try next. Nothing urgent, just the next step."</p>
-            <div class="sig"><img src="a/coachface.jpg?v=1" alt=""><div><b>Marcus</b><span>Your longevity coach</span></div></div>
+            <div class="sig"><img src="a/coachface.jpg?v=2" alt=""><div><b>Marcus</b><span>Your longevity coach</span></div></div>
           </div>
           <div class="stack ln" style="animation-delay:1.3s">
             <button class="btn btn-ink" data-go="book">Book your review with Marcus</button>
@@ -813,7 +1095,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
           </svg>
         </div>
         <p class="chart-cap">Down 15% since you joined in February.</p>
-        <div class="coachnote"><img src="a/coachface.jpg?v=1" alt=""><p>"Moving the right way. Let's talk on the 12th about what gets you under 0.9."<span>Marcus, 3 November</span></p></div>
+        <div class="coachnote"><img src="a/coachface.jpg?v=2" alt=""><p>"Moving the right way. Let's talk on the 12th about what gets you under 0.9."<span>Marcus, 3 November</span></p></div>
         <div class="linkrows">
           <a class="row" data-go="story"><div class="main"><div class="t">Why we test ApoB</div><div class="s">From the Journal, 4 minute read</div></div><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></a>
           <a class="row" data-go="coach"><div class="main"><div class="t">Ask Marcus about this</div><div class="s">Usually replies within one business day</div></div><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></a>
@@ -823,7 +1105,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
       <!-- 6 BOOK -->
       <section class="scr" id="s-book" data-tab="coach">
         <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Back</button>
-        <div class="hero b-hero"><img src="a/bookroom.jpg?v=1" alt=""><div class="fade"></div>
+        <div class="hero b-hero"><img src="a/bookroom.jpg?v=2" alt=""><div class="fade"></div>
           <div class="b-head"><h1 class="h-display">Marcus Hale</h1><p>Your longevity coach, with you since February</p></div>
         </div>
         <div class="b-body">
@@ -846,7 +1128,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 
       <!-- 7 BOOKED -->
       <section class="scr booked" id="s-booked" data-tab="coach">
-        <img class="bg" src="a/bookedarrive.jpg?v=1" alt="">
+        <img class="bg" src="a/bookedarrive.jpg?v=2" alt="">
         <div class="scrim"></div>
         <div class="in">
           <div class="g-rule"></div>
@@ -863,7 +1145,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 
       <!-- 8 COACH CHAT -->
       <section class="scr" id="s-coach" data-tab="coach" style="padding-bottom:88px">
-        <div class="c-head"><img src="a/coachface.jpg?v=1" alt=""><div class="who"><b>Marcus Hale</b><span>Usually replies within one business day</span></div><button class="bk" data-go="book">Book</button></div>
+        <div class="c-head"><img src="a/coachface.jpg?v=2" alt=""><div class="who"><b>Marcus Hale</b><span>Usually replies within one business day</span></div><button class="bk" data-go="book">Book</button></div>
         <div class="thread" id="thread">
           <p class="daysep">Today</p>
           <div class="msg them">Morning Claire. Your November results are in, and there's a lot to like. I've left you a note on your results page.</div>
@@ -883,58 +1165,69 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 
       <!-- 9 PLAN: THREE BOXES -->
       <section class="scr has-tabs" id="s-plan" data-tab="plan">
-        <div class="hero p-hero"><img src="a/plan.jpg?v=1" alt=""><div class="fade"></div>
-          <div class="p-head"><h1 class="h-display">Your plan</h1><p>Your protocol, movement and meals, in one place.</p></div>
+        <div class="hero p-hero"><img src="a/plan.jpg?v=2" alt=""><div class="fade"></div>
+          <div class="p-head"><h1 class="h-display">Your protocol</h1><p>Your treatment, movement and meals, in one place.</p></div>
         </div>
-        <a class="ptoday" data-go="protocol"><b id="planToday">Tonight</b><span>Next: progesterone, 10 pm</span></a>
+        <a class="ptoday" data-go="today"><b>Today</b><span id="ptCount">4 of 8 done</span></a>
         <a class="pillar" data-go="protocol">
-          <div class="ph"><img src="a/protocol.jpg?v=1" alt="" style="object-position:50% 35%"><div class="fade"></div>
-            <div class="cap"><small>Protocol</small><b>Your daily protocol</b></div></div>
-          <div class="pmeta"><span class="pby"><img src="a/doctor.jpg?v=1" alt=""><span>Prescribed by <b>Dr Anna Reyes</b></span></span></div>
-          <div class="pmeta" style="padding-top:6px"><span class="next">Today: <em id="pillPr">3 of 5 taken</em>, progesterone at bedtime</span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
+          <div class="ph"><img src="a/protocol.jpg?v=2" alt="" style="object-position:50% 35%"><div class="fade"></div>
+            <div class="cap"><small>Treatment</small><b>What you take, and why</b></div></div>
+          <div class="pmeta"><span class="pby"><img src="a/doctor.jpg?v=2" alt=""><span>Prescribed by <b>Dr Anna Reyes</b></span></span></div>
+          <div class="pmeta" style="padding-top:6px"><span class="next" id="pmProto">Today: <em>2 of 4 taken</em></span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
         </a>
         <a class="pillar" data-go="move">
-          <div class="ph"><img src="a/robcoach.jpg?v=1" alt="" style="object-position:50% 25%"><div class="fade"></div>
+          <div class="ph"><img src="a/robcoach.jpg?v=2" alt="" style="object-position:50% 25%"><div class="fade"></div>
             <div class="cap"><small>Move</small><b>Strength for the long run</b></div></div>
-          <div class="pmeta"><span class="pby"><img src="a/robcoach.jpg?v=1" alt=""><span>By <b>Rob Keane</b>, strength coach</span></span></div>
-          <div class="pmeta" style="padding-top:6px"><span class="next">Today: <em>lower body, 40 min</em>, week 3 of 8</span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
+          <div class="pmeta"><span class="pby"><img src="a/robcoach.jpg?v=2" alt=""><span>By <b>Rob Keane</b>, strength coach</span></span></div>
+          <div class="pmeta" style="padding-top:6px"><span class="next" id="pmTrain">Today: <em>lower body, 40 min</em></span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
         </a>
         <a class="pillar" data-go="eat">
-          <div class="ph"><img src="a/salmon.jpg?v=1" alt="" style="object-position:50% 40%"><div class="fade"></div>
+          <div class="ph"><img src="a/salmon.jpg?v=2" alt="" style="object-position:50% 40%"><div class="fade"></div>
             <div class="cap"><small>Eat</small><b>The heart-health menu</b></div></div>
-          <div class="pmeta"><span class="pby"><img src="a/chef.jpg?v=1" alt=""><span>By <b>Tom Ashby</b>, chef, with <b>Clara Moss</b>, dietitian</span></span></div>
-          <div class="pmeta" style="padding-top:6px"><span class="next">Tonight: <em>miso salmon, 25 min</em></span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
+          <div class="pmeta"><span class="pby"><img src="a/chef.jpg?v=2" alt=""><span>By <b>Tom Ashby</b>, chef, with <b>Clara Moss</b>, dietitian</span></span></div>
+          <div class="pmeta" style="padding-top:6px"><span class="next" id="pmMeal">Tonight: <em>miso salmon</em></span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
         </a>
-        <div class="marcus"><img src="a/coachface.jpg?v=1" alt=""><p><b>It all starts with your protocol.</b> Dr Reyes sets it at each results day. Marcus then chose your Move and Eat plans to work with it. Ask either of them to change anything in Coach.</p></div>
+        <div class="marcus"><img src="a/coachface.jpg?v=2" alt=""><p><b>It all starts with your treatment.</b> Dr Reyes sets it at each results day. Your movement and meals are built around it. Ask Marcus to change anything in Coach.</p></div>
       </section>
 
-      <!-- 10 PROTOCOL -->
+      <!-- 10 TREATMENT -->
       <section class="scr has-tabs" id="s-protocol" data-tab="plan">
-        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Plan</button>
-        <div class="hero pr-hero"><img src="a/protocol.jpg?v=1" alt=""><div class="fade"></div>
-          <div class="pr-head"><small>The foundation of your plan</small><h1>Your protocol</h1><div class="pby"><img src="a/doctor.jpg?v=1" alt=""><span>Prescribed by <b>Dr Anna Reyes</b></span></div></div>
+        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Protocol</button>
+        <div class="hero pr-hero"><img src="a/protocol.jpg?v=2" alt=""><div class="fade"></div>
+          <div class="pr-head"><small>The foundation of your protocol</small><h1>Your treatment</h1><div class="pby"><img src="a/doctor.jpg?v=2" alt=""><span>Prescribed by <b>Dr Anna Reyes</b></span></div></div>
         </div>
-        <p class="pr-set">Set by Dr Reyes in February, when you started hormone therapy, and last updated on 14 August. She reviews it again with your November results.</p>
-        <div class="pr-day"><b>Today</b><span id="prCount">3 of 5 taken</span></div>
-        <p class="slot">Morning</p>
-        <div class="dz"><button class="t" data-why="e2"><span class="kind">Hormone therapy</span><b>Estradiol gel, 2 pumps</b><span>On your upper arm, after your shower</span></button><button class="tick done" data-act="tick" data-sync="e2" aria-label="Mark taken"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-        <div class="dz"><button class="t" data-why="d3"><span class="kind">Vitamin</span><b>Vitamin D3, 2000 IU</b><span>With breakfast</span></button><button class="tick done" data-act="tick" data-sync="d3" aria-label="Mark taken"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-        <div class="dz"><button class="t" data-why="o3"><span class="kind">Supplement</span><b>Omega 3, two capsules</b><span>With breakfast</span></button><button class="tick done" data-act="tick" data-sync="o3" aria-label="Mark taken"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-        <p class="slot">Evening</p>
-        <div class="dz"><button class="t" data-why="mg"><span class="kind">Supplement</span><b>Magnesium glycinate, 400 mg</b><span>With dinner</span></button><button class="tick" data-act="tick" data-sync="mg" aria-label="Mark taken"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-        <div class="dz"><button class="t" data-why="rx"><span class="kind">Hormone therapy</span><b>Progesterone, 100 mg</b><span>One capsule at bedtime</span></button><button class="due" data-why="rx" id="rxDue">10 pm</button></div>
-        <h2 class="sec-h">What's in your protocol</h2>
+        <div class="cnote"><img src="a/doctor.jpg?v=2" alt=""><div class="cn"><div class="by"><span><i class="nd"></i><b>Dr Reyes</b>, your doctor, 29 October</span><button data-go="coach">Reply</button></div><p class="q">&ldquo;Take your progesterone at bedtime, not with dinner. It helps you sleep. If you miss one, just carry on the next night.&rdquo;</p></div></div>
+        <div class="tnow" id="trNow"></div>
+        <div class="pr-day wkh"><b>This week</b><span id="trWk">5 of 32 taken</span></div>
+        <div class="tweek">
+          <div class="tday past"><div class="tdh"><b>Monday 2</b><span class="dots"><i></i><i></i><i></i><i class="gap"></i></span><span class="tc">3 of 4</span></div><p class="tgap">Progesterone missed. No need to double up, just carry on tonight.</p></div>
+          <div class="tday now"><div class="tdh"><b>Tuesday 3</b><em>Today</em><span class="dots" id="tdDots"></span><span class="tc" id="prCount">2 of 4</span></div>
+            <p class="slot">Morning</p>
+            <div class="dz"><button class="t" data-why="e2"><span class="kind">Hormone therapy</span><b>Estradiol gel, 2 pumps</b><span>On your upper arm, after your shower</span></button><button class="tick" data-act="tick" data-sync="p-e2" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+            <div class="dz"><button class="t" data-stack="am"><span class="kind">Vitamins, from Halden</span><b>Morning stack</b><span>Vitamin D3 and omega 3, with breakfast</span></button><button class="tick" data-act="tick" data-sync="v-am" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+            <p class="slot">Evening</p>
+            <div class="dz"><button class="t" data-stack="pm"><span class="kind">Supplements, from Saltgrass</span><b>Evening stack</b><span>Magnesium and L-theanine, with dinner</span></button><button class="tick" data-act="tick" data-sync="v-pm" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+            <div class="dz"><button class="t" data-why="rx"><span class="kind">Hormone therapy</span><b>Progesterone, 100 mg</b><span>One capsule at bedtime</span></button><button class="tick" data-act="tick" data-sync="p-rx" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          </div>
+          <div class="tday future"><div class="tdh"><b>Wednesday 4</b><span class="tc">4 doses</span></div></div>
+          <div class="tday future"><div class="tdh"><b>Thursday 5</b><span class="tc">5 doses</span></div><ul class="tev"><li><button data-toast="Tracking: with the courier, arriving Thursday">Your December box arrives. Signature needed.</button></li><li><button data-why="fib">Psyllium husk starts, before dinner</button></li></ul></div>
+          <div class="tday future"><div class="tdh"><b>Friday 6</b><span class="tc">5 doses</span></div><ul class="tev"><li><button data-go="coach">Check-in with Marcus, 10.00, by video</button></li></ul></div>
+          <div class="tday future"><div class="tdh"><b>Saturday 7</b><span class="tc">5 doses</span></div></div>
+          <div class="tday future"><div class="tdh"><b>Sunday 8</b><span class="tc">5 doses</span></div></div>
+        </div>
+        <h2 class="sec-h">What&rsquo;s in your treatment</h2>
+        <p class="pr-set" style="margin-top:6px">Set by Dr Reyes in February, when you started hormone therapy, and last updated on 14 August. She reviews it again with your November results.</p>
         <div class="inp">
           <button data-why="e2"><b>2</b><span>Hormone therapy</span></button>
-          <button data-why="d3"><b>1</b><span>Vitamin</span></button>
-          <button data-why="o3"><b>2</b><span>Supplements</span></button>
+          <button data-stack="am"><b>4</b><span>Vitamins and supplements</span></button>
+          <button data-why="fib"><b>1</b><span>New from Thursday</span></button>
         </div>
         <h2 class="sec-h">Your December box</h2>
         <div class="pship"><div class="ship">
           <div class="stp done"><span class="pt"></span><div><div class="t">Approved by Dr Reyes</div><div class="s">29 October</div></div></div>
           <div class="stp done"><span class="pt"></span><div><div class="t">Packed and checked</div><div class="s">2 November</div></div></div>
           <div class="stp now"><i class="trail"></i><i class="runner"></i><span class="pt"></span><div><div class="t">With the courier</div><div class="s">Picked up this morning. <a class="link-gold" style="font-size:12.5px" data-toast="Tracking: with the courier, arriving Thursday">Track parcel</a></div></div></div>
-          <div class="stp"><span class="pt"></span><div><div class="t">Arriving Thursday 5 November</div><div class="s">Your estradiol gel and progesterone, plus a refill of your vitamin and supplements. Signature needed.</div></div></div>
+          <div class="stp"><span class="pt"></span><div><div class="t">Arriving Thursday 5 November</div><div class="s">Your estradiol gel and progesterone, refills of both stacks, and your new fibre stack. Signature needed.</div></div></div>
         </div></div>
         <h2 class="sec-h">Your last four weeks</h2>
         <div class="rec"><div class="dots" id="recDots"></div><div class="lbl"><span>7 Oct</span><span id="recLbl"><b>26 of 27 days</b> complete</span><span>Today</span></div></div>
@@ -943,42 +1236,67 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
           <div class="row"><div class="main"><div class="t">Remind me 30 minutes before</div></div><button class="toggle on" data-act="toggle" aria-label="Toggle"></button></div>
           <div class="row"><div class="main"><div class="t">Nudge me again if I miss it</div></div><button class="toggle on" data-act="toggle" aria-label="Toggle"></button></div>
         </div>
-        <div class="marcus doc"><img src="a/doctor.jpg?v=1" alt=""><p><b>Dr Reyes reviews your protocol at every results day.</b> Questions, or a side effect to mention? Message the care team any time.</p></div>
+        <p class="pr-set bg">Dr Reyes reviews your treatment at every results day. Your vitamins and supplements come from our partner brands, chosen by her.</p>
         <div class="linkrows pcare"><a class="row" data-go="coach"><div class="main"><div class="t">Message the care team</div><div class="s">Usually replies within one business day</div></div><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></a></div>
       </section>
 
-      <!-- 11 MOVE: THE PROGRAMME -->
-      <section class="scr has-tabs" id="s-move" data-tab="plan">
-        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Plan</button>
-        <div class="hero m1-hero"><img src="a/robcoach.jpg?v=1" alt=""><div class="fade"></div>
-          <div class="m1-head"><small>An 8-week programme</small><h1>Strength for the long run</h1><div class="pby"><img src="a/robcoach.jpg?v=1" alt=""><span>By <b>Rob Keane</b>, strength coach</span></div></div>
-        </div>
-        <div class="blocks"><i class="f"></i><i class="f"></i><i class="c"></i><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="wk"><span><b>Week 3 of 8</b></span><span>3 sessions a week, at home</span></div>
-        <div class="week">
-          <div><b>M</b><i class="d"></i></div><div class="on"><b>T</b><i></i></div><div class="rest"><b>W</b><i></i></div><div><b>T</b><i></i></div><div class="rest"><b>F</b><i></i></div><div><b>S</b><i></i></div><div class="rest"><b>S</b><i></i></div>
-        </div>
-        <div class="sess-h"><b>Today: lower body</b><span>40 min</span></div>
-        <div id="moves"></div>
-        <div class="pad" style="margin-top:22px"><button class="btn btn-bone" id="startBtn">Start session</button></div>
-        <div class="marcus"><img src="a/coachface.jpg?v=1" alt=""><p><b>Marcus put you on Rob's programme</b> after your August review. Two kettlebells and a mat are all you need.</p></div>
-      </section>
-
-      <!-- 12 EAT: THE WEEKLY MENU -->
+      <!-- 12 MEALS: THE WEEK -->
       <section class="scr has-tabs paper" id="s-eat" data-tab="plan" data-tone="paper">
-        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Plan</button>
+        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Protocol</button>
         <div class="menu-top">
           <small>Your week, 2 to 8 November</small>
           <h1>The heart-health menu</h1>
-          <div class="pby"><img src="a/chef.jpg?v=1" alt=""><span>By <b>Tom Ashby</b> with <b>Clara Moss</b></span></div>
+          <div class="pby"><img src="a/chef.jpg?v=2" alt=""><span>By <b>Tom Ashby</b> with <b>Clara Moss</b></span></div>
         </div>
-        <div class="mdays" id="mdays">
-          <button data-day="0"><b>2</b>Mon</button><button data-day="1" class="on"><b>3</b>Tue</button><button data-day="2"><b>4</b>Wed</button><button data-day="3"><b>5</b>Thu</button><button data-day="4"><b>6</b>Fri</button><button data-day="5"><b>7</b>Sat</button><button data-day="6"><b>8</b>Sun</button>
+        <div class="cnote"><img src="a/coachface.jpg?v=2" alt=""><div class="cn"><div class="by"><span><i class="nd"></i><b>Marcus</b>, your coach, 2 November</span><button data-go="coach">Reply</button></div><p class="q">&ldquo;Salmon twice this week for your ApoB. Eating out on Thursday? Pick fish and greens, and skip the bread.&rdquo;</p></div></div>
+        <div class="tnow">
+          <p class="k">Tonight</p>
+          <button class="tn" data-recipe="salmon"><span class="tx"><b>Miso salmon, sesame greens</b><span>25 minutes, serves 2</span></span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></button>
+          <button class="btn btn-ink" data-recipe="salmon">See tonight&rsquo;s recipe</button>
         </div>
-        <div class="courses" id="courses"></div>
-        <a class="shop" data-toast="Shopping list sent to your phone's Reminders"><div class="t"><b>Your shopping list</b><span>Everything for the week, 31 items, sorted by aisle</span></div><svg class="ico" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
-        <div class="marcus"><img src="a/coachface.jpg?v=1" alt=""><p><b>Set by Marcus after your August results.</b> More oily fish and fibre for your ApoB, as you talked about. Tap any dish for the recipe.</p></div>
+        <div class="pr-day wkh"><b>This week</b><span id="eatWk">8 of 21 eaten</span></div>
+        <button class="shop" data-shop><span class="t"><b>Shopping list for the week</b><span id="shopSub">Every ingredient for all 21 meals, in one list</span></span><svg class="ico" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="wkm" id="wkm"></div>
+        <div class="pad" style="margin-top:24px"><button class="btn btn-ink" data-shop>Make my shopping list</button></div>
+        <p class="pr-set bg">Set by Marcus after your August results: more oily fish and fibre for your ApoB.</p>
         <p class="sign">Tom &amp; Clara</p>
+      </section>
+
+      <!-- 13 TRAINING: THE WEEK -->
+      <section class="scr has-tabs" id="s-move" data-tab="plan">
+        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Protocol</button>
+        <div class="hero m1-hero"><img src="a/robcoach.jpg?v=2" alt=""><div class="fade"></div>
+          <div class="m1-head"><small>An 8-week programme</small><h1>Strength for the long run</h1><div class="pby"><img src="a/robcoach.jpg?v=2" alt=""><span>By <b>Rob Keane</b>, strength coach</span></div></div>
+        </div>
+        <div class="cnote"><img src="a/coachface.jpg?v=2" alt=""><div class="cn"><div class="by"><span><i class="nd"></i><b>Marcus</b>, your coach, 2 November</span><button data-go="coach">Reply</button></div><p class="q">&ldquo;Your squats are ready to go up. Try 17.5 kg today, and keep Wednesday&rsquo;s walk easy enough to talk the whole way.&rdquo;</p></div></div>
+        <div class="tnow">
+          <p class="k">Today&rsquo;s workout</p>
+          <button class="tn" data-sess="1"><span class="tx"><b>Lower body</b><span>Strength, 40 min, 5 moves</span></span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></button>
+          <button class="btn btn-bone" data-start="1">Start workout</button>
+        </div>
+        <div class="pr-day wkh"><b>This week</b><span id="trCount">2 of 6 done</span></div>
+        <div class="blocks"><i class="f"></i><i class="f"></i><i class="c"></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="wk"><span><b>Week 3 of 8</b> of Rob&rsquo;s programme</span></div>
+        <div id="trows"></div>
+        <div class="sess-h wh"><b>Your weights</b><span>Tap a move for every session</span></div>
+        <div id="wlist"></div>
+        <p class="pr-set bg">Marcus put you on Rob&rsquo;s programme after your August review. Strength three times a week, two easy Zone 2 sessions for your heart, and one short mobility session. At home or at your own gym.</p>
+      </section>
+
+      <!-- 14 ONE SESSION -->
+      <section class="scr has-tabs" id="s-session" data-tab="plan">
+        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Move</button>
+        <div class="hero m1-hero"><img id="ssImg" src="a/demo.jpg?v=2" alt=""><div class="fade"></div>
+          <div class="m1-head"><small id="ssWhen">Tuesday 3 November</small><h1 id="ssName">Lower body</h1><div class="pby"><img src="a/robcoach.jpg?v=2" alt=""><span>By <b>Rob Keane</b>, strength coach</span></div></div>
+        </div>
+        <div class="wk ssmeta"><span><b id="ssKind">Strength</b></span><span id="ssDur">40 min</span></div>
+        <div class="cnote" id="ssNote"><img src="a/coachface.jpg?v=2" alt=""><div class="cn"><div class="by"><span><i class="nd"></i><b>Marcus</b>, your coach, 2 November</span><button data-go="coach">Reply</button></div><p class="q"></p></div></div>
+        <div class="pad sstart"><button class="btn btn-bone" id="startBtn">Start workout</button></div>
+        <div class="ssd"><span id="ssdT">Mark this session as done</span><span id="ssdTick"></span></div>
+        <p class="pr-set" id="ssWhy"></p>
+        <div class="sess-h"><b id="ssListH">The session</b><span id="ssCount">5 moves</span></div>
+        <div id="moves"></div>
+        <p class="pr-set bg">Something hurt, or too easy? Tell Marcus in Coach and Rob will adjust next week.</p>
       </section>
 
       <!-- 13 JOURNAL -->
@@ -986,29 +1304,29 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
         <div class="j-mast"><h1 class="h-display">The Journal</h1><p>Short reads and films from the doctors and coaches of the House.</p></div>
         <div class="topics"><button class="on" data-act="topic">For you</button><button data-act="topic">Sleep</button><button data-act="topic">Movement</button><button data-act="topic">Nutrition</button><button data-act="topic">Your results</button><button data-act="topic">Your treatment</button></div>
         <a class="lead" data-go="story">
-          <div class="img"><img src="a/ride.jpg?v=1" alt=""></div>
+          <div class="img"><img src="a/ride.jpg?v=2" alt=""></div>
           <div class="tx"><p class="k">Movement</p><h2>The quiet case for Zone 2</h2><p class="s">Marcus Hale, 6 minute read</p></div>
         </a>
         <a class="foryou" data-go="story"><p class="k">Because your ApoB moved</p><h3>Why we test ApoB, not just cholesterol</h3><p class="s">Dr Anna Reyes, 4 minute read with a short film</p></a>
         <div class="jlist">
-          <a class="jrow" data-go="story"><div class="tx"><p class="k">Film</p><h4>Inside your blood panel, in four minutes</h4><p class="s">Dr Anna Reyes</p></div><div class="th"><img src="a/kitchen.jpg?v=1" alt=""><span class="play"><i><svg viewBox="0 0 14 14"><path d="M2 1l11 6-11 6z"/></svg></i></span></div></a>
-          <a class="jrow" data-go="story"><div class="tx"><p class="k">Sleep</p><h4>Sleep is a skill. Here's how to practise it</h4><p class="s">5 minute read</p></div><div class="th"><img src="a/pool.jpg?v=1" alt=""></div></a>
-          <a class="jrow" data-go="story"><div class="tx"><p class="k">Nutrition</p><h4>The longevity plate, made simple</h4><p class="s">3 minute read</p></div><div class="th"><img src="a/dinner.jpg?v=1" alt=""></div></a>
-          <a class="jrow" data-go="story" style="border-bottom:0"><div class="tx"><p class="k">Your hormone therapy</p><h4>What to expect in your first twelve weeks</h4><p class="s">Reviewed by the clinical team</p></div><div class="th"><img src="a/swim.jpg?v=1" alt=""></div></a>
+          <a class="jrow" data-go="story"><div class="tx"><p class="k">Film</p><h4>Inside your blood panel, in four minutes</h4><p class="s">Dr Anna Reyes</p></div><div class="th"><img src="a/kitchen.jpg?v=2" alt=""><span class="play"><i><svg viewBox="0 0 14 14"><path d="M2 1l11 6-11 6z"/></svg></i></span></div></a>
+          <a class="jrow" data-go="story"><div class="tx"><p class="k">Sleep</p><h4>Sleep is a skill. Here's how to practise it</h4><p class="s">5 minute read</p></div><div class="th"><img src="a/pool.jpg?v=2" alt=""></div></a>
+          <a class="jrow" data-go="story"><div class="tx"><p class="k">Nutrition</p><h4>The longevity plate, made simple</h4><p class="s">3 minute read</p></div><div class="th"><img src="a/dinner.jpg?v=2" alt=""></div></a>
+          <a class="jrow" data-go="story" style="border-bottom:0"><div class="tx"><p class="k">Your hormone therapy</p><h4>What to expect in your first twelve weeks</h4><p class="s">Reviewed by the clinical team</p></div><div class="th"><img src="a/swim.jpg?v=2" alt=""></div></a>
         </div>
       </section>
 
       <!-- 14 STORY -->
       <section class="scr" id="s-story" data-tab="journal">
         <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Journal</button>
-        <div class="hero s-hero"><img src="a/read.jpg?v=1" alt=""><div class="fade"></div></div>
+        <div class="hero s-hero"><img src="a/read.jpg?v=2" alt=""><div class="fade"></div></div>
         <article class="s-body">
           <p class="k">Your results</p>
           <h1>Why we test ApoB, not just cholesterol</h1>
           <div class="by"><span><b>Dr Anna Reyes</b>, 4 minute read</span></div>
           <p class="b">A standard cholesterol test tells you how much cholesterol is in your blood. ApoB tells you something slightly different: how many particles are carrying it.</p>
           <p class="b">Each of those particles carries one ApoB protein, so counting ApoB is a way of counting particles. Two people can share the same cholesterol number and have very different counts.</p>
-          <a class="film"><img src="a/swim.jpg?v=1" alt=""><span class="cap"><i><svg viewBox="0 0 14 14"><path d="M2 1l11 6-11 6z"/></svg></i><span><b>Marcus explains ApoB in three minutes</b><span>Film, 3:10</span></span></span></a>
+          <a class="film"><img src="a/swim.jpg?v=2" alt=""><span class="cap"><i><svg viewBox="0 0 14 14"><path d="M2 1l11 6-11 6z"/></svg></i><span><b>Marcus explains ApoB in three minutes</b><span>Film, 3:10</span></span></span></a>
           <p class="b">That's why it's part of every panel at the House, and why your coach watches how it moves over time rather than reading a single result.</p>
           <div class="pull"><h2>What to do with your number</h2><p>Talk it through with your coach. It means most next to your history, your family and your plan.</p></div>
           <button class="btn btn-ink" style="margin-top:26px" data-go="coach">Ask Marcus about this</button>
@@ -1020,7 +1338,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
       <section class="scr has-tabs" id="s-profile" data-tab="today">
         <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Back</button>
         <div class="pr-top">
-          <div class="card"><img src="a/membercard.jpg?v=1" alt=""><div class="tx"><b>Claire Whitford</b><span>Member since February 2026</span><span>Annual membership</span></div></div>
+          <div class="card"><img src="a/membercard.jpg?v=2" alt=""><div class="tx"><b>Claire Whitford</b><span>Member since February 2026</span><span>Annual membership</span></div></div>
         </div>
         <div class="use">
           <h2 class="sec">Your membership this year</h2>
@@ -1039,6 +1357,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
           <div class="row"><div class="main"><div class="t">Notifications</div></div><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
           <div class="row"><div class="main"><div class="t">Privacy and your data</div></div><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
           <div class="row"><div class="main"><div class="t">Help</div></div><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
+          <div class="row" data-reset><div class="main"><div class="t">Start the sample day again</div><div class="s">Clears your ticks, for anyone testing the app</div></div></div>
           <div class="row" data-go="gate"><div class="main"><div class="t" style="color:var(--muted)">Lock the app</div></div></div>
         </div>
       </section>
@@ -1047,14 +1366,14 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
       <div class="bsheet" id="bsheet"><div class="grab"><i></i></div><button class="close" id="bsheetX" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div id="bsheetIn"></div></div>
       <div class="sess" id="sess">
         <button class="x" id="sX" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-        <div class="sv"><img id="sImg" src="a/demo.jpg?v=1" alt=""><div class="fade"></div></div>
-        <div class="sb"><span class="of" id="sOf"></span><h2 id="sName"></h2><span class="rep" id="sRep"></span><p class="cue2" id="sCue"></p><div class="sets" id="sSets"></div><button class="btn btn-bone" id="sNext">Set done</button></div>
+        <div class="sv"><img id="sImg" src="a/demo.jpg?v=2" alt=""><div class="fade"></div></div>
+        <div class="sb"><span class="of" id="sOf"></span><h2 id="sName"></h2><span class="rep" id="sRep"></span><p class="cue2" id="sCue"></p><div class="sets" id="sSets"></div><div id="sLift"></div><button class="btn btn-bone" id="sNext">Set done</button></div>
       </div>
       <div class="ptoast" id="ptoast"></div>
       <nav class="tabs hide" id="tabs"><i class="tabline" id="tabline"></i>
         <button data-go="today" data-tabbtn="today"><svg viewBox="0 0 24 24"><path d="M5 21V10a7 7 0 0 1 14 0v11M3 21h18M9.5 21v-6a2.5 2.5 0 0 1 5 0v6"/></svg>Today</button>
         <button data-go="results" data-tabbtn="results"><svg viewBox="0 0 24 24"><path d="M12 3.5s6 6.4 6 10.8a6 6 0 0 1-12 0c0-4.4 6-10.8 6-10.8z"/></svg>Results</button>
-        <button data-go="plan" data-tabbtn="plan"><svg viewBox="0 0 24 24"><path d="M5 19.5C5 11 11 5 19.5 5 19.5 13.5 13.5 19.5 5 19.5zM5 19.5l8.5-8.5"/></svg>Plan</button>
+        <button data-go="plan" data-tabbtn="plan"><svg viewBox="0 0 24 24"><path d="M5 19.5C5 11 11 5 19.5 5 19.5 13.5 13.5 19.5 5 19.5zM5 19.5l8.5-8.5"/></svg>Protocol</button>
         <button data-go="journal" data-tabbtn="journal"><svg viewBox="0 0 24 24"><path d="M3 5.5c3.2-1 6.2-.6 9 1.3 2.8-1.9 5.8-2.3 9-1.3v13c-3.2-1-6.2-.6-9 1.3-2.8-1.9-5.8-2.3-9-1.3zM12 6.8v13"/></svg>Journal</button>
         <button data-go="coach" data-tabbtn="coach"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v10.5H10l-6 4z"/></svg>Coach</button>
       </nav>
@@ -1072,7 +1391,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 
 <script>
 (function(){
-  var SCREENS=[['gate','The gate','Face ID opens the House'],['today','Today','One calm page a day'],['reveal','New results','Your results, as a letter'],['results','Results','Everything, in one place'],['detail','One marker','Plain words and your trend'],['book','Book','Your coach, in three taps'],['booked','Booked','The confirmation'],['coach','Coach','Message Marcus'],['plan','Plan','Protocol, Move and Eat'],['protocol','Protocol','Doses, why, and your next box'],['move','Move','Your programme'],['eat','Eat','Your weekly menu'],['journal','Journal','Education, every week'],['story','Story','A Journal read'],['profile','Membership','What you have, what you have used']];
+  var SCREENS=[['gate','The gate','Face ID opens the House'],['today','Today','Your day, at a glance'],['reveal','New results','Your results, as a letter'],['results','Results','Everything, in one place'],['detail','One marker','Plain words and your trend'],['book','Book','Your coach, in three taps'],['booked','Booked','The confirmation'],['coach','Coach','Message Marcus'],['plan','Protocol','Treatment, Move and Eat'],['protocol','Treatment','What you take, and why'],['move','Move','The week, tick by tick'],['session','Session','One workout'],['eat','Eat','The week, and one shopping list'],['journal','Journal','Education, every week'],['story','Story','A Journal read'],['profile','Membership','What you have, what you have used']];
   var screen=document.getElementById('screen'), tabs=document.getElementById('tabs'), idx=document.getElementById('index');
   var NO_TABS={gate:1,reveal:1,book:1,booked:1,story:1};
   var cur='gate', hist=[];
@@ -1120,7 +1439,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
       if(act==='opt'){a.parentNode.querySelectorAll('.opt').forEach(function(o){o.classList.remove('on')});a.classList.add('on');updConfirm();return;}
       if(act==='seg'||act==='topic'||act==='day'||act==='time'){a.parentNode.querySelectorAll('button').forEach(function(o){o.classList.remove('on')});a.classList.add('on');updConfirm();return;}
     }
-    var g=e.target.closest('[data-go]'); if(g){e.preventDefault();var to=g.dataset.go; if(g.dataset.tabbtn){hist=[];} show(to);}
+    var g=e.target.closest('[data-go]'); if(g){e.preventDefault();var to=g.dataset.go; if(g.dataset.tabbtn){hist=[];} show(to,g.hasAttribute('data-swap')?{back:true}:{});}
   });
   function updProg(){if(window.holPlan)holPlan.count();}
   var DAYN={Mon:'Monday',Tue:'Tuesday',Wed:'Wednesday',Thu:'Thursday',Fri:'Friday'};
@@ -1147,83 +1466,338 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 <script>
 (function(){
   var $=function(q,r){return (r||document).querySelector(q)}, $$=function(q,r){return Array.prototype.slice.call((r||document).querySelectorAll(q))};
-  var IMG={protocol:'a/protocol.jpg?v=1',doctor:'a/doctor.jpg?v=1',salmon:'a/salmon.jpg?v=1',breakfast:'a/breakfast.jpg?v=1',lunch:'a/lunch.jpg?v=1',plate:'a/plate.jpg?v=1',demo:'a/demo.jpg?v=1',rdl:'a/rdl.jpg?v=1',split:'a/split.jpg?v=1',bridge:'a/bridge.jpg?v=1',carry:'a/carry.jpg?v=1'};
-  var tt;function toast(m){var el=$('#ptoast');el.textContent=m;el.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){el.classList.remove('on')},2400);}
-  function openSheet(html,dark){$('#bsheetIn').innerHTML=html;var s=$('#bsheet');s.classList.toggle('dark',!!dark);s.scrollTop=0;s.classList.add('on');$('#bdim').classList.add('on');}
-  function closeSheet(){$('#bsheet').classList.remove('on');$('#bdim').classList.remove('on');}
+  var IMG={protocol:'a/protocol.jpg?v=2',doctor:'a/doctor.jpg?v=2',vitamins:'a/vitamins.jpg?v=2',salmon:'a/salmon.jpg?v=2',breakfast:'a/breakfast.jpg?v=2',lunch:'a/lunch.jpg?v=2',plate:'a/plate.jpg?v=2',oats:'a/oats.jpg?v=2',yoghurt:'a/yoghurt.jpg?v=2',soup:'a/soup.jpg?v=2',sardines:'a/sardines.jpg?v=2',demo:'a/demo.jpg?v=2',rdl:'a/rdl.jpg?v=2',split:'a/split.jpg?v=2',bridge:'a/bridge.jpg?v=2',carry:'a/carry.jpg?v=2',walk:'a/walk.jpg?v=2',ride:'a/ride.jpg?v=2',robcoach:'a/robcoach.jpg?v=2',classv:'a/classv.jpg?v=2'};
+  var CHK='<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
+  var CHEV='<svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg>';
+  function tick(k,label){return '<button class="tick" data-act="tick"'+(k?' data-sync="'+k+'"':'')+' aria-label="'+(label||'Mark done')+'">'+CHK+'</button>';}
+  var tt;function toast(m){var el=$('#ptoast');el.textContent=m;el.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){el.classList.remove('on')},2600);}
+  function openSheet(html,dark){$('#bsheetIn').innerHTML=html;var s=$('#bsheet');s.classList.toggle('dark',!!dark);s.scrollTop=0;s.classList.add('on');$('#bdim').classList.add('on');applyState();}
+  function closeSheet(){$('#bsheet').classList.remove('on');$('#bdim').classList.remove('on');setTimeout(function(){if(!$('#bsheet').classList.contains('on')){$('#bsheet').classList.remove('over');$('#bdim').classList.remove('over');}},600);}
   $('#bsheetX').onclick=closeSheet;$('#bdim').onclick=closeSheet;
   function closeAll(){closeSheet();$('#sess').classList.remove('on');}
+  function go(id){var a=document.createElement('a');a.setAttribute('data-go',id);a.style.display='none';$('#s-'+cur()).appendChild(a);a.click();a.remove();}
+  function cur(){var s=$('.scr.on');return s?s.id.slice(2):'today';}
 
-  /* recipes */
+  /* ---------- one record of what is done, shared by every screen ---------- */
+  var KEY='hol-day-v2';
+  var DEFAULT=['p-e2','v-am','m-1-b','m-1-l','t-0','m-0-b','m-0-l','m-0-d'];
+  var done={};
+  try{var sv=JSON.parse(localStorage.getItem(KEY)||'null');(sv||DEFAULT).forEach(function(k){done[k]=1;});}catch(e){DEFAULT.forEach(function(k){done[k]=1;});}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(Object.keys(done)));}catch(e){}}
+  function applyState(){$$('[data-sync]').forEach(function(t){t.classList.toggle('done',!!done[t.dataset.sync]);});}
+  function setKey(k,on){if(on)done[k]=1;else delete done[k];applyState();count();}
+  function readDom(){var seen={};$$('[data-sync]').forEach(function(t){var k=t.dataset.sync;if(seen[k])return;seen[k]=1;if(t.classList.contains('done'))done[k]=1;else delete done[k];});}
+
+  /* ---------- recipes, with real quantities so the shopping list can add them up ---------- */
+  /* [amount, unit, item, aisle]  aisle: f fruit and veg, m meat and fish, d dairy and eggs, b bakery, p pantry, s staples you probably have */
   var R={
-    salmon:{n:'Miso salmon, sesame greens',s:'25 minutes, serves 2',i:['2 salmon fillets, skin on','1 tbsp white miso','1 tsp honey, 1 tsp rice vinegar','1 bunch broccolini, 2 baby bok choy','1 cup cooked brown rice','Sesame seeds and a lime'],m:['Mix the miso, honey and vinegar. Brush it over the salmon.','Roast skin side up at 220&deg;C for 10 to 12 minutes.','Steam the greens for 3 minutes, then toss with sesame.','Serve on the rice with a squeeze of lime.']},
-    lunch:{n:'Puy lentils, roast pumpkin, goat\'s cheese',s:'20 minutes with leftover pumpkin, serves 2',i:['1 cup cooked puy lentils','300 g pumpkin, roasted in wedges','2 handfuls rocket','40 g goat\'s cheese','A handful of walnuts','Olive oil and lemon'],m:['Warm the lentils with a splash of olive oil and lemon.','Toss through the rocket.','Top with the pumpkin, crumbled cheese and walnuts.']},
-    breakfast:{n:'Jammy eggs, greens, sourdough',s:'12 minutes, serves 1',i:['2 eggs','A big handful of spinach and herbs','Half an avocado','1 slice seeded sourdough','A small bowl of blueberries'],m:['Boil the eggs for 6 and a half minutes, then cool in cold water.','Wilt the spinach in a little olive oil.','Toast the bread, add avocado, greens and the halved eggs.']},
-    plate:{n:'The Sunday plate',s:'35 minutes, serves 2',i:['2 chicken thighs','1 sweet potato, cubed','Broccolini, fennel, rocket, cherry tomatoes','1 avocado','Pumpkin seeds'],m:['Roast the sweet potato at 210&deg;C for 25 minutes.','Grill the chicken for 6 minutes a side, then rest and slice.','Build the plate: half greens, a palm of chicken, a fist of sweet potato, a thumb of avocado.']}
+    oats:{n:'Overnight oats, berries, walnuts',s:'5 minutes the night before, serves 1',img:'oats',i:[[50,'g','Rolled oats','p'],[100,'g','Greek yoghurt','d'],[100,'ml','Milk','d'],[80,'g','Blueberries','f'],[15,'g','Walnuts','p'],[1,'tbsp','Chia seeds','s']],m:['Stir the oats, yoghurt, milk and chia together in a jar.','Cover and leave in the fridge overnight.','In the morning, top with the berries and broken walnuts.']},
+    eggs:{n:'Jammy eggs, greens, sourdough',s:'12 minutes, serves 1',img:'breakfast',i:[[2,'','Eggs','d'],[60,'g','Baby spinach','f'],[0.5,'','Avocado','f'],[1,'slice','Seeded sourdough','b'],[80,'g','Blueberries','f']],m:['Boil the eggs for 6 and a half minutes, then cool in cold water.','Wilt the spinach in a little olive oil.','Toast the bread, add avocado, greens and the halved eggs. Berries on the side.']},
+    yog:{n:'Greek yoghurt, peach, seeds',s:'3 minutes, serves 1',img:'yoghurt',i:[[200,'g','Greek yoghurt','d'],[1,'','Peach or nectarine','f'],[15,'g','Pumpkin seeds','p'],[1,'tbsp','Chia seeds','s'],[1,'tsp','Honey','s']],m:['Spoon the yoghurt into a bowl.','Slice the peach over the top.','Finish with the seeds and a thin drizzle of honey.']},
+    lent:{n:'Puy lentils, roast pumpkin, goat\'s cheese',s:'40 minutes, serves 2 (lunch today and tomorrow)',img:'lunch',i:[[150,'g','Puy lentils, dry','p'],[400,'g','Pumpkin','f'],[60,'g','Rocket','f'],[40,'g','Goat\'s cheese','d'],[30,'g','Walnuts','p'],[1,'','Lemon','f'],[1,'tbsp','Olive oil','s']],m:['Roast the pumpkin in wedges at 210&deg;C for 30 minutes.','Simmer the lentils for 20 minutes, drain, and dress with olive oil and lemon.','Toss through the rocket. Top with pumpkin, cheese and walnuts. Box half for tomorrow.']},
+    sard:{n:'Sardines on rye, fennel and lemon',s:'10 minutes, serves 1',img:'sardines',i:[[1,'tin','Sardines in olive oil','p'],[2,'slice','Dark rye bread','b'],[50,'g','Ricotta','d'],[0.5,'','Fennel bulb','f'],[0.5,'bunch','Dill','f'],[0.5,'','Lemon','f']],m:['Toast the rye and spread with ricotta.','Lay the sardines over the top.','Shave the fennel thinly, pile it on with dill, lemon zest and pepper.']},
+    soup:{n:'Red lentil and pumpkin soup',s:'30 minutes, serves 2 (lunch today and tomorrow)',img:'soup',i:[[200,'g','Red lentils','p'],[500,'g','Pumpkin','f'],[1,'','Brown onion','f'],[2,'clove','Garlic','f'],[1,'litre','Vegetable stock','p'],[2,'slice','Dark rye bread','b'],[0.5,'bunch','Coriander','f'],[15,'g','Pumpkin seeds','p']],m:['Soften the onion and garlic in olive oil.','Add the pumpkin, lentils and stock. Simmer for 20 minutes, then blend.','Serve with olive oil, toasted seeds and coriander. Rye on the side.']},
+    salmon:{n:'Miso salmon, sesame greens, brown rice',s:'25 minutes, serves 2',img:'salmon',i:[[2,'','Salmon fillets','m'],[1,'tbsp','White miso','s'],[1,'tsp','Honey','s'],[1,'bunch','Broccolini','f'],[2,'','Baby bok choy','f'],[150,'g','Brown rice','p'],[1,'','Lime','f'],[1,'tbsp','Sesame seeds','s']],m:['Mix the miso and honey with a splash of water. Brush it over the salmon.','Roast skin side up at 220&deg;C for 10 to 12 minutes.','Steam the greens for 3 minutes. Serve with rice, sesame and lime.']},
+    plate:{n:'Chicken, sweet potato, greens',s:'35 minutes, serves 2',img:'plate',i:[[4,'','Chicken thighs','m'],[1,'','Sweet potato, large','f'],[1,'bunch','Broccolini','f'],[60,'g','Rocket','f'],[250,'g','Cherry tomatoes','f'],[1,'','Avocado','f'],[15,'g','Pumpkin seeds','p']],m:['Roast the sweet potato at 210&deg;C for 25 minutes.','Grill the chicken for 6 minutes a side, then rest and slice.','Build the plate: half greens, a palm of chicken, a fist of sweet potato, a thumb of avocado.']}
   };
-  function recipe(k){var r=R[k];openSheet('<div class="sh-img"><img src="'+IMG[k]+'" alt=""></div><div class="sh-body"><h2>'+r.n+'</h2><p class="sub">'+r.s+'. A recipe by Tom Ashby.</p><h3>You need</h3><ul>'+r.i.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><h3>Method</h3><ol>'+r.m.map(function(x){return '<li><span>'+x+'</span></li>'}).join('')+'</ol><button class="btn btn-ink" onclick="this.classList.add(\'added\');this.textContent=\'Added to your shopping list\'">Add to shopping list</button></div>');}
+  var DN=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+  var SLOT={b:'Breakfast',l:'Lunch',d:'Dinner'};
+  /* [recipe, leftover note or ''] for b, l, d */
+  var WEEK=[
+    [['oats',''],['lent',''],['plate','']],
+    [['eggs',''],['lent','From Monday&rsquo;s leftovers'],['salmon','']],
+    [['yog',''],['sard',''],['plate','']],
+    [['eggs',''],['soup',''],['salmon','']],
+    [['oats',''],['soup','From Thursday&rsquo;s leftovers'],['plate','']],
+    [['yog',''],['sard',''],['salmon','']],
+    [['eggs',''],['lent',''],['plate','The Sunday plate']]
+  ];
+  var TODAY=1;
+  function mins(k){return R[k].s.split(',')[0];}
+  function renderWeek(){
+    $('#wkm').innerHTML=WEEK.map(function(day,d){
+      return '<div class="wday'+(d===TODAY?' now':'')+'"><div class="wdh"><b>'+DN[d]+' '+(d+2)+'</b>'+(d===TODAY?'<span>Today</span>':'')+'</div>'+
+        day.map(function(m,j){var s='bld'[j],r=R[m[0]];return '<div class="mrow"><button class="mm" data-recipe="'+m[0]+'"'+(m[1]?' data-note="'+m[1]+'"':'')+'><img src="'+IMG[r.img]+'" alt=""><span class="tx"><small>'+SLOT[s]+'</small><b>'+r.n+'</b><span>'+(m[1]||mins(m[0]))+'</span></span></button>'+tick('m-'+d+'-'+s,'Mark eaten')+'</div>';}).join('')+'</div>';
+    }).join('');
+  }
+  function fmtQty(q,u){
+    var plural={slice:'slices',tin:'tins',clove:'cloves',bunch:'bunches',litre:'litres'};
+    if(u==='g'){return q>=1000?(Math.round(q/100)/10)+' kg':q+' g';}
+    if(u==='ml'){return q>=1000?(Math.round(q/100)/10)+' litres':q+' ml';}
+    if(u===''){return String(Math.ceil(q));}
+    var n=(u==='bunch'||u==='tin')?Math.ceil(q):q;
+    return n+' '+(n>1&&plural[u]?plural[u]:u);
+  }
+  function shopping(){
+    var items={},order=[];
+    WEEK.forEach(function(day){day.forEach(function(m){if(m[1]&&m[1].indexOf('leftover')>-1)return;R[m[0]].i.forEach(function(x){var id=x[2]+'|'+x[1];if(!items[id]){items[id]={n:x[2],u:x[1],q:0,a:x[3]};order.push(id);}items[id].q+=x[0];});});});
+    var groups=[['f','Fruit and veg'],['m','Meat and fish'],['d','Dairy and eggs'],['b','Bakery'],['p','Pantry'],['s','You probably have these']];
+    return groups.map(function(g){var list=order.filter(function(id){return items[id].a===g[0]}).map(function(id){return items[id]}).sort(function(a,b){return a.n<b.n?-1:1});return {k:g[0],t:g[1],list:list};}).filter(function(g){return g.list.length;});
+  }
+  function shopText(){
+    var t='Shopping list, week of 2 November\nHouse of Longevity, the heart-health menu\n';
+    shopping().forEach(function(g){t+='\n'+g.t.toUpperCase()+'\n';g.list.forEach(function(x){t+='- '+x.n+(g.k==='s'?'':', '+fmtQty(x.q,x.u))+'\n';});});
+    return t;
+  }
+  function shopSheet(){
+    var g=shopping(),n=0;g.forEach(function(x){if(x.k!=='s')n+=x.list.length;});
+    openSheet('<div class="sh-body shl"><p class="sub" style="margin:0 0 4px;color:var(--gold)">Week of 2 November</p><h2>Your shopping list</h2><p class="sub">'+n+' things for all 21 meals. Leftover days are already counted, so nothing is doubled.</p>'+
+      '<div class="shbtns"><button class="btn btn-ink" data-shopdo="copy">Copy</button><button class="btn btn-line" data-shopdo="share">Share</button><button class="btn btn-line" data-shopdo="download">Download</button></div>'+
+      g.map(function(x){return '<h3>'+x.t+'</h3><ul>'+x.list.map(function(i){return '<li><button data-got><i></i><span>'+i.n+'</span><em>'+(x.k==='s'?'':fmtQty(i.q,i.u))+'</em></button></li>'}).join('')+'</ul>';}).join('')+
+      '<p class="sub" style="margin-top:18px">Tap anything you already have to cross it off.</p></div>');
+  }
+  function copyText(t){
+    if(navigator.clipboard&&window.isSecureContext){return navigator.clipboard.writeText(t).then(function(){return true},function(){return fallback()});}
+    return Promise.resolve(fallback());
+    function fallback(){var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();var ok=false;try{ok=document.execCommand('copy');}catch(e){}a.remove();return ok;}
+  }
+  function shopDo(kind,btn){
+    var t=shopText();
+    if(kind==='copy'){copyText(t).then(function(ok){toast(ok?'Copied. Paste it into Notes, WhatsApp or anywhere.':'Copy did not work on this phone. Try Share.');if(ok){btn.textContent='Copied';btn.classList.add('added');}});}
+    if(kind==='share'){if(navigator.share){navigator.share({title:'Shopping list, week of 2 November',text:t}).catch(function(){});}else{copyText(t).then(function(){toast('Sharing is not available here, so the list was copied instead.');});}}
+    if(kind==='download'){var b=new Blob([t],{type:'text/plain'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='Shopping list, 2 to 8 November.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);toast('Downloaded.');}
+  }
+  function recipe(k,el){
+    var r=R[k],row=el&&el.closest('.row,.dz,.mrow'),tk=row&&row.querySelector('[data-sync]'),key=tk&&tk.dataset.sync,note=el&&el.dataset.note;
+    var btn=key?'<button class="btn btn-ink'+(done[key]?' added':'')+'" data-eat="'+key+'">'+(done[key]?'Eaten':'Mark as eaten')+'</button>':'';
+    openSheet('<div class="sh-img"><img src="'+IMG[r.img]+'" alt=""></div><div class="sh-body"><h2>'+r.n+'</h2><p class="sub">'+(note?note+'. ':'')+r.s+'. A recipe by Tom Ashby.</p><h3>You need</h3><ul>'+r.i.map(function(x){return '<li>'+x[2]+(x[3]==='s'?'':', '+fmtQty(x[0],x[1]).replace(/^0\.5 /,'half ').replace(/^0\.5$/,'half'))+'</li>'}).join('')+'</ul><h3>Method</h3><ol>'+r.m.map(function(x){return '<li><span>'+x+'</span></li>'}).join('')+'</ol>'+btn+'<button class="btn btn-line" data-shop style="margin-top:10px">See the week&rsquo;s shopping list</button></div>');
+  }
 
-  function recipe(k){var r=R[k];openSheet('<div class="sh-img"><img src="'+IMG[k]+'" alt=""></div><div class="sh-body"><h2>'+r.n+'</h2><p class="sub">'+r.s+'. A recipe by Tom Ashby.</p><h3>You need</h3><ul>'+r.i.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><h3>Method</h3><ol>'+r.m.map(function(x){return '<li><span>'+x+'</span></li>'}).join('')+'</ol><button class="btn btn-ink" data-added>Add to shopping list</button></div>');}
-
-  /* protocol */
-  (function(){var h='';for(var k=0;k<28;k++){h+='<i'+(k===9?' class="m"':'')+(k===27?' class="n"':'')+'></i>';}$('#recDots').innerHTML=h;})();
-  var rxTaken=false;
-  function count(){var n=$$('#s-protocol [data-sync].done').length+(rxTaken?1:0),t=n+' of 5 taken';$('#prCount').textContent=t;$('#pillPr').textContent=t;var last=$('#recDots i:last-child');if(last)last.className=n===5?'':'n';$('#recLbl').innerHTML=n===5?'<b>27 of 28 days</b> complete':'<b>26 of 27 days</b> complete';}
-  function setRx(on){rxTaken=on;var r=$('#rxDue');r.classList.toggle('tk',on);r.textContent=on?'Taken':'10 pm';$$('[data-rx]').forEach(function(x){x.textContent=on?'Taken':'Due at 10 pm';});$('#planToday').textContent=on?'All done tonight':'Tonight';var b=$('#rxTake');if(b)b.textContent=on?'Marked as taken':'Mark as taken';count();}
+  /* ---------- protocols and vitamins ---------- */
   var WHY={
-    d3:{k:'Vitamin',n:'Vitamin D3, 2000 IU',w:'Once a day, with breakfast',why:'Dr Reyes added this in August when your level was 54 nmol/L. In November it was 92 nmol/L.',note:'She will check it again at your February results.'},
-    o3:{k:'Supplement',n:'Omega 3, two capsules',w:'Once a day, with breakfast',why:'Part of your heart-health focus, alongside your Eat plan, after your August results.',note:'Take with food. Tell the care team if it upsets your stomach.'},
-    mg:{k:'Supplement',n:'Magnesium glycinate, 400 mg',w:'Once a day, with dinner',why:'Added to support your sleep, as you discussed with Dr Reyes.',note:'Your Oura sleep trend is shown in Results.'},
-    e2:{k:'Hormone therapy',n:'Estradiol gel, 2 pumps',w:'Every morning, on your upper arm or thigh',why:'Part of the hormone therapy Dr Reyes started in February for your perimenopause symptoms, the broken sleep and hot flushes you told her about. Estradiol tops up the oestrogen your body is now making less of.',note:'Let it dry for a few minutes before you dress, and wash your hands afterwards. Never change your dose without speaking to the care team.'},
-    rx:{k:'Hormone therapy',n:'Progesterone, 100 mg',w:'One capsule at bedtime',why:'Taken alongside your estradiol gel. It protects the lining of the womb, which is why the two always go together.',note:'It can make you drowsy, so take it at bedtime. Never change your dose without speaking to the care team.'}
+    d3:{k:'Morning stack, from Halden',img:'vitamins',n:'Vitamin D3, 2000 IU',w:'One softgel with breakfast',why:'Dr Reyes added this in August when your level was 54 nmol/L. In November it was 92 nmol/L.',note:'She will check it again at your February results.',key:'v-am'},
+    o3:{k:'Morning stack, from Halden',img:'vitamins',n:'Omega 3, two capsules',w:'With breakfast',why:'Part of your heart health protocol, alongside your meals, after your August results.',note:'Take with food. Tell the care team if it upsets your stomach.',key:'v-am'},
+    mg:{k:'Evening stack, from Saltgrass',img:'vitamins',n:'Magnesium glycinate, 400 mg',w:'Two capsules with dinner',why:'Part of your sleep protocol, as you discussed with Dr Reyes.',note:'Your Oura sleep trend will show in Results once it is connected.',key:'v-pm'},
+    lt:{k:'Evening stack, from Saltgrass',img:'vitamins',n:'L-theanine, 200 mg',w:'One capsule with dinner',why:'Added in September to help you wind down in the evening, part of your sleep protocol.',note:'It does not make you drowsy the next morning. Tell the care team if you notice anything.',key:'v-pm'},
+    fib:{k:'New, from Halden',img:'vitamins',n:'Psyllium husk',w:'One scoop in a big glass of water, before dinner',why:'New with your November results. Extra soluble fibre is one of the steadiest ways to bring ApoB down, alongside your meals.',note:'It arrives in Thursday&rsquo;s box. Start with half a scoop for the first week.'},
+    e2:{k:'Hormone therapy',img:'protocol',n:'Estradiol gel, 2 pumps',w:'Every morning, on your upper arm or thigh',why:'Part of the hormone therapy Dr Reyes started in February for your perimenopause symptoms, the broken sleep and hot flushes you told her about. Estradiol tops up the oestrogen your body is now making less of.',note:'Let it dry for a few minutes before you dress, and wash your hands afterwards.',key:'p-e2'},
+    rx:{k:'Hormone therapy',img:'protocol',n:'Progesterone, 100 mg',w:'One capsule at bedtime',why:'Taken alongside your estradiol gel. It protects the lining of the womb, which is why the two always go together.',note:'It can make you drowsy, so take it at bedtime. Never change your dose without speaking to the care team.',key:'p-rx'},
+    sleep:{k:'Sleep protocol',img:'protocol',n:'Lights out by 10.30',w:'Screens off by 9.30, same time every night',why:'A steady bedtime is the first lever Dr Reyes pulls for broken sleep, before anything else is added.',note:'Weekends count too. Within half an hour either way is fine.',key:'p-sleep'}
   };
   function whySheet(k){var d=WHY[k];
-    var btn=k==='rx'?'<button class="btn btn-bone" id="rxTake">'+(rxTaken?'Marked as taken':'Mark as taken')+'</button>':'';
-    openSheet('<div class="sh-img" style="height:220px"><img src="'+IMG.protocol+'" alt="" style="object-position:50% 40%"></div><div class="sh-body"><p class="sub" style="margin:0 0 4px;color:var(--gold-soft)">'+d.k+'</p><h2>'+d.n+'</h2><p class="sub">'+d.w+'</p><h3>Why it is in your protocol</h3><p style="font-size:15px;line-height:1.55">'+d.why+'</p><h3>Good to know</h3><p style="font-size:15px;line-height:1.55;color:var(--muted)">'+d.note+'</p>'+btn+'<p class="sub" style="margin-top:22px">From Dr Anna Reyes</p></div>',true);
-    var rb=$('#rxTake');if(rb)rb.onclick=function(){setRx(!rxTaken);};}
+    var btn=d.key?'<button class="btn btn-bone'+(done[d.key]?' added':'')+'" data-eat="'+d.key+'">'+(done[d.key]?'Done for today':(d.key.charAt(0)==='v'?'Mark the stack as taken':'Mark as done'))+'</button>':'';
+    openSheet('<div class="sh-img" style="height:220px"><img src="'+IMG[d.img]+'" alt="" style="object-position:50% 45%"></div><div class="sh-body"><p class="sub" style="margin:0 0 4px;color:var(--gold-soft)">'+d.k+'</p><h2>'+d.n+'</h2><p class="sub">'+d.w+'</p><h3>Why you are taking it</h3><p style="font-size:15px;line-height:1.55">'+d.why+'</p><h3>Good to know</h3><p style="font-size:15px;line-height:1.55;color:var(--muted)">'+d.note+'</p>'+btn+'</div>',true);
+  }
+  var STACK={
+    am:{n:'Morning stack',k:'Vitamins, from Halden, an HoL partner brand',w:'With breakfast',key:'v-am',items:['d3','o3'],left:'4 days left. Your refill arrives Thursday.'},
+    pm:{n:'Evening stack',k:'Supplements, from Saltgrass, an HoL partner brand',w:'With dinner',key:'v-pm',items:['mg','lt'],left:'4 days left. Your refill arrives Thursday.'}
+  };
+  function stackSheet(k){var s=STACK[k];
+    openSheet('<div class="sh-img" style="height:220px"><img src="'+IMG.vitamins+'" alt="" style="object-position:50% 50%"></div><div class="sh-body"><p class="sub" style="margin:0 0 4px;color:var(--gold-soft)">'+s.k+'</p><h2>'+s.n+'</h2><p class="sub">'+s.w+'. '+s.left+'</p><h3>What&rsquo;s in it</h3><ul class="stl">'+s.items.map(function(i){var d=WHY[i];return '<li><button data-why="'+i+'"><b>'+d.n+'</b><span>'+d.w+'</span></button></li>'}).join('')+'</ul><button class="btn btn-bone'+(done[s.key]?' added':'')+'" data-eat="'+s.key+'">'+(done[s.key]?'Done for today':'Mark the stack as taken')+'</button></div>',true);
+  }
+  var PROTO={
+    hrt:{n:'Hormone therapy',by:'Dr Anna Reyes',since:'February',why:'For the broken sleep and hot flushes you told Dr Reyes about. Your symptoms are checked at every results day, and the dose is only changed by her.',steps:[['Every morning','Estradiol gel, 2 pumps'],['Every night','Progesterone, 100 mg']],next:'Review with your February results'},
+    heart:{n:'Heart health',by:'Dr Reyes and Marcus',since:'August',why:'Your ApoB was 1.30 in August, higher than Dr Reyes wants for your age and family history. In November it was 1.10. The aim is under 0.90 by next August.',steps:[['Every morning','Morning stack: vitamin D3, omega 3'],['Most dinners','Oily fish and fibre, from your meals'],['Twice a week','Zone 2, from your training'],['From Thursday','Psyllium husk before dinner']],next:'Retest with your February bloods'},
+    sleep:{n:'Sleep',by:'Dr Anna Reyes',since:'September',why:'Deeper, steadier sleep. The plan is a steady bedtime first, then a calm evening stack to help you wind down.',steps:[['With dinner','Evening stack: magnesium, L-theanine'],['By 9.30','Screens off'],['By 10.30','Lights out']],next:'Check-in with Marcus on Friday'}
+  };
+  function protoSheet(k){var p=PROTO[k];
+    openSheet('<div class="sh-img" style="height:220px"><img src="'+IMG.protocol+'" alt="" style="object-position:50% 40%"></div><div class="sh-body"><p class="sub" style="margin:0 0 4px;color:var(--gold-soft)">Since '+p.since+', set by '+p.by+'</p><h2>'+p.n+'</h2><h3>Why you are on it</h3><p style="font-size:15px;line-height:1.55">'+p.why+'</p><h3>What you do</h3><ul>'+p.steps.map(function(s){return '<li><b style="font-weight:500">'+s[0]+'.</b> '+s[1]+'</li>'}).join('')+'</ul><h3>Next</h3><p style="font-size:15px;line-height:1.55">'+p.next+'. Questions before then? Message the care team any time.</p></div>',true);
+  }
 
-  /* eat: the weekly menu */
-  var DAYS=[
-    [['Breakfast','Overnight oats, berries, walnuts','5 min the night before','breakfast'],['Lunch','Puy lentils, roast pumpkin, goat\'s cheese','20 min','lunch'],['Dinner','Chicken, sweet potato, greens','35 min','plate']],
-    [['Breakfast','Jammy eggs, greens, sourdough','12 min','breakfast'],['Lunch','Puy lentils, roast pumpkin, goat\'s cheese','From Monday\'s leftovers','lunch'],['Dinner','Miso salmon, sesame greens, brown rice','25 min','salmon']],
-    [['Breakfast','Greek yoghurt, seeds, stone fruit','3 min','breakfast'],['Lunch','Sardines on rye, fennel and lemon','10 min','lunch'],['Dinner','The Sunday plate, done on a Wednesday','35 min','plate']],
-    [['Breakfast','Jammy eggs, greens, sourdough','12 min','breakfast'],['Lunch','Chicken and white bean salad','15 min','lunch'],['Dinner','Salmon, brown rice, lime','25 min','salmon']],
-    [['Breakfast','Overnight oats, berries, walnuts','5 min the night before','breakfast'],['Lunch','Leftover salmon rice bowl','5 min','salmon'],['Dinner','Out for dinner: Clara\'s guide to ordering','Two tips','plate']],
-    [['Breakfast','Mushrooms and eggs on sourdough','15 min','breakfast'],['Lunch','Lentil and pumpkin soup','30 min','lunch'],['Dinner','The Sunday plate','35 min','plate']],
-    [['Breakfast','Slow brunch: eggs, greens, avocado','20 min','breakfast'],['Lunch','Something light','Your choice','lunch'],['Dinner','Batch cook for the week ahead','60 min','salmon']]
+  /* ---------- training ---------- */
+  var SESS=[
+    {d:'Monday 2',n:'Upper body',k:'Strength',dur:'40 min',img:'robcoach',pos:'50% 25%',why:'Push, pull and carry, to keep your shoulders and back strong.',moves:[
+      {n:'Incline push-up',r:'3 sets of 8',c:'Hands on a bench or the kitchen bench. Body in one straight line, lower your chest to the edge, then press away.',sets:3},
+      {n:'One-arm dumbbell row',r:'3 sets of 10 each arm',c:'One hand on a bench, back flat. Pull the weight to your hip, pause, lower slowly.',sets:3},
+      {n:'Half-kneeling press',r:'3 sets of 8 each arm',c:'One knee down, squeeze that glute. Press the dumbbell straight up without leaning back.',sets:3},
+      {n:'Dead bug',r:'2 sets of 8 each side',c:'Lie on your back, lower back pressed into the floor. Reach the opposite arm and leg away slowly.',sets:2},
+      {n:'Suitcase carry',r:'3 walks of 30 metres each side',c:'A kettlebell in one hand. Stay tall, do not lean. Swap hands each walk.',sets:3,im:'carry',pos:'50% 40%'}]},
+    {d:'Tuesday 3',n:'Lower body',k:'Strength',dur:'40 min',img:'demo',pos:'50% 40%',why:'Legs and hips, the strength that keeps you moving well for decades.',moves:[
+      {n:'Goblet squat',r:'3 sets of 10',c:'Kettlebell at your chest. Sit between your heels, chest tall, then drive up through your whole foot.',sets:3,im:'demo',pos:'50% 40%'},
+      {n:'Romanian deadlift',r:'3 sets of 8',c:'Soft knees. Push your hips back until you feel your hamstrings, then stand tall.',sets:3,im:'rdl',pos:'50% 50%'},
+      {n:'Split squat',r:'3 sets of 8 each leg',c:'Long stance, back knee lowers straight down. Hold the wall if you need balance.',sets:3,im:'split',pos:'50% 50%'},
+      {n:'Glute bridge',r:'2 sets of 12',c:'Feet flat, press through your heels, pause at the top for a second.',sets:2,im:'bridge',pos:'50% 60%'},
+      {n:'Farmer carry',r:'3 walks of 30 metres',c:'A kettlebell in each hand, shoulders down, walk tall and slow.',sets:3,im:'carry',pos:'50% 40%'}]},
+    {d:'Wednesday 4',n:'Zone 2 walk',k:'Heart',dur:'45 min',img:'walk',pos:'50% 35%',why:'Easy, steady effort for your heart. You should be able to talk in full sentences the whole way.',moves:[
+      {n:'Warm up',r:'5 minutes, easy',c:'Start slower than feels necessary.',sets:1,t:1},
+      {n:'Steady walk',r:'35 minutes, Zone 2',c:'Brisk, but you can still talk in full sentences. If you cannot, slow down a little. Hills are welcome.',sets:1,t:1},
+      {n:'Cool down',r:'5 minutes, easy',c:'Ease off and let your breathing settle.',sets:1,t:1}]},
+    {d:'Thursday 5',n:'Full body',k:'Strength',dur:'35 min',img:'carry',pos:'50% 40%',why:'A shorter session that touches everything once.',moves:[
+      {n:'Goblet squat',r:'3 sets of 8',c:'Kettlebell at your chest. Sit between your heels, chest tall, then drive up.',sets:3,im:'demo',pos:'50% 40%'},
+      {n:'Incline push-up',r:'3 sets of 8',c:'Hands on a bench. Body in one straight line, lower, then press away.',sets:3},
+      {n:'Romanian deadlift',r:'3 sets of 8',c:'Soft knees. Hips back until you feel your hamstrings, then stand tall.',sets:3,im:'rdl',pos:'50% 50%'},
+      {n:'One-arm dumbbell row',r:'3 sets of 10 each arm',c:'Back flat, pull the weight to your hip, lower slowly.',sets:3},
+      {n:'Farmer carry',r:'3 walks of 30 metres',c:'A kettlebell in each hand, shoulders down, walk tall and slow.',sets:3,im:'carry',pos:'50% 40%'}]},
+    null,
+    {d:'Saturday 7',n:'Zone 2 ride',k:'Heart',dur:'60 min',img:'ride',pos:'50% 45%',why:'Your longer easy session of the week. Bike, walk or swim, whatever you will enjoy.',moves:[
+      {n:'Warm up',r:'10 minutes, easy',c:'Light gears, easy spin.',sets:1,t:1},
+      {n:'Steady ride',r:'45 minutes, Zone 2',c:'You can talk in full sentences the whole time. Keep it flat or gently rolling.',sets:1,t:1},
+      {n:'Cool down',r:'5 minutes, easy',c:'Spin easy and let your breathing settle.',sets:1,t:1}]},
+    {d:'Sunday 8',n:'Mobility',k:'Recovery',dur:'20 min',img:'classv',pos:'50% 35%',why:'Twenty slow minutes to undo the week. A mat and some floor space is all you need.',moves:[
+      {n:'Cat and cow',r:'10 slow rounds',c:'On hands and knees. Round your back up, then let it sink, moving with your breath.',sets:1,t:1},
+      {n:'World&rsquo;s greatest stretch',r:'5 each side',c:'Long lunge, hand inside your front foot, then reach the other arm up to the sky.',sets:1,t:1},
+      {n:'90/90 hips',r:'8 switches',c:'Sit with both knees bent at right angles. Rotate both knees to the other side, chest tall.',sets:1,t:1},
+      {n:'Thread the needle',r:'6 each side',c:'On hands and knees, slide one arm under your body and rest your shoulder down.',sets:1,t:1},
+      {n:'Box breathing',r:'3 minutes',c:'Breathe in for 4, hold for 4, out for 4, hold for 4.',sets:1,t:1}]}
   ];
-  function renderDay(d){var c=$('#courses');c.style.opacity=0;setTimeout(function(){c.innerHTML=DAYS[d].map(function(x){return '<button class="course" data-recipe="'+x[3]+'"><small>'+x[0]+'</small><b>'+x[1]+'</b><span>'+x[2]+'</span></button>'}).join('');c.style.opacity=1;},180);}
-  renderDay(1);
-  $$('#mdays button').forEach(function(b){b.onclick=function(){$$('#mdays button').forEach(function(x){x.classList.toggle('on',x===b)});renderDay(+b.dataset.day);};});
+  var TT=1;
+  function sessCount(){var n=0,t=0;SESS.forEach(function(s,i){if(s){t++;if(done['t-'+i])n++;}});return [n,t];}
+  function renderTrain(){
+    $('#trows').innerHTML=SESS.map(function(s,i){
+      if(!s)return '<div class="trow rest"><span class="dd">Friday 6</span><span class="tx"><b>Rest day</b><span>A walk if you feel like it, nothing more</span></span></div>';
+      return '<div class="trow'+(i===TT?' now':'')+'"><button class="tm" data-sess="'+i+'"><span class="dd">'+s.d+(i===TT?'<em>Today</em>':'')+'</span><span class="tx"><b>'+s.n+'</b><span>'+s.k+', '+s.dur+'</span></span>'+CHEV+'</button>'+tick('t-'+i,'Mark session done')+'</div>';
+    }).join('');
+  }
+  var SI=TT;
+  function openSess(i){var s=SESS[i];SI=i;
+    $('#ssImg').src=IMG[s.img];$('#ssImg').style.objectPosition=s.pos;$('#ssWhen').textContent=s.d.replace(/ (\d)$/,' $1 November');$('#ssName').textContent=s.n;$('#ssKind').textContent=s.k;$('#ssDur').textContent=s.dur+', '+s.moves.length+(s.moves[0].t?' parts':' moves');
+    $('#ssWhy').textContent=s.why;$('#ssNote .q').innerHTML='&ldquo;'+(CNOTE[s.n]||'')+'&rdquo;';$('#ssNote').style.display=CNOTE[s.n]?'':'none';$('#ssCount').textContent=s.moves.length+(s.moves[0].t?' parts':' moves');$('#ssListH').textContent=s.moves[0].t?'The plan':'The session';
+    $('#ssdTick').innerHTML=tick('t-'+i,'Mark session done');
+    $('#moves').innerHTML=s.moves.map(function(m,j){return '<div class="mv"><button class="th'+(m.im?'':' num')+'" data-move="'+j+'">'+(m.im?'<img src="'+IMG[m.im]+'" alt="" style="object-position:'+m.pos+'">':'<span>'+(j+1)+'</span>')+'</button><button class="t" data-move="'+j+'"><b>'+m.n+'</b><span>'+m.r+'</span>'+(LIFTS[m.n]?'<span class="lw">'+liftLine(m)+'</span>':'')+'</button>'+tick('','Mark done')+'</div>';}).join('');
+    applyState();startLabel();
+  }
+  function startLabel(){var on=!!done['t-'+SI],b=$('#startBtn');b.textContent=on?'Done. Do it again':'Start '+(SESS[SI].moves[0].t?'session':'workout');b.classList.toggle('added',on);
+    var b2=$('[data-start]');if(b2){var d2=!!done['t-'+TT];b2.textContent=d2?'Done today. Next: Zone 2 walk, Wednesday':'Start workout';b2.classList.toggle('added',d2);}
+    $('#ssdT').textContent=on?'Done, nicely':'Mark this session as done';}
+  function moveSheet(j){var m=SESS[SI].moves[j],img=m.im?IMG[m.im]:IMG[SESS[SI].img],pos=m.pos||SESS[SI].pos;
+    openSheet('<div class="sh-img" style="height:'+(m.im?360:220)+'px"><img src="'+img+'" alt="" style="object-position:'+pos+'"></div><div class="sh-body"><h2>'+m.n+'</h2><p class="sub">'+m.r+(m.t?'':'. Rest 60 seconds between sets.')+'</p>'+liftChart(m.n)+'<h3>How Rob coaches it</h3><p style="font-size:15px;line-height:1.55">'+m.c+'</p>'+(m.t?'':'<h3>Make it easier</h3><p style="font-size:15px;line-height:1.55;color:var(--muted)">Use a lighter weight or bodyweight only, and shorten the range a little.</p>')+'</div>',true);}
+  var mi=0,ms=0;
+  function sessRender(){var s=SESS[SI],m=s.moves[mi];$('#sOf').textContent=(m.t?'Part ':'Move ')+(mi+1)+' of '+s.moves.length;$('#sName').innerHTML=m.n;$('#sRep').textContent=m.r;$('#sCue').textContent=m.c;$('#sImg').src=m.im?IMG[m.im]:IMG[s.img];$('#sImg').style.objectPosition=m.pos||s.pos;
+    var L=LIFTS[m.n],rn=RUN[m.n]||[];
+    $('#sSets').className='sets'+(L&&rn.length?' lab':'');
+    $('#sSets').innerHTML=m.t?'':Array.apply(null,Array(m.sets)).map(function(_,k){var lab=L&&rn[k]?'<span>'+(L.bw?rn[k][1]+' reps':kg(rn[k][0])+' kg'+(L.c?'':' &times; '+rn[k][1]))+'</span>':(L&&k===ms?'<span class="now">Now</span>':'');return '<i'+(k<ms?' class="f"':'')+'>'+lab+'</i>'}).join('');
+    if(!m.t&&ms<m.sets){prefill(m);liftUI(m);}else{$('#sLift').innerHTML='';$('#sess').classList.remove('lift');}
+    $('#sNext').textContent=m.t?(mi<s.moves.length-1?'Done, next part':'Finish'):(ms<m.sets?'Set '+(ms+1)+' done':(mi<s.moves.length-1?'Next move':'Finish session'));}
+  function startSess(i){SI=i;if(cur()!=='session')openSess(i);mi=0;ms=0;RUN={};sessRender();$('#sess').classList.add('on');}
+  $('#startBtn').onclick=function(){startSess(SI);};
+  $('#sNext').onclick=function(){var s=SESS[SI],m=s.moves[mi];if(!m.t&&ms<m.sets){logSet(m);ms++;sessRender();return;}if(mi<s.moves.length-1){mi++;ms=0;sessRender();return;}
+    $('#sess').classList.remove('on');$$('#moves .tick').forEach(function(t){t.classList.add('done')});setKey('t-'+SI,true);toast(s.moves.some(function(x){return LIFTS[x.n]})?'Session done. Your weights are saved.':'Session done. Ticked off on Today and Move.');openSess(SI);};
+  $('#sX').onclick=function(){$('#sess').classList.remove('on');if(cur()==='session')openSess(SI);};
 
-  /* move: the programme */
-  var MV=[
-    {n:'Goblet squat',r:'3 sets of 10',c:'Kettlebell at your chest. Sit between your heels, chest tall, then drive up through your whole foot.',sets:3,pos:'50% 40%',im:'demo'},
-    {n:'Romanian deadlift',r:'3 sets of 8',c:'Soft knees. Push your hips back until you feel your hamstrings, then stand tall.',sets:3,pos:'50% 50%',im:'rdl'},
-    {n:'Split squat',r:'3 sets of 8 each leg',c:'Long stance, back knee lowers straight down. Hold the wall if you need balance.',sets:3,pos:'50% 50%',im:'split'},
-    {n:'Glute bridge',r:'2 sets of 12',c:'Feet flat, press through your heels, pause at the top for a second.',sets:2,pos:'50% 60%',im:'bridge'},
-    {n:'Farmer carry',r:'3 walks of 30 metres',c:'A kettlebell in each hand, shoulders down, walk tall and slow.',sets:3,pos:'50% 40%',im:'carry'}
-  ];
-  $('#moves').innerHTML=MV.map(function(m,i){return '<div class="mv"><button class="th" data-move="'+i+'"><img src="'+IMG[m.im]+'" alt="" style="object-position:'+m.pos+'"></button><button class="t" data-move="'+i+'"><b>'+m.n+'</b><span>'+m.r+'</span></button><button class="tick'+(i===0?' done':'')+'" data-act="tick" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>'}).join('');
-  function moveSheet(i){var m=MV[i];openSheet('<div class="sh-img" style="height:360px"><img src="'+IMG[m.im]+'" alt="" style="object-position:'+m.pos+'"></div><div class="sh-body"><h2>'+m.n+'</h2><p class="sub">'+m.r+'. Rest 60 seconds between sets.</p><h3>How Rob coaches it</h3><p style="font-size:15px;line-height:1.55">'+m.c+'</p><h3>Make it easier</h3><p style="font-size:15px;line-height:1.55;color:var(--muted)">Use a lighter bell or bodyweight only, and go a little less deep.</p></div>',true);}
-  var si=0,ss=0;
-  function sessRender(){var m=MV[si];$('#sOf').textContent='Move '+(si+1)+' of '+MV.length;$('#sName').textContent=m.n;$('#sRep').textContent=m.r;$('#sCue').textContent=m.c;$('#sImg').src=IMG[m.im];$('#sImg').style.objectPosition=m.pos;
-    $('#sSets').innerHTML=Array.apply(null,Array(m.sets)).map(function(_,k){return '<i'+(k<ss?' class="f"':'')+'></i>'}).join('');
-    $('#sNext').textContent=ss<m.sets?'Set '+(ss+1)+' done':(si<MV.length-1?'Next move':'Finish session');}
-  $('#startBtn').onclick=function(){si=0;ss=0;sessRender();$('#sess').classList.add('on');};
-  $('#sNext').onclick=function(){var m=MV[si];if(ss<m.sets){ss++;sessRender();return;}if(si<MV.length-1){si++;ss=0;sessRender();return;}
-    $('#sess').classList.remove('on');$$('#moves .tick').forEach(function(t){t.classList.add('done')});toast('Session done. Week 3, day 2 ticked off.');$('#startBtn').textContent='Session done, see you Thursday';$('#startBtn').classList.add('added');};
-  $('#sX').onclick=function(){$('#sess').classList.remove('on')};
+  /* ---------- weights: Rob's targets, past sessions, and what you log ---------- */
+  /* t target kg, r target reps, bw bodyweight, c carry (weight only), h past sessions [date, kg, reps] */
+  var LIFTS={
+    'Goblet squat':{t:17.5,r:10,h:[['22 Oct',12.5],['27 Oct',15],['29 Oct',15]]},
+    'Romanian deadlift':{t:20,r:8,h:[['22 Oct',15],['27 Oct',17.5],['29 Oct',17.5]]},
+    'Split squat':{t:10,r:8,h:[['20 Oct',5],['27 Oct',7.5]]},
+    'Glute bridge':{bw:1,r:12,h:[['20 Oct',0,10],['27 Oct',0,12]]},
+    'Farmer carry':{t:17.5,c:1,h:[['22 Oct',12.5],['27 Oct',15],['29 Oct',15]]},
+    'Incline push-up':{bw:1,r:8,h:[['26 Oct',0,7],['29 Oct',0,8],['2 Nov',0,8]]},
+    'One-arm dumbbell row':{t:12.5,r:10,h:[['26 Oct',10],['29 Oct',12.5],['2 Nov',12.5]]},
+    'Half-kneeling press':{t:10,r:8,h:[['19 Oct',5],['26 Oct',7.5],['2 Nov',7.5]]},
+    'Dead bug':{bw:1,r:8,h:[['26 Oct',0,8],['2 Nov',0,8]]},
+    'Suitcase carry':{t:17.5,c:1,h:[['19 Oct',12.5],['26 Oct',15],['2 Nov',15]]}
+  };
+  /* Marcus's note for each session: one thing to do, shown above Start */
+  var CNOTE={'Upper body':'Slow the lowering on your rows, three seconds down. That&rsquo;s where the strength comes from.',
+    'Lower body':'Try 17.5 kg on your goblet squats today. If your knee niggles on the split squats, shorten your step.',
+    'Zone 2 walk':'Easy means easy. If you can&rsquo;t talk in full sentences, slow down.',
+    'Full body':'Short on time? Do the first three moves and the carry. That still counts.',
+    'Zone 2 ride':'Make it social. A long easy ride with a friend is perfect Zone 2.',
+    'Mobility':'Do this one in the evening. It helps you wind down for sleep.'};
+  var LKEY='hol-lift-v1',LOG={};
+  try{LOG=JSON.parse(localStorage.getItem(LKEY)||'{}')||{};}catch(e){LOG={};}
+  function kg(x){return String(Math.round(x*10)/10);}
+  function hist(name){var L=LIFTS[name];if(!L)return [];
+    var out=L.h.map(function(h){var n=L.bw?2:3;return {d:h[0],s:Array.apply(null,Array(n)).map(function(){return [h[1],h[2]||L.r||0]})};});
+    (LOG[name]||[]).forEach(function(e){out=out.filter(function(o){return o.d!==e.d});out.push(e);});
+    return out;}
+  function lastTime(name,skip){var h=hist(name).filter(function(e){return e.d!==skip});return h.length?h[h.length-1]:null;}
+  function best(e){return e.s.reduce(function(a,s){return s[0]>a?s[0]:a},0);}
+  function sessDate(i){return SESS[i].d.replace(/^\D+/,'')+' Nov';}
+  function liftLine(m){var L=LIFTS[m.n];if(!L)return '';var lt=lastTime(m.n);
+    if(L.bw)return 'Bodyweight. Last time '+(lt?lt.s[0][1]+' reps':'new')+', Rob&rsquo;s target '+L.r+' reps';
+    if(lt&&best(lt)>=L.t)return 'Last time '+kg(best(lt))+' kg. On Rob&rsquo;s target';
+    return 'Last time '+(lt?kg(best(lt))+' kg':'new')+', Rob&rsquo;s target '+kg(L.t)+' kg';}
+  function liftChart(name){var L=LIFTS[name];if(!L)return '';var h=hist(name).slice(-5);
+    if(L.bw)return '<h3>Your reps</h3><ul class="lhist">'+h.slice().reverse().map(function(e){return '<li><span>'+e.d+'</span><b>'+e.s.map(function(s){return s[1]}).join(', ')+' reps</b></li>'}).join('')+'</ul><p class="lgoal">Rob&rsquo;s target: '+L.r+' reps a set, with control.</p>';
+    var mx=Math.max(L.t,Math.max.apply(null,h.map(best)));
+    return '<h3>Your weights</h3><div class="lchart">'+h.map(function(e){var v=best(e);return '<div><em>'+kg(v)+'</em><i style="height:'+Math.round(v/mx*86)+'px"></i><span>'+e.d+'</span></div>'}).join('')+'<div class="tg"><em>'+kg(L.t)+'</em><i style="height:86px"></i><span>Target</span></div></div>'+
+      '<ul class="lhist">'+(L.c?'':'<li class="hd"><span>Session</span><span>kg &times; reps, each set</span></li>')+h.slice().reverse().map(function(e){return '<li><span>'+e.d+'</span><b>'+e.s.map(function(s){return kg(s[0])+(L.c?' kg':' &times; '+s[1])}).join(', ')+'</b></li>'}).join('')+'</ul>';}
+  var RUN={},cv={kg:0,rp:0};
+  function prefill(m){var L=LIFTS[m.n];if(!L)return;var r=RUN[m.n];
+    if(r&&r.length){cv.kg=r[r.length-1][0];cv.rp=r[r.length-1][1];return;}
+    var lt=lastTime(m.n,sessDate(SI));cv.kg=lt?best(lt):(L.t||0);cv.rp=lt?lt.s[lt.s.length-1][1]:(L.r||0);if(L.bw)cv.kg=0;}
+  function liftUI(m){var L=LIFTS[m.n];if(!L||m.t){$('#sLift').innerHTML='';$('#sess').classList.remove('lift');return;}
+    $('#sess').classList.add('lift');
+    var lt=lastTime(m.n,sessDate(SI));
+    function box(lab,inner,cls){return '<div class="lc"><span class="ll">'+lab+'</span><div class="'+(cls||'lstp')+'">'+inner+'</div></div>';}
+    /* the number you see is real text, so it can never be clipped; a clear input sits over it for typing */
+    function val(id,v,unit,lab){return '<label class="lval"><span class="lgrp"><span class="lnum" id="'+id+'V">'+v+'</span>'+(unit?'<em>'+unit+'</em>':'')+'</span><input id="'+id+'" inputmode="'+(unit?'decimal':'numeric')+'" value="'+v+'" aria-label="'+lab+'" autocomplete="off"></label>';}
+    var w=L.bw?box('Weight','Bodyweight','lfix'):box('Weight','<button class="lb mi" data-lk="-1" aria-label="Less weight"></button>'+val('lkg',kg(cv.kg),'kg','Weight in kg')+'<button class="lb pl" data-lk="1" aria-label="More weight"></button>');
+    var dm=(m.r.match(/(\d+)\s*metres/)||[])[1];
+    var r=L.c?box('Distance',(dm?dm+' m':m.r),'lfix'):box('Reps','<button class="lb mi" data-lr="-1" aria-label="Fewer reps"></button>'+val('lrp',cv.rp,'','Reps')+'<button class="lb pl" data-lr="1" aria-label="More reps"></button>');
+    var note=L.bw?('Last time '+(lt?lt.s.map(function(s){return s[1]}).join(', ')+' reps':'new')+'. <b>Rob&rsquo;s target '+L.r+' reps</b>'):('Last time '+(lt?kg(best(lt))+' kg':'new')+'. <b>Rob&rsquo;s target '+kg(L.t)+' kg</b>');
+    $('#sLift').innerHTML='<div class="lgrid">'+w+r+'</div><p class="lnote">'+note+'</p><button class="lsee" data-lift="'+m.n+'">See your weights for this move</button>';fitAll();}
+  /* copy the typed value into the visible number, then shrink the number if it would not fit its box */
+  function fitAll(){['lkg','lrp'].forEach(function(id){var inp=document.getElementById(id),sp=document.getElementById(id+'V');if(!inp||!sp)return;
+    sp.textContent=inp.value===''?'0':inp.value;var lv=sp.closest('.lval'),room=lv.clientWidth-8,fs=30;sp.style.fontSize=fs+'px';
+    while(fs>16&&(sp.offsetWidth+(sp.nextElementSibling&&sp.nextElementSibling.tagName==='EM'?sp.nextElementSibling.offsetWidth+4:0))>room){fs--;sp.style.fontSize=fs+'px';}});}
+  document.addEventListener('input',function(e){if(e.target.id==='lkg'||e.target.id==='lrp')fitAll();});
+  document.addEventListener('focusin',function(e){if(e.target.id==='lkg'||e.target.id==='lrp'){e.target.closest('.lval').classList.add('edit');setTimeout(function(){try{e.target.select();}catch(x){}},0);}});
+  document.addEventListener('focusout',function(e){if(e.target.id==='lkg'||e.target.id==='lrp'){e.target.closest('.lval').classList.remove('edit');readCv();e.target.value=e.target.id==='lkg'?kg(cv.kg):cv.rp;fitAll();}});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitAll);
+  window.addEventListener('resize',fitAll);
+  /* weights sheet for any lift, from the Move page, the session page or mid-workout */
+  function liftSheet(name){var mv=null,ss=null;SESS.forEach(function(s){if(s&&s.moves)s.moves.forEach(function(m){if(!mv&&m.n===name){mv=m;ss=s;}})});if(!mv)return;
+    var img=mv.im?IMG[mv.im]:IMG[ss.img],pos=mv.pos||ss.pos;
+    openSheet('<div class="sh-img" style="height:'+(mv.im?300:200)+'px"><img src="'+img+'" alt="" style="object-position:'+pos+'"></div><div class="sh-body"><h2>'+name+'</h2><p class="sub">'+mv.r+'</p>'+liftChart(name)+'<h3>How Rob coaches it</h3><p style="font-size:15px;line-height:1.55">'+mv.c+'</p></div>',true);
+    $('#bsheet').classList.toggle('over',$('#sess').classList.contains('on'));$('#bdim').classList.toggle('over',$('#sess').classList.contains('on'));}
+  function renderWeights(){var el=$('#wlist');if(!el||typeof LIFTS==='undefined'||!LIFTS)return;var seen={},rows=[];
+    SESS.forEach(function(s){if(s&&s.moves)s.moves.forEach(function(m){var L=LIFTS[m.n];if(!L||L.bw||seen[m.n])return;seen[m.n]=1;var lt=lastTime(m.n),b=lt?best(lt):0;
+      rows.push('<button class="wrow" data-lift="'+m.n+'"><span class="wn"><b>'+m.n+'</b><span>'+(b>=L.t?'On Rob&rsquo;s target':'Rob&rsquo;s target '+kg(L.t)+' kg')+'</span></span><span class="wv">'+(lt?kg(b):'&ndash;')+'<em>kg</em></span>'+CHEV+'</button>');})});
+    el.innerHTML=rows.join('');}
+  function readCv(){var a=$('#lkg'),b=$('#lrp');if(a){var v=parseFloat(String(a.value).replace(',','.'));if(!isNaN(v)&&v>=0)cv.kg=v;}if(b){var w=parseInt(b.value,10);if(!isNaN(w)&&w>=0)cv.rp=w;}}
+  function logSet(m){var L=LIFTS[m.n];if(!L)return;readCv();(RUN[m.n]=RUN[m.n]||[]).push([L.bw?0:cv.kg,L.c?0:cv.rp]);
+    var d=sessDate(SI);LOG[m.n]=(LOG[m.n]||[]).filter(function(e){return e.d!==d});LOG[m.n].push({d:d,s:RUN[m.n].slice()});
+    try{localStorage.setItem(LKEY,JSON.stringify(LOG));}catch(e){}renderWeights();}
+  document.addEventListener('click',function(e){var b=e.target.closest('[data-lk],[data-lr]');if(!b)return;readCv();
+    if(b.dataset.lk){cv.kg=Math.max(0,Math.round((cv.kg+2.5*b.dataset.lk)*10)/10);$('#lkg').value=kg(cv.kg);}
+    else{cv.rp=Math.max(0,cv.rp+(+b.dataset.lr));$('#lrp').value=cv.rp;}fitAll();});
+  document.addEventListener('click',function(e){var b=e.target.closest('[data-lift]');if(b){e.stopPropagation();liftSheet(b.dataset.lift);}},true);
+
+  /* ---------- counting ---------- */
+  var DAY=['p-e2','v-am','m-1-b','m-1-l','t-1','m-1-d','v-pm','p-rx'];
+  var CAT={p:['p-e2','v-am','v-pm','p-rx'],m:['m-1-b','m-1-l','m-1-d'],t:['t-1']};
+  function n(list){return list.filter(function(k){return done[k]}).length;}
+  var TDOSE=[['p-e2','Estradiol gel, 2 pumps','Hormone therapy, after your shower','data-why="e2"'],['v-am','Morning stack','Vitamin D3 and omega 3, with breakfast','data-stack="am"'],['v-pm','Evening stack','Magnesium and L-theanine, with dinner','data-stack="pm"'],['p-rx','Progesterone, 100 mg','One capsule at bedtime','data-why="rx"']];
+  function renderTrNow(){var nx=TDOSE.filter(function(d){return !done[d[0]]})[0];
+    $('#trNow').innerHTML=nx?'<p class="k">Due next</p><button class="tn" '+nx[3]+'><span class="tx"><b>'+nx[1]+'</b><span>'+nx[2]+'</span></span>'+CHEV+'</button><button class="btn btn-bone" data-take="'+nx[0]+'">Mark as taken</button>'
+      :'<p class="k">Today</p><div class="tn"><span class="tx"><b>All four taken</b><span>Next: estradiol gel, tomorrow morning</span></span></div><button class="btn btn-bone added" data-take="">Done for today</button>';
+    $('#tdDots').innerHTML=TDOSE.map(function(d){return '<i'+(done[d[0]]?'':' class="o"')+'></i>'}).join('');}
+  function count(){
+    readDom();save();
+    var d=n(DAY),all=d===DAY.length;
+    $('#ydCount').textContent=all?'All done today':d+' of '+DAY.length+' done';
+    $('#ptCount').textContent=all?'All done today':d+' of '+DAY.length+' done';
+    $$('.ydt button').forEach(function(b){var c=CAT[b.dataset.cat],k=n(c);b.querySelector('b').innerHTML=k+'<small>/'+c.length+'</small>';b.querySelector('em').style.width=(k/c.length*100)+'%';b.classList.toggle('full',k===c.length);});
+    $$('#yd .row').forEach(function(r){var t=r.querySelector('[data-sync]');r.classList.toggle('isdone',!!(t&&done[t.dataset.sync]));});
+    $$('#yd .ydg').forEach(function(g){g.classList.toggle('alldone',!g.querySelector('.row:not(.isdone)'));});
+    $('#ydClear').classList.toggle('on',all);
+    var pp=n(CAT.p),pt=pp===4?'All 4 taken today':pp+' of 4 taken';renderWeights();$('#pmProto').innerHTML='Today: <em>'+pt+'</em>';$('#prCount').textContent=pp+' of 4';$('#trWk').textContent=(3+pp)+' of 32 taken';renderTrNow();
+    $('#pmMeal').innerHTML=done['m-1-d']?'Tonight: <em>miso salmon, eaten</em>':'Tonight: <em>miso salmon</em>';
+    var sc=sessCount();$('#pmTrain').innerHTML=done['t-1']?'Today: <em>lower body, done</em>':'Today: <em>lower body, 40 min</em>';
+    $('#trCount').textContent=sc[0]+' of '+sc[1]+' done';
+    var wk=0;WEEK.forEach(function(_,dd){'bld'.split('').forEach(function(s){if(done['m-'+dd+'-'+s])wk++;});});$('#eatWk').textContent=wk+' of 21 eaten';
+    var tAll=pp===4,last=$('#recDots i:last-child');if(last)last.className=tAll?'':'n';$('#recLbl').innerHTML=tAll?'<b>27 of 28 days</b> complete':'<b>26 of 27 days</b> complete';
+    $$('[data-eat]').forEach(function(b){var on=!!done[b.dataset.eat];b.classList.toggle('added',on);});
+    if($('#startBtn'))startLabel();
+  }
+
+  /* ---------- build ---------- */
+  (function(){var h='';for(var k=0;k<28;k++){h+='<i'+(k===26?' class="m"':'')+(k===27?' class="n"':'')+'></i>';}$('#recDots').innerHTML=h;})();
+  renderWeek();renderTrain();openSess(TT);applyState();count();
 
   document.addEventListener('click',function(e){
-    var t=e.target.closest('[data-why]'); if(t){whySheet(t.dataset.why);return;}
-    t=e.target.closest('[data-recipe]'); if(t){recipe(t.dataset.recipe);return;}
+    var t=e.target.closest('[data-ydf]'); if(t){$$('.ydf button').forEach(function(x){x.classList.toggle('on',x===t)});$('#yd').classList.toggle('todo',t.dataset.ydf==='todo');return;}
+    t=e.target.closest('[data-eat]'); if(t){var k=t.dataset.eat,on=!done[k];setKey(k,on);var lbl=k.charAt(0)==='m'?(on?'Eaten':'Mark as eaten'):(on?'Done for today':(k.charAt(0)==='v'?'Mark the stack as taken':'Mark as done'));t.textContent=lbl;return;}
+    t=e.target.closest('[data-take]'); if(t){var tk=t.dataset.take;if(!tk)return;setKey(tk,true);var nx=TDOSE.filter(function(d){return !done[d[0]]})[0];toast(nx?'Taken. Next: '+nx[1]+'.':'All four taken today. Nicely done.');return;}
+    t=e.target.closest('[data-shopdo]'); if(t){shopDo(t.dataset.shopdo,t);return;}
+    t=e.target.closest('[data-got]'); if(t){t.classList.toggle('got');return;}
+    t=e.target.closest('[data-shop]'); if(t){shopSheet();return;}
+    t=e.target.closest('[data-start]'); if(t){startSess(TT);return;}
+    t=e.target.closest('[data-sess]'); if(t){openSess(+t.dataset.sess);go('session');return;}
+    t=e.target.closest('[data-stack]'); if(t){stackSheet(t.dataset.stack);return;}
+    t=e.target.closest('[data-proto]'); if(t){protoSheet(t.dataset.proto);return;}
+    t=e.target.closest('[data-why]'); if(t){whySheet(t.dataset.why);return;}
+    t=e.target.closest('[data-recipe]'); if(t){recipe(t.dataset.recipe,t);return;}
     t=e.target.closest('[data-move]'); if(t){moveSheet(+t.dataset.move);return;}
     t=e.target.closest('[data-toast]'); if(t){e.preventDefault();toast(t.dataset.toast);return;}
-    t=e.target.closest('[data-added]'); if(t){t.classList.add('added');t.textContent='Added to your shopping list';return;}
+    t=e.target.closest('[data-reset]'); if(t){done={};LOG={};try{localStorage.removeItem(LKEY);}catch(x){}DEFAULT.forEach(function(k){done[k]=1;});save();applyState();count();toast('The sample day has started again.');return;}
   });
   window.holPlan={count:count,closeAll:closeAll};
 })();
+
 </script>
 
 <script>
