@@ -887,6 +887,40 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 .wrow .ico{flex:none;color:var(--muted)}
 .bsheet.over~.sess .x{opacity:0;pointer-events:none}
 
+/* note from Marcus or Dr Reyes, at the top of each page, above the thing to do */
+.cnote{display:flex;gap:14px;margin:22px 24px 0;padding:18px 18px 14px;background:var(--dusk);border-radius:2px}
+.cnote img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:none}
+.cnote .cn{flex:1;min-width:0}
+.cnote .q{font-family:var(--display);font-style:italic;font-size:18px;line-height:1.35;color:var(--bone);text-wrap:pretty}
+.cnote .by{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:2px 0 8px;font-size:12.5px;line-height:1.4;color:var(--muted)}
+.cnote .by b{font-weight:500;color:var(--limestone)}
+.cnote .by button{flex:none;font-size:12.5px;color:var(--gold-soft);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;padding:6px 0;margin:-6px 0}
+.paper .cnote{background:#E9DDC8;box-shadow:inset 0 0 0 1px rgba(34,30,25,.10)}
+.paper .cnote .q{color:var(--charcoal)}
+.paper .cnote .by{color:var(--muted-paper)}.paper .cnote .by b{color:var(--charcoal)}
+.paper .cnote .by button{color:var(--gold)}
+.cnote+.tnow{margin-top:22px}
+.cnote+.sstart{padding-top:18px}
+.pr-set.bg{margin-top:30px;padding-top:16px;border-top:1px solid var(--line)}
+.paper .pr-set.bg{border-top-color:var(--line-paper)}
+
+/* small phones (iPhone SE and similar): shorter photo so the note and the button both fit on the first screen */
+@media (max-height:740px){
+  .pr-hero{height:224px}
+  .m1-hero{height:256px}
+  .m1-head h1,.pr-head h1{font-size:34px}
+  #s-eat .menu-top{padding-top:104px}
+  .menu-top h1{font-size:34px}
+  .cnote{margin-top:16px;padding:14px 16px 12px;gap:12px}
+  .cnote img{width:34px;height:34px}
+  .cnote .q{font-size:16.5px}
+  .cnote+.tnow{margin-top:16px}
+  .cnote+.sstart{padding-top:14px}
+}
+.cnote .nd{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold-soft);margin-right:8px;vertical-align:1px}
+.paper .cnote .nd{background:var(--gold)}
+.paper .cnote .by button{color:#7A5A2B}.paper .cnote .nd{background:#9A7232}
+
 </style>
 </head>
 <body>
@@ -1161,6 +1195,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
         <div class="hero pr-hero"><img src="a/protocol.jpg?v=2" alt=""><div class="fade"></div>
           <div class="pr-head"><small>The foundation of your protocol</small><h1>Your treatment</h1><div class="pby"><img src="a/doctor.jpg?v=2" alt=""><span>Prescribed by <b>Dr Anna Reyes</b></span></div></div>
         </div>
+        <div class="cnote"><img src="a/doctor.jpg?v=2" alt=""><div class="cn"><div class="by"><span><i class="nd"></i><b>Dr Reyes</b>, your doctor, 29 October</span><button data-go="coach">Reply</button></div><p class="q">&ldquo;Take your progesterone at bedtime, not with dinner. It helps you sleep. If you miss one, just carry on the next night.&rdquo;</p></div></div>
         <div class="tnow" id="trNow"></div>
         <div class="pr-day wkh"><b>This week</b><span id="trWk">5 of 32 taken</span></div>
         <div class="tweek">
@@ -1200,7 +1235,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
           <div class="row"><div class="main"><div class="t">Remind me 30 minutes before</div></div><button class="toggle on" data-act="toggle" aria-label="Toggle"></button></div>
           <div class="row"><div class="main"><div class="t">Nudge me again if I miss it</div></div><button class="toggle on" data-act="toggle" aria-label="Toggle"></button></div>
         </div>
-        <div class="marcus doc"><img src="a/doctor.jpg?v=2" alt=""><p><b>Dr Reyes reviews your treatment at every results day.</b> Your vitamins and supplements come from our partner brands, chosen by her. Questions, or a side effect to mention? Message the care team any time.</p></div>
+        <p class="pr-set bg">Dr Reyes reviews your treatment at every results day. Your vitamins and supplements come from our partner brands, chosen by her.</p>
         <div class="linkrows pcare"><a class="row" data-go="coach"><div class="main"><div class="t">Message the care team</div><div class="s">Usually replies within one business day</div></div><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></a></div>
       </section>
 
@@ -1212,6 +1247,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
           <h1>The heart-health menu</h1>
           <div class="pby"><img src="a/chef.jpg?v=2" alt=""><span>By <b>Tom Ashby</b> with <b>Clara Moss</b></span></div>
         </div>
+        <div class="cnote"><img src="a/coachface.jpg?v=2" alt=""><div class="cn"><div class="by"><span><i class="nd"></i><b>Marcus</b>, your coach, 2 November</span><button data-go="coach">Reply</button></div><p class="q">&ldquo;Salmon twice this week for your ApoB. Eating out on Thursday? Pick fish and greens, and skip the bread.&rdquo;</p></div></div>
         <div class="tnow">
           <p class="k">Tonight</p>
           <button class="tn" data-recipe="salmon"><span class="tx"><b>Miso salmon, sesame greens</b><span>25 minutes, serves 2</span></span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></button>
@@ -1221,7 +1257,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
         <button class="shop" data-shop><span class="t"><b>Shopping list for the week</b><span id="shopSub">Every ingredient for all 21 meals, in one list</span></span><svg class="ico" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <div class="wkm" id="wkm"></div>
         <div class="pad" style="margin-top:24px"><button class="btn btn-ink" data-shop>Make my shopping list</button></div>
-        <div class="marcus"><img src="a/coachface.jpg?v=2" alt=""><p><b>Set by Marcus after your August results.</b> More oily fish and fibre for your ApoB, as you talked about. Tap any dish for the recipe.</p></div>
+        <p class="pr-set bg">Set by Marcus after your August results: more oily fish and fibre for your ApoB.</p>
         <p class="sign">Tom &amp; Clara</p>
       </section>
 
@@ -1231,6 +1267,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
         <div class="hero m1-hero"><img src="a/robcoach.jpg?v=2" alt=""><div class="fade"></div>
           <div class="m1-head"><small>An 8-week programme</small><h1>Strength for the long run</h1><div class="pby"><img src="a/robcoach.jpg?v=2" alt=""><span>By <b>Rob Keane</b>, strength coach</span></div></div>
         </div>
+        <div class="cnote"><img src="a/coachface.jpg?v=2" alt=""><div class="cn"><div class="by"><span><i class="nd"></i><b>Marcus</b>, your coach, 2 November</span><button data-go="coach">Reply</button></div><p class="q">&ldquo;Your squats are ready to go up. Try 17.5 kg today, and keep Wednesday&rsquo;s walk easy enough to talk the whole way.&rdquo;</p></div></div>
         <div class="tnow">
           <p class="k">Today&rsquo;s workout</p>
           <button class="tn" data-sess="1"><span class="tx"><b>Lower body</b><span>Strength, 40 min, 5 moves</span></span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></button>
@@ -1242,7 +1279,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
         <div id="trows"></div>
         <div class="sess-h wh"><b>Your weights</b><span>Tap a move for every session</span></div>
         <div id="wlist"></div>
-        <div class="marcus"><img src="a/coachface.jpg?v=2" alt=""><p><b>Marcus put you on Rob&rsquo;s programme</b> after your August review. Strength three times a week, two easy Zone 2 sessions for your heart, and one short mobility session. At home or at your own gym.</p></div>
+        <p class="pr-set bg">Marcus put you on Rob&rsquo;s programme after your August review. Strength three times a week, two easy Zone 2 sessions for your heart, and one short mobility session. At home or at your own gym.</p>
       </section>
 
       <!-- 14 ONE SESSION -->
@@ -1252,12 +1289,13 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
           <div class="m1-head"><small id="ssWhen">Tuesday 3 November</small><h1 id="ssName">Lower body</h1><div class="pby"><img src="a/robcoach.jpg?v=2" alt=""><span>By <b>Rob Keane</b>, strength coach</span></div></div>
         </div>
         <div class="wk ssmeta"><span><b id="ssKind">Strength</b></span><span id="ssDur">40 min</span></div>
+        <div class="cnote" id="ssNote"><img src="a/coachface.jpg?v=2" alt=""><div class="cn"><div class="by"><span><i class="nd"></i><b>Marcus</b>, your coach, 2 November</span><button data-go="coach">Reply</button></div><p class="q"></p></div></div>
         <div class="pad sstart"><button class="btn btn-bone" id="startBtn">Start workout</button></div>
         <div class="ssd"><span id="ssdT">Mark this session as done</span><span id="ssdTick"></span></div>
         <p class="pr-set" id="ssWhy"></p>
         <div class="sess-h"><b id="ssListH">The session</b><span id="ssCount">5 moves</span></div>
         <div id="moves"></div>
-        <div class="marcus"><img src="a/coachface.jpg?v=2" alt=""><p><b>Something hurt, or too easy?</b> Tell Marcus in Coach and Rob will adjust next week.</p></div>
+        <p class="pr-set bg">Something hurt, or too easy? Tell Marcus in Coach and Rob will adjust next week.</p>
       </section>
 
       <!-- 13 JOURNAL -->
@@ -1602,7 +1640,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
   var SI=TT;
   function openSess(i){var s=SESS[i];SI=i;
     $('#ssImg').src=IMG[s.img];$('#ssImg').style.objectPosition=s.pos;$('#ssWhen').textContent=s.d.replace(/ (\d)$/,' $1 November');$('#ssName').textContent=s.n;$('#ssKind').textContent=s.k;$('#ssDur').textContent=s.dur+', '+s.moves.length+(s.moves[0].t?' parts':' moves');
-    $('#ssWhy').textContent=s.why;$('#ssCount').textContent=s.moves.length+(s.moves[0].t?' parts':' moves');$('#ssListH').textContent=s.moves[0].t?'The plan':'The session';
+    $('#ssWhy').textContent=s.why;$('#ssNote .q').innerHTML='&ldquo;'+(CNOTE[s.n]||'')+'&rdquo;';$('#ssNote').style.display=CNOTE[s.n]?'':'none';$('#ssCount').textContent=s.moves.length+(s.moves[0].t?' parts':' moves');$('#ssListH').textContent=s.moves[0].t?'The plan':'The session';
     $('#ssdTick').innerHTML=tick('t-'+i,'Mark session done');
     $('#moves').innerHTML=s.moves.map(function(m,j){return '<div class="mv"><button class="th'+(m.im?'':' num')+'" data-move="'+j+'">'+(m.im?'<img src="'+IMG[m.im]+'" alt="" style="object-position:'+m.pos+'">':'<span>'+(j+1)+'</span>')+'</button><button class="t" data-move="'+j+'"><b>'+m.n+'</b><span>'+m.r+'</span>'+(LIFTS[m.n]?'<span class="lw">'+liftLine(m)+'</span>':'')+'</button>'+tick('','Mark done')+'</div>';}).join('');
     applyState();startLabel();
@@ -1639,6 +1677,13 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
     'Dead bug':{bw:1,r:8,h:[['26 Oct',0,8],['2 Nov',0,8]]},
     'Suitcase carry':{t:17.5,c:1,h:[['19 Oct',12.5],['26 Oct',15],['2 Nov',15]]}
   };
+  /* Marcus's note for each session: one thing to do, shown above Start */
+  var CNOTE={'Upper body':'Slow the lowering on your rows, three seconds down. That&rsquo;s where the strength comes from.',
+    'Lower body':'Try 17.5 kg on your goblet squats today. If your knee niggles on the split squats, shorten your step.',
+    'Zone 2 walk':'Easy means easy. If you can&rsquo;t talk in full sentences, slow down.',
+    'Full body':'Short on time? Do the first three moves and the carry. That still counts.',
+    'Zone 2 ride':'Make it social. A long easy ride with a friend is perfect Zone 2.',
+    'Mobility':'Do this one in the evening. It helps you wind down for sleep.'};
   var LKEY='hol-lift-v1',LOG={};
   try{LOG=JSON.parse(localStorage.getItem(LKEY)||'{}')||{};}catch(e){LOG={};}
   function kg(x){return String(Math.round(x*10)/10);}
