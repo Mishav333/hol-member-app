@@ -824,39 +824,51 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 .tev{list-style:none;margin-top:8px}
 .tev button{display:flex;gap:10px;align-items:center;text-align:left;font-size:13.5px;line-height:1.4;color:var(--limestone);padding:3px 0}
 .tev button::before{content:'';width:10px;height:1px;background:var(--gold-soft);flex:none}
-.mv .t .lw{display:block;font-size:12px;color:var(--gold-soft);margin-top:2px}
-.sess.lift .sv{height:34%}
+.mv .t .lw{display:block;font-size:12px;color:var(--gold-soft);margin-top:3px}
+/* workout logger: one balanced unit, sits just above the button */
+.sess.lift .sv{height:auto;flex:1 1 auto;min-height:28%}
+.sess.lift .sb{flex:0 0 auto}
 .sess .sets i{position:relative}
-.sess .sets i span{position:absolute;top:10px;left:0;font-size:11.5px;color:var(--limestone);white-space:nowrap}
-.sess .sets.lab{margin-bottom:18px}
-.lift{display:flex;gap:12px;margin-top:16px}
-.lc{flex:1;min-width:0}
-.lc>span{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
-.lstp{display:flex;align-items:center;border:1px solid rgba(217,201,174,.4);border-radius:3px;height:54px}
-.lstp button{width:44px;height:100%;font-size:24px;line-height:1;color:var(--gold-soft);flex:none}
-.lstp input{flex:1;min-width:0;width:100%;background:none;border:0;color:var(--bone);font-family:var(--display);font-weight:500;font-size:30px;text-align:center;outline:none;padding:0}
-.lstp em{font-style:normal;font-size:13px;color:var(--muted);margin:0 2px 0 -4px}
-.lbw{height:54px;display:flex;align-items:center;font-family:var(--display);font-style:italic;font-size:21px;color:var(--limestone)}
-.lnote{font-size:13px;color:var(--muted);margin-top:10px}
+.sess .sets i span{position:absolute;top:11px;left:0;right:0;text-align:center;font-size:11.5px;line-height:14px;color:var(--limestone);white-space:nowrap}
+.sess.lift .sets{margin-bottom:32px}
+#sLift{margin-top:auto}
+.sess.lift .btn{margin-top:20px}
+.lgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lc{min-width:0}
+.ll{display:block;font-size:12px;line-height:16px;color:var(--muted);margin-bottom:8px}
+.lstp,.lfix{height:60px;border:1px solid rgba(217,201,174,.38);border-radius:3px}
+.lstp{display:grid;grid-template-columns:46px 1fr 46px;align-items:stretch}
+.lb{position:relative;width:46px;height:100%;color:var(--gold-soft)}
+.lb::before,.lb.pl::after{content:'';position:absolute;left:50%;top:50%;width:14px;height:1.5px;margin:-.75px 0 0 -7px;background:currentColor;border-radius:1px}
+.lb.pl::after{transform:rotate(90deg)}
+.lb:active{background:rgba(217,201,174,.08)}
+.lval{display:flex;justify-content:center;align-items:baseline;gap:4px;align-self:center;min-width:0;cursor:text}
+.lval input{width:40px;min-width:0;background:none;border:0;padding:0;margin:0;color:var(--bone);font-family:var(--display);font-weight:500;font-size:30px;line-height:1;text-align:center;outline:none;font-variant-numeric:lining-nums tabular-nums}
+.lval em{font-style:normal;font-size:13px;line-height:1;color:var(--muted)}
+.lfix{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:500;font-size:19px;color:var(--limestone)}
+.lnote{font-size:13px;line-height:1.45;color:var(--muted);margin-top:12px}
 .lnote b{font-weight:500;color:var(--gold-soft)}
-.lchart{display:flex;align-items:flex-end;gap:10px;height:132px;margin-top:10px;padding-bottom:4px;border-bottom:1px solid rgba(217,201,174,.25)}
-.lchart div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:5px}
+/* weights chart: baseline under the bars, dates clear below it */
+.lchart{position:relative;display:flex;align-items:flex-end;gap:10px;height:150px;margin-top:12px}
+.lchart::after{content:'';position:absolute;left:0;right:0;bottom:25px;height:1px;background:rgba(217,201,174,.3)}
+.lchart div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
 .lchart i{display:block;width:100%;max-width:34px;background:var(--gold-soft);border-radius:2px 2px 0 0}
-.lchart em{font-style:normal;font-size:12.5px;color:var(--bone)}
-.lchart span{font-size:11px;color:var(--muted);white-space:nowrap}
+.lchart em{font-style:normal;font-size:12.5px;line-height:15px;color:var(--bone);margin-bottom:6px}
+.lchart span{font-size:11px;line-height:14px;color:var(--muted);white-space:nowrap;margin-top:12px}
 .lchart .tg i{background:none;border:1px dashed var(--gold-soft);border-bottom:0}
 .lchart .tg em{color:var(--gold-soft)}
-.lhist{list-style:none;margin-top:12px}
-.lhist li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(217,201,174,.15);font-size:14px}
+.lhist{list-style:none;margin-top:18px}
+.lhist li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid rgba(217,201,174,.15);font-size:14px;line-height:1.35}
 .lhist li span{color:var(--muted)}
 .lhist li b{font-weight:400;text-align:right}
-.lhist small{font-size:11.5px;color:var(--muted)}
-.lgoal{font-size:14px;color:var(--gold-soft);margin-top:12px}
+.lhist li.hd{padding:0 0 8px;font-size:11.5px}
+.lgoal{font-size:14px;color:var(--gold-soft);margin-top:14px}
 
 /* round 3 QA fixes */
 .tgap{text-wrap:pretty}
 .tdh .dots i.gap{border:1.5px dashed rgba(217,201,174,.9)}
-.lbw{border:1px solid rgba(217,201,174,.25);border-radius:3px;justify-content:center;font-size:19px}
+.sess .sets i span.now{color:var(--gold-soft)}
+.sess .sets i:not(.f) span.now~*{display:none}
 
 </style>
 </head>
@@ -1585,7 +1597,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
   function sessRender(){var s=SESS[SI],m=s.moves[mi];$('#sOf').textContent=(m.t?'Part ':'Move ')+(mi+1)+' of '+s.moves.length;$('#sName').innerHTML=m.n;$('#sRep').textContent=m.r;$('#sCue').textContent=m.c;$('#sImg').src=m.im?IMG[m.im]:IMG[s.img];$('#sImg').style.objectPosition=m.pos||s.pos;
     var L=LIFTS[m.n],rn=RUN[m.n]||[];
     $('#sSets').className='sets'+(L&&rn.length?' lab':'');
-    $('#sSets').innerHTML=m.t?'':Array.apply(null,Array(m.sets)).map(function(_,k){var lab=L&&rn[k]?'<span>'+(L.bw?rn[k][1]+' reps':kg(rn[k][0])+' kg'+(L.c?'':' &times; '+rn[k][1]))+'</span>':'';return '<i'+(k<ms?' class="f"':'')+'>'+lab+'</i>'}).join('');
+    $('#sSets').innerHTML=m.t?'':Array.apply(null,Array(m.sets)).map(function(_,k){var lab=L&&rn[k]?'<span>'+(L.bw?rn[k][1]+' reps':kg(rn[k][0])+' kg'+(L.c?'':' &times; '+rn[k][1]))+'</span>':(L&&k===ms?'<span class="now">Now</span>':'');return '<i'+(k<ms?' class="f"':'')+'>'+lab+'</i>'}).join('');
     if(!m.t&&ms<m.sets){prefill(m);liftUI(m);}else{$('#sLift').innerHTML='';$('#sess').classList.remove('lift');}
     $('#sNext').textContent=m.t?(mi<s.moves.length-1?'Done, next part':'Finish'):(ms<m.sets?'Set '+(ms+1)+' done':(mi<s.moves.length-1?'Next move':'Finish session'));}
   function startSess(i){SI=i;if(cur()!=='session')openSess(i);mi=0;ms=0;RUN={};sessRender();$('#sess').classList.add('on');}
@@ -1626,7 +1638,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
     if(L.bw)return '<h3>Your reps</h3><ul class="lhist">'+h.slice().reverse().map(function(e){return '<li><span>'+e.d+'</span><b>'+e.s.map(function(s){return s[1]}).join(', ')+' reps</b></li>'}).join('')+'</ul><p class="lgoal">Rob&rsquo;s target: '+L.r+' reps a set, with control.</p>';
     var mx=Math.max(L.t,Math.max.apply(null,h.map(best)));
     return '<h3>Your weights</h3><div class="lchart">'+h.map(function(e){var v=best(e);return '<div><em>'+kg(v)+'</em><i style="height:'+Math.round(v/mx*86)+'px"></i><span>'+e.d+'</span></div>'}).join('')+'<div class="tg"><em>'+kg(L.t)+'</em><i style="height:86px"></i><span>Target</span></div></div>'+
-      '<ul class="lhist">'+h.slice().reverse().map(function(e){return '<li><span>'+e.d+'</span><b>'+e.s.map(function(s){return kg(s[0])+(L.c?' kg':' &times; '+s[1])}).join(', ')+(L.c?'':' <small>kg &times; reps</small>')+'</b></li>'}).join('')+'</ul>';}
+      '<ul class="lhist">'+(L.c?'':'<li class="hd"><span>Session</span><span>kg &times; reps, each set</span></li>')+h.slice().reverse().map(function(e){return '<li><span>'+e.d+'</span><b>'+e.s.map(function(s){return kg(s[0])+(L.c?' kg':' &times; '+s[1])}).join(', ')+'</b></li>'}).join('')+'</ul>';}
   var RUN={},cv={kg:0,rp:0};
   function prefill(m){var L=LIFTS[m.n];if(!L)return;var r=RUN[m.n];
     if(r&&r.length){cv.kg=r[r.length-1][0];cv.rp=r[r.length-1][1];return;}
@@ -1634,17 +1646,25 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
   function liftUI(m){var L=LIFTS[m.n];if(!L||m.t){$('#sLift').innerHTML='';$('#sess').classList.remove('lift');return;}
     $('#sess').classList.add('lift');
     var lt=lastTime(m.n,sessDate(SI));
-    var w=L.bw?'<div class="lc"><span>Weight</span><div class="lbw">Bodyweight</div></div>':'<div class="lc"><span>Weight</span><div class="lstp"><button data-lk="-1" aria-label="Less weight">&minus;</button><input id="lkg" inputmode="decimal" value="'+kg(cv.kg)+'" aria-label="Weight in kg"><em>kg</em><button data-lk="1" aria-label="More weight">+</button></div></div>';
-    var r=L.c?'':'<div class="lc"><span>Reps</span><div class="lstp"><button data-lr="-1" aria-label="Fewer reps">&minus;</button><input id="lrp" inputmode="numeric" value="'+cv.rp+'" aria-label="Reps"><button data-lr="1" aria-label="More reps">+</button></div></div>';
+    function box(lab,inner,cls){return '<div class="lc"><span class="ll">'+lab+'</span><div class="'+(cls||'lstp')+'">'+inner+'</div></div>';}
+    var w=L.bw?box('Weight','Bodyweight','lfix'):box('Weight','<button class="lb mi" data-lk="-1" aria-label="Less weight"></button><label class="lval"><input id="lkg" inputmode="decimal" value="'+kg(cv.kg)+'" aria-label="Weight in kg"><em>kg</em></label><button class="lb pl" data-lk="1" aria-label="More weight"></button>');
+    var dm=(m.r.match(/(\d+)\s*metres/)||[])[1];
+    var r=L.c?box('Distance',(dm?dm+' m':m.r),'lfix'):box('Reps','<button class="lb mi" data-lr="-1" aria-label="Fewer reps"></button><label class="lval"><input id="lrp" inputmode="numeric" value="'+cv.rp+'" aria-label="Reps"></label><button class="lb pl" data-lr="1" aria-label="More reps"></button>');
     var note=L.bw?('Last time '+(lt?lt.s.map(function(s){return s[1]}).join(', ')+' reps':'new')+'. <b>Rob&rsquo;s target '+L.r+' reps</b>'):('Last time '+(lt?kg(best(lt))+' kg':'new')+'. <b>Rob&rsquo;s target '+kg(L.t)+' kg</b>');
-    $('#sLift').innerHTML='<div class="lift">'+w+r+'</div><p class="lnote">'+note+'</p>';}
+    $('#sLift').innerHTML='<div class="lgrid">'+w+r+'</div><p class="lnote">'+note+'</p>';fitAll();}
+  /* size each number field to its digits so number and unit centre together as one group */
+  var FITC=document.createElement('canvas').getContext('2d');
+  function fit(inp){if(!inp)return;var cs=getComputedStyle(inp);FITC.font=cs.fontWeight+' '+cs.fontSize+' '+cs.fontFamily;inp.style.width=Math.ceil(FITC.measureText(inp.value||'0').width+2)+'px';}
+  function fitAll(){fit($('#lkg'));fit($('#lrp'));}
+  document.addEventListener('input',function(e){if(e.target.id==='lkg'||e.target.id==='lrp')fit(e.target);});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitAll);
   function readCv(){var a=$('#lkg'),b=$('#lrp');if(a){var v=parseFloat(String(a.value).replace(',','.'));if(!isNaN(v)&&v>=0)cv.kg=v;}if(b){var w=parseInt(b.value,10);if(!isNaN(w)&&w>=0)cv.rp=w;}}
   function logSet(m){var L=LIFTS[m.n];if(!L)return;readCv();(RUN[m.n]=RUN[m.n]||[]).push([L.bw?0:cv.kg,L.c?0:cv.rp]);
     var d=sessDate(SI);LOG[m.n]=(LOG[m.n]||[]).filter(function(e){return e.d!==d});LOG[m.n].push({d:d,s:RUN[m.n].slice()});
     try{localStorage.setItem(LKEY,JSON.stringify(LOG));}catch(e){}}
   document.addEventListener('click',function(e){var b=e.target.closest('[data-lk],[data-lr]');if(!b)return;readCv();
     if(b.dataset.lk){cv.kg=Math.max(0,Math.round((cv.kg+2.5*b.dataset.lk)*10)/10);$('#lkg').value=kg(cv.kg);}
-    else{cv.rp=Math.max(0,cv.rp+(+b.dataset.lr));$('#lrp').value=cv.rp;}});
+    else{cv.rp=Math.max(0,cv.rp+(+b.dataset.lr));$('#lrp').value=cv.rp;}fitAll();});
 
   /* ---------- counting ---------- */
   var DAY=['p-e2','v-am','m-1-b','m-1-l','t-1','m-1-d','v-pm','p-rx'];
