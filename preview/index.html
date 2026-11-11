@@ -669,7 +669,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 /* Today: your day */
 .yd .yd-head{display:flex;justify-content:space-between;align-items:baseline}
 .yd .yd-head span{font-size:13px;color:var(--gold-soft)}
-.ydt{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:4px}
+.ydt{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:4px}
 .ydt button{background:var(--night);padding:14px 4px 12px 0;text-align:left}
 .ydt button+button{padding-left:12px}
 .ydt b{display:block;font-family:var(--display);font-weight:500;font-size:30px;line-height:1;color:var(--bone)}
@@ -793,6 +793,11 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 .yd .row .k{font-size:12px}
 .mrow .tx b,.trow .tx b,.yd .row .t{text-wrap:pretty}
 
+/* treatment stack sheet */
+.stl{list-style:none;margin-top:6px}
+.stl li button{display:flex;justify-content:space-between;align-items:baseline;gap:12px;width:100%;text-align:left;padding:12px 0;border-bottom:1px solid rgba(217,201,174,.18)}
+.stl li b{font-weight:400;font-size:15.5px}.stl li span{font-size:13px;color:var(--muted);flex:none}
+
 </style>
 </head>
 <body>
@@ -842,34 +847,32 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
           <div class="go"><span>Open your results</span><svg class="ico" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div>
         </a>
         <div class="t-block yd" id="yd">
-          <div class="yd-head"><h2 class="sec">Your day</h2><span id="ydCount">5 of 9 done</span></div>
+          <div class="yd-head"><h2 class="sec">Your day</h2><span id="ydCount">4 of 8 done</span></div>
           <div class="ydt">
-            <button data-go="protocol" data-cat="p"><b>1<small>/3</small></b><span>Protocols</span><i><em></em></i></button>
-            <button data-go="vitamins" data-cat="v"><b>1<small>/2</small></b><span>Vitamins</span><i><em></em></i></button>
-            <button data-go="eat" data-cat="m"><b>2<small>/3</small></b><span>Meals</span><i><em></em></i></button>
-            <button data-go="move" data-cat="t"><b>1<small>/1</small></b><span>Training</span><i><em></em></i></button>
+            <button data-go="protocol" data-cat="p"><b>2<small>/4</small></b><span>Treatment</span><i><em></em></i></button>
+            <button data-go="eat" data-cat="m"><b>2<small>/3</small></b><span>Eat</span><i><em></em></i></button>
+            <button data-go="move" data-cat="t"><b>0<small>/1</small></b><span>Move</span><i><em></em></i></button>
           </div>
           <div class="ydf"><button class="on" data-ydf="all">Everything</button><button data-ydf="todo">Still to do</button></div>
           <div class="ydg"><p class="ydslot">Morning</p>
-          <div class="row" data-cat="p"><button class="main" data-why="e2"><span class="k">Protocol</span><span class="t">Estradiol gel, 2 pumps</span><span class="s">Hormone therapy, after your shower</span></button><button class="tick" data-act="tick" data-sync="p-e2" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-          <div class="row" data-cat="v"><button class="main" data-go="vitamins"><span class="k">Vitamins</span><span class="t">Morning stack</span><span class="s">Vitamin D3 and omega 3, with breakfast</span></button><button class="tick" data-act="tick" data-sync="v-am" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-          <div class="row" data-cat="m"><button class="main" data-recipe="eggs"><span class="k">Meal</span><span class="t">Breakfast: jammy eggs, greens, sourdough</span><span class="s">12 minutes</span></button><button class="tick" data-act="tick" data-sync="m-1-b" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          <div class="row" data-cat="p"><button class="main" data-why="e2"><span class="k">Treatment</span><span class="t">Estradiol gel, 2 pumps</span><span class="s">Hormone therapy, after your shower</span></button><button class="tick" data-act="tick" data-sync="p-e2" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          <div class="row" data-cat="p"><button class="main" data-stack="am"><span class="k">Treatment</span><span class="t">Morning stack</span><span class="s">Vitamin D3 and omega 3, with breakfast</span></button><button class="tick" data-act="tick" data-sync="v-am" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          <div class="row" data-cat="m"><button class="main" data-recipe="eggs"><span class="k">Eat</span><span class="t">Breakfast: jammy eggs, greens, sourdough</span><span class="s">12 minutes</span></button><button class="tick" data-act="tick" data-sync="m-1-b" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
           </div>
           <div class="ydg"><p class="ydslot">Midday</p>
-          <div class="row" data-cat="m"><button class="main" data-recipe="lent" data-note="From Monday&rsquo;s leftovers"><span class="k">Meal</span><span class="t">Lunch: puy lentils, roast pumpkin</span><span class="s">From Monday&rsquo;s leftovers</span></button><button class="tick" data-act="tick" data-sync="m-1-l" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-          <div class="row" data-cat="t"><button class="main" data-sess="1"><span class="k">Training</span><span class="t">Lower body strength, 40 min</span><span class="s">Week 3 of Rob&rsquo;s programme</span></button><button class="tick" data-act="tick" data-sync="t-1" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          <div class="row" data-cat="m"><button class="main" data-recipe="lent" data-note="From Monday&rsquo;s leftovers"><span class="k">Eat</span><span class="t">Lunch: puy lentils, roast pumpkin</span><span class="s">From Monday&rsquo;s leftovers</span></button><button class="tick" data-act="tick" data-sync="m-1-l" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          <div class="row" data-cat="t"><button class="main" data-sess="1"><span class="k">Move</span><span class="t">Lower body strength, 40 min</span><span class="s">Week 3 of Rob&rsquo;s programme</span></button><button class="tick" data-act="tick" data-sync="t-1" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
           </div>
           <div class="ydg"><p class="ydslot">Evening</p>
-          <div class="row" data-cat="m"><button class="main" data-recipe="salmon"><span class="k">Meal</span><span class="t">Dinner: miso salmon, sesame greens</span><span class="s">25 minutes</span></button><button class="tick" data-act="tick" data-sync="m-1-d" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-          <div class="row" data-cat="v"><button class="main" data-go="vitamins"><span class="k">Vitamins</span><span class="t">Evening stack</span><span class="s">Magnesium and L-theanine, with dinner</span></button><button class="tick" data-act="tick" data-sync="v-pm" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-          <div class="row" data-cat="p"><button class="main" data-why="rx"><span class="k">Protocol</span><span class="t">Progesterone, 100 mg</span><span class="s">Hormone therapy, at bedtime</span></button><button class="tick" data-act="tick" data-sync="p-rx" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-          <div class="row" data-cat="p"><button class="main" data-why="sleep"><span class="k">Protocol</span><span class="t">Lights out by 10.30</span><span class="s">Your sleep protocol</span></button><button class="tick" data-act="tick" data-sync="p-sleep" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          <div class="row" data-cat="m"><button class="main" data-recipe="salmon"><span class="k">Eat</span><span class="t">Dinner: miso salmon, sesame greens</span><span class="s">25 minutes</span></button><button class="tick" data-act="tick" data-sync="m-1-d" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          <div class="row" data-cat="p"><button class="main" data-stack="pm"><span class="k">Treatment</span><span class="t">Evening stack</span><span class="s">Magnesium and L-theanine, with dinner</span></button><button class="tick" data-act="tick" data-sync="v-pm" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+          <div class="row" data-cat="p"><button class="main" data-why="rx"><span class="k">Treatment</span><span class="t">Progesterone, 100 mg</span><span class="s">Hormone therapy, at bedtime</span></button><button class="tick" data-act="tick" data-sync="p-rx" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
           </div>
           <p class="yd-clear" id="ydClear">Nothing left to do today. Nicely done.</p>
         </div>
         <div class="t-block">
           <h2 class="sec">Coming up</h2>
-          <div class="upnext" data-go="vitamins"><div class="day"><b>5</b><span>Thu Nov</span></div><div class="main" style="flex:1"><div class="t" style="font-size:15.5px">Your December box arrives</div><div class="s" style="font-size:13px;color:var(--muted);margin-top:3px">With the courier now</div></div><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
+          <div class="upnext" data-go="protocol"><div class="day"><b>5</b><span>Thu Nov</span></div><div class="main" style="flex:1"><div class="t" style="font-size:15.5px">Your December box arrives</div><div class="s" style="font-size:13px;color:var(--muted);margin-top:3px">With the courier now</div></div><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
           <div class="upnext" data-go="coach" style="border-bottom:0"><div class="day"><b>6</b><span>Fri Nov</span></div><div class="main" style="flex:1"><div class="t" style="font-size:15.5px">Check-in with Marcus</div><div class="s" style="font-size:13px;color:var(--muted);margin-top:3px">7.00 am, phone call</div></div><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
         </div>
         <a class="journal-tease" data-go="story">
@@ -1039,68 +1042,57 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
       <!-- 9 PLAN: THREE BOXES -->
       <section class="scr has-tabs" id="s-plan" data-tab="plan">
         <div class="hero p-hero"><img src="a/plan.jpg?v=2" alt=""><div class="fade"></div>
-          <div class="p-head"><h1 class="h-display">Your plan</h1><p>Protocols, vitamins, meals and training, in one place.</p></div>
+          <div class="p-head"><h1 class="h-display">Your protocol</h1><p>Your treatment, movement and meals, in one place.</p></div>
         </div>
-        <a class="ptoday" data-go="today"><b>Today</b><span id="ptCount">5 of 9 done</span></a>
+        <a class="ptoday" data-go="today"><b>Today</b><span id="ptCount">4 of 8 done</span></a>
         <a class="pillar" data-go="protocol">
           <div class="ph"><img src="a/protocol.jpg?v=2" alt="" style="object-position:50% 35%"><div class="fade"></div>
-            <div class="cap"><small>Protocols</small><b>Three protocols, one plan</b></div></div>
-          <div class="pmeta"><span class="pby"><img src="a/doctor.jpg?v=2" alt=""><span>Set by <b>Dr Anna Reyes</b></span></span></div>
-          <div class="pmeta" style="padding-top:6px"><span class="next" id="pmProto">Today: <em>1 of 3 done</em></span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
-        </a>
-        <a class="pillar" data-go="vitamins">
-          <div class="ph"><img src="a/vitamins.jpg?v=2" alt="" style="object-position:50% 45%"><div class="fade"></div>
-            <div class="cap"><small>Vitamins</small><b>Your stacks</b></div></div>
-          <div class="pmeta"><span class="pby"><img src="a/doctor.jpg?v=2" alt=""><span>Chosen by <b>Dr Anna Reyes</b></span></span></div>
-          <div class="pmeta" style="padding-top:6px"><span class="next" id="pmVit"><em>2 stacks</em>, refills arrive Thursday</span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
-        </a>
-        <a class="pillar" data-go="eat">
-          <div class="ph"><img src="a/salmon.jpg?v=2" alt="" style="object-position:50% 40%"><div class="fade"></div>
-            <div class="cap"><small>Meals</small><b>The heart-health menu</b></div></div>
-          <div class="pmeta"><span class="pby"><img src="a/chef.jpg?v=2" alt=""><span>By <b>Tom Ashby</b>, chef, with <b>Clara Moss</b>, dietitian</span></span></div>
-          <div class="pmeta" style="padding-top:6px"><span class="next" id="pmMeal">Tonight: <em>miso salmon</em></span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
+            <div class="cap"><small>Treatment</small><b>What you take, and why</b></div></div>
+          <div class="pmeta"><span class="pby"><img src="a/doctor.jpg?v=2" alt=""><span>Prescribed by <b>Dr Anna Reyes</b></span></span></div>
+          <div class="pmeta" style="padding-top:6px"><span class="next" id="pmProto">Today: <em>2 of 4 taken</em></span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
         </a>
         <a class="pillar" data-go="move">
           <div class="ph"><img src="a/robcoach.jpg?v=2" alt="" style="object-position:50% 25%"><div class="fade"></div>
-            <div class="cap"><small>Training</small><b>Strength for the long run</b></div></div>
+            <div class="cap"><small>Move</small><b>Strength for the long run</b></div></div>
           <div class="pmeta"><span class="pby"><img src="a/robcoach.jpg?v=2" alt=""><span>By <b>Rob Keane</b>, strength coach</span></span></div>
           <div class="pmeta" style="padding-top:6px"><span class="next" id="pmTrain">Today: <em>lower body, 40 min</em></span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
         </a>
-        <div class="marcus"><img src="a/coachface.jpg?v=2" alt=""><p><b>It all starts with your protocols.</b> Dr Reyes sets them at each results day. Your vitamins, meals and training are then built around them. Ask Marcus to change anything in Coach.</p></div>
+        <a class="pillar" data-go="eat">
+          <div class="ph"><img src="a/salmon.jpg?v=2" alt="" style="object-position:50% 40%"><div class="fade"></div>
+            <div class="cap"><small>Eat</small><b>The heart-health menu</b></div></div>
+          <div class="pmeta"><span class="pby"><img src="a/chef.jpg?v=2" alt=""><span>By <b>Tom Ashby</b>, chef, with <b>Clara Moss</b>, dietitian</span></span></div>
+          <div class="pmeta" style="padding-top:6px"><span class="next" id="pmMeal">Tonight: <em>miso salmon</em></span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></div>
+        </a>
+        <div class="marcus"><img src="a/coachface.jpg?v=2" alt=""><p><b>It all starts with your treatment.</b> Dr Reyes sets it at each results day. Your movement and meals are built around it. Ask Marcus to change anything in Coach.</p></div>
       </section>
 
-      <!-- 10 PROTOCOLS -->
+      <!-- 10 TREATMENT -->
       <section class="scr has-tabs" id="s-protocol" data-tab="plan">
-        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Plan</button>
+        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Protocol</button>
         <div class="hero pr-hero"><img src="a/protocol.jpg?v=2" alt=""><div class="fade"></div>
-          <div class="pr-head"><small>Set by your doctor</small><h1>Your protocols</h1><div class="pby"><img src="a/doctor.jpg?v=2" alt=""><span>Prescribed by <b>Dr Anna Reyes</b></span></div></div>
+          <div class="pr-head"><small>The foundation of your protocol</small><h1>Your treatment</h1><div class="pby"><img src="a/doctor.jpg?v=2" alt=""><span>Prescribed by <b>Dr Anna Reyes</b></span></div></div>
         </div>
-        <nav class="psw"><button data-go="protocol" data-swap class="on">Protocols</button><button data-go="vitamins" data-swap>Vitamins</button><button data-go="eat" data-swap>Meals</button><button data-go="move" data-swap>Training</button></nav>
-        <div class="inp"><button data-proto="hrt"><b>3</b><span>Protocols</span></button><button data-go="today"><b>6</b><span>Daily steps</span></button><button data-proto="heart"><b>Feb</b><span>Next review</span></button></div>
-        <div class="proto" id="pc-hrt">
-          <button class="ph" data-proto="hrt"><h3>Hormone therapy</h3><span class="st" data-pcount="hrt"></span></button>
-          <p class="by">Dr Anna Reyes, since February</p>
-          <div class="bar"><span>Month 9</span><i><em style="width:75%"></em></i><span>Review in February</span></div>
-          <p class="goal">For the broken sleep and hot flushes you told Dr Reyes about.</p>
-          <div class="dz"><button class="t" data-why="e2"><span class="kind">Morning</span><b>Estradiol gel, 2 pumps</b><span>On your upper arm, after your shower</span></button><button class="tick" data-act="tick" data-sync="p-e2" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div><div class="dz"><button class="t" data-why="rx"><span class="kind">Bedtime</span><b>Progesterone, 100 mg</b><span>One capsule</span></button><button class="tick" data-act="tick" data-sync="p-rx" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-          <div class="foot"><span></span><button class="link-gold" data-proto="hrt">About this protocol</button></div>
+        <p class="pr-set">Set by Dr Reyes in February, when you started hormone therapy, and last updated on 14 August. She reviews it again with your November results.</p>
+        <div class="pr-day"><b>Today</b><span id="prCount">2 of 4 taken</span></div>
+        <p class="slot">Morning</p>
+        <div class="dz"><button class="t" data-why="e2"><span class="kind">Hormone therapy</span><b>Estradiol gel, 2 pumps</b><span>On your upper arm, after your shower</span></button><button class="tick" data-act="tick" data-sync="p-e2" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+        <div class="dz"><button class="t" data-stack="am"><span class="kind">Vitamins, from Halden</span><b>Morning stack</b><span>Vitamin D3 and omega 3, with breakfast</span></button><button class="tick" data-act="tick" data-sync="v-am" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+        <p class="slot">Evening</p>
+        <div class="dz"><button class="t" data-stack="pm"><span class="kind">Supplements, from Saltgrass</span><b>Evening stack</b><span>Magnesium and L-theanine, with dinner</span></button><button class="tick" data-act="tick" data-sync="v-pm" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+        <div class="dz"><button class="t" data-why="rx"><span class="kind">Hormone therapy</span><b>Progesterone, 100 mg</b><span>One capsule at bedtime</span></button><button class="tick" data-act="tick" data-sync="p-rx" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
+        <h2 class="sec-h">What&rsquo;s in your treatment</h2>
+        <div class="inp">
+          <button data-why="e2"><b>2</b><span>Hormone therapy</span></button>
+          <button data-stack="am"><b>4</b><span>Vitamins and supplements</span></button>
+          <button data-why="fib"><b>1</b><span>New from Thursday</span></button>
         </div>
-        <div class="proto" id="pc-heart">
-          <button class="ph" data-proto="heart"><h3>Heart health</h3><span class="st" data-pcount="heart"></span></button>
-          <p class="by">Dr Reyes and Marcus, since August</p>
-          <div class="bar"><span>Week 13 of 26</span><i><em style="width:50%"></em></i><span>Retest in February</span></div>
-          <p class="goal">Bringing your ApoB down. It is 1.10 now, from 1.30 when you started.</p>
-          <div class="dz"><button class="t" data-go="vitamins"><span class="kind">Morning, from your vitamins</span><b>Morning stack</b><span>Vitamin D3 and omega 3, with breakfast</span></button><button class="tick" data-act="tick" data-sync="v-am" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div><div class="dz"><button class="t" data-recipe="salmon"><span class="kind">Tonight, from your meals</span><b>Miso salmon, sesame greens</b><span>25 minutes</span></button><button class="tick" data-act="tick" data-sync="m-1-d" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div><div class="dz"><button class="t" data-sess="2"><span class="kind">Tomorrow, from your training</span><b>Zone 2 walk, 45 min</b><span>Twice a week, easy pace</span></button><button class="tick" data-act="tick" data-sync="t-2" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-          <div class="foot"><span></span><button class="link-gold" data-proto="heart">About this protocol</button></div>
-        </div>
-        <div class="proto" id="pc-sleep">
-          <button class="ph" data-proto="sleep"><h3>Sleep</h3><span class="st" data-pcount="sleep"></span></button>
-          <p class="by">Dr Anna Reyes, since September</p>
-          <div class="bar"><span>Week 8 of 12</span><i><em style="width:66%"></em></i><span>Check-in on Friday</span></div>
-          <p class="goal">Deeper, steadier sleep. Your Oura trend will show here once it is connected.</p>
-          <div class="dz"><button class="t" data-go="vitamins"><span class="kind">Dinner, from your vitamins</span><b>Evening stack</b><span>Magnesium and L-theanine</span></button><button class="tick" data-act="tick" data-sync="v-pm" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div><div class="dz"><button class="t" data-why="sleep"><span class="kind">Bedtime</span><b>Lights out by 10.30</b><span>Screens off by 9.30</span></button><button class="tick" data-act="tick" data-sync="p-sleep" aria-label="Mark done"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-          <div class="foot"><span></span><button class="link-gold" data-proto="sleep">About this protocol</button></div>
-        </div>
+        <h2 class="sec-h">Your December box</h2>
+        <div class="pship"><div class="ship">
+          <div class="stp done"><span class="pt"></span><div><div class="t">Approved by Dr Reyes</div><div class="s">29 October</div></div></div>
+          <div class="stp done"><span class="pt"></span><div><div class="t">Packed and checked</div><div class="s">2 November</div></div></div>
+          <div class="stp now"><i class="trail"></i><i class="runner"></i><span class="pt"></span><div><div class="t">With the courier</div><div class="s">Picked up this morning. <a class="link-gold" style="font-size:12.5px" data-toast="Tracking: with the courier, arriving Thursday">Track parcel</a></div></div></div>
+          <div class="stp"><span class="pt"></span><div><div class="t">Arriving Thursday 5 November</div><div class="s">Your estradiol gel and progesterone, refills of both stacks, and your new fibre stack. Signature needed.</div></div></div>
+        </div></div>
         <h2 class="sec-h">Your last four weeks</h2>
         <div class="rec"><div class="dots" id="recDots"></div><div class="lbl"><span>7 Oct</span><span id="recLbl"><b>26 of 27 days</b> complete</span><span>Today</span></div></div>
         <h2 class="sec-h">Reminders</h2>
@@ -1108,64 +1100,18 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
           <div class="row"><div class="main"><div class="t">Remind me 30 minutes before</div></div><button class="toggle on" data-act="toggle" aria-label="Toggle"></button></div>
           <div class="row"><div class="main"><div class="t">Nudge me again if I miss it</div></div><button class="toggle on" data-act="toggle" aria-label="Toggle"></button></div>
         </div>
-        <div class="marcus doc"><img src="a/doctor.jpg?v=2" alt=""><p><b>Dr Reyes reviews your protocols at every results day.</b> Questions, or a side effect to mention? Message the care team any time.</p></div>
-        <div class="linkrows pcare"><a class="row" data-go="coach"><div class="main"><div class="t">Message the care team</div><div class="s">Usually replies within one business day</div></div><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></a></div>
-      </section>
-
-      <!-- 11 VITAMINS -->
-      <section class="scr has-tabs" id="s-vitamins" data-tab="plan">
-        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Plan</button>
-        <div class="hero pr-hero vit-hero"><img src="a/vitamins.jpg?v=2" alt=""><div class="fade"></div>
-          <div class="pr-head"><small>From our partner brands</small><h1>Your vitamins</h1><div class="pby"><img src="a/doctor.jpg?v=2" alt=""><span>Chosen by <b>Dr Anna Reyes</b></span></div></div>
-        </div>
-        <nav class="psw"><button data-go="protocol" data-swap>Protocols</button><button data-go="vitamins" data-swap class="on">Vitamins</button><button data-go="eat" data-swap>Meals</button><button data-go="move" data-swap>Training</button></nav>
-        <div class="inp"><button><b>2</b><span>Stacks taking</span></button><button><b>1</b><span>New stack coming</span></button><button><b>4</b><span>Days to refill</span></button></div>
-        <h2 class="sec-h">Taking now</h2>
-        <div class="stack">
-          <div class="ph"><h3>Morning stack</h3><span class="st" data-vst="v-am"></span></div>
-          <p class="by">From Halden, an HoL partner brand. With breakfast.</p>
-          <ul><li><button data-why="d3"><b>Vitamin D3</b><span>2000 IU, one softgel</span></button></li><li><button data-why="o3"><b>Omega 3</b><span>Two capsules</span></button></li></ul>
-          <div class="bar"><span>4 days left</span><i><em style="width:14%"></em></i><span>Refill arrives Thursday</span></div>
-          <div class="take"><span>Taken this morning?</span><button class="tick" data-act="tick" data-sync="v-am" aria-label="Mark taken"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-        </div>
-        <div class="stack">
-          <div class="ph"><h3>Evening stack</h3><span class="st" data-vst="v-pm"></span></div>
-          <p class="by">From Saltgrass, an HoL partner brand. With dinner.</p>
-          <ul><li><button data-why="mg"><b>Magnesium glycinate</b><span>400 mg, two capsules</span></button></li><li><button data-why="lt"><b>L-theanine</b><span>200 mg, one capsule</span></button></li></ul>
-          <div class="bar"><span>4 days left</span><i><em style="width:14%"></em></i><span>Refill arrives Thursday</span></div>
-          <div class="take"><span>Taken tonight?</span><button class="tick" data-act="tick" data-sync="v-pm" aria-label="Mark taken"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></svg></button></div>
-        </div>
-        <h2 class="sec-h">On its way</h2>
-        <div class="stack soon">
-          <div class="ph"><h3>Fibre stack</h3><span class="st">Starts Thursday</span></div>
-          <p class="by">From Halden. New with your November results, part of your heart health protocol.</p>
-          <ul><li><button data-why="fib"><b>Psyllium husk</b><span>One scoop in water, before dinner</span></button></li></ul>
-        </div>
-        <h2 class="sec-h">Your December box</h2>
-        <div class="pship"><div class="ship">
-          <div class="stp done"><span class="pt"></span><div><div class="t">Approved by Dr Reyes</div><div class="s">29 October</div></div></div>
-          <div class="stp done"><span class="pt"></span><div><div class="t">Packed and checked</div><div class="s">2 November</div></div></div>
-          <div class="stp now"><i class="trail"></i><i class="runner"></i><span class="pt"></span><div><div class="t">With the courier</div><div class="s">Picked up this morning. <a class="link-gold" style="font-size:12.5px" data-toast="Tracking: with the courier, arriving Thursday">Track parcel</a></div></div></div>
-          <div class="stp"><span class="pt"></span><div><div class="t">Arriving Thursday 5 November</div><div class="s">Refills of both stacks, your new Fibre stack and your hormone therapy. Signature needed.</div></div></div>
-        </div></div>
-        <h2 class="sec-h">Past boxes</h2>
-        <div class="premind">
-          <div class="row"><div class="main"><div class="t">November box</div><div class="s">Delivered 8 October. Both stacks and your hormone therapy.</div></div></div>
-          <div class="row"><div class="main"><div class="t">October box</div><div class="s">Delivered 10 September. Your Evening stack started here.</div></div></div>
-        </div>
-        <div class="marcus doc"><img src="a/doctor.jpg?v=2" alt=""><p><b>Every stack comes from one of our partner brands, chosen by Dr Reyes.</b> It all arrives in your monthly box, so there is nothing to order yourself. Want to change or pause a stack? Message the care team.</p></div>
+        <div class="marcus doc"><img src="a/doctor.jpg?v=2" alt=""><p><b>Dr Reyes reviews your treatment at every results day.</b> Your vitamins and supplements come from our partner brands, chosen by her. Questions, or a side effect to mention? Message the care team any time.</p></div>
         <div class="linkrows pcare"><a class="row" data-go="coach"><div class="main"><div class="t">Message the care team</div><div class="s">Usually replies within one business day</div></div><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></a></div>
       </section>
 
       <!-- 12 MEALS: THE WEEK -->
       <section class="scr has-tabs paper" id="s-eat" data-tab="plan" data-tone="paper">
-        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Plan</button>
+        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Protocol</button>
         <div class="menu-top">
           <small>Your week, 2 to 8 November</small>
           <h1>The heart-health menu</h1>
           <div class="pby"><img src="a/chef.jpg?v=2" alt=""><span>By <b>Tom Ashby</b> with <b>Clara Moss</b></span></div>
         </div>
-        <nav class="psw"><button data-go="protocol" data-swap>Protocols</button><button data-go="vitamins" data-swap>Vitamins</button><button data-go="eat" data-swap class="on">Meals</button><button data-go="move" data-swap>Training</button></nav>
         <button class="shop" data-shop><span class="t"><b>Shopping list for the week</b><span id="shopSub">Every ingredient for all 21 meals, in one list</span></span><svg class="ico" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <div class="wkm" id="wkm"></div>
         <div class="pad" style="margin-top:24px"><button class="btn btn-ink" data-shop>Make my shopping list</button></div>
@@ -1175,11 +1121,10 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 
       <!-- 13 TRAINING: THE WEEK -->
       <section class="scr has-tabs" id="s-move" data-tab="plan">
-        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Plan</button>
+        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Protocol</button>
         <div class="hero m1-hero"><img src="a/robcoach.jpg?v=2" alt=""><div class="fade"></div>
           <div class="m1-head"><small>An 8-week programme</small><h1>Strength for the long run</h1><div class="pby"><img src="a/robcoach.jpg?v=2" alt=""><span>By <b>Rob Keane</b>, strength coach</span></div></div>
         </div>
-        <nav class="psw"><button data-go="protocol" data-swap>Protocols</button><button data-go="vitamins" data-swap>Vitamins</button><button data-go="eat" data-swap>Meals</button><button data-go="move" data-swap class="on">Training</button></nav>
         <div class="tnow">
           <p class="k">Today&rsquo;s workout</p>
           <button class="tn" data-sess="1"><span class="tx"><b>Lower body</b><span>Strength, 40 min, 5 moves</span></span><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><path d="M9 6l6 6-6 6"/></svg></button>
@@ -1193,7 +1138,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 
       <!-- 14 ONE SESSION -->
       <section class="scr has-tabs" id="s-session" data-tab="plan">
-        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Training</button>
+        <button class="back" data-act="back"><svg class="ico" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>Move</button>
         <div class="hero m1-hero"><img id="ssImg" src="a/demo.jpg?v=2" alt=""><div class="fade"></div>
           <div class="m1-head"><small id="ssWhen">Tuesday 3 November</small><h1 id="ssName">Lower body</h1><div class="pby"><img src="a/robcoach.jpg?v=2" alt=""><span>By <b>Rob Keane</b>, strength coach</span></div></div>
         </div>
@@ -1280,7 +1225,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
       <nav class="tabs hide" id="tabs"><i class="tabline" id="tabline"></i>
         <button data-go="today" data-tabbtn="today"><svg viewBox="0 0 24 24"><path d="M5 21V10a7 7 0 0 1 14 0v11M3 21h18M9.5 21v-6a2.5 2.5 0 0 1 5 0v6"/></svg>Today</button>
         <button data-go="results" data-tabbtn="results"><svg viewBox="0 0 24 24"><path d="M12 3.5s6 6.4 6 10.8a6 6 0 0 1-12 0c0-4.4 6-10.8 6-10.8z"/></svg>Results</button>
-        <button data-go="plan" data-tabbtn="plan"><svg viewBox="0 0 24 24"><path d="M5 19.5C5 11 11 5 19.5 5 19.5 13.5 13.5 19.5 5 19.5zM5 19.5l8.5-8.5"/></svg>Plan</button>
+        <button data-go="plan" data-tabbtn="plan"><svg viewBox="0 0 24 24"><path d="M5 19.5C5 11 11 5 19.5 5 19.5 13.5 13.5 19.5 5 19.5zM5 19.5l8.5-8.5"/></svg>Protocol</button>
         <button data-go="journal" data-tabbtn="journal"><svg viewBox="0 0 24 24"><path d="M3 5.5c3.2-1 6.2-.6 9 1.3 2.8-1.9 5.8-2.3 9-1.3v13c-3.2-1-6.2-.6-9 1.3-2.8-1.9-5.8-2.3-9-1.3zM12 6.8v13"/></svg>Journal</button>
         <button data-go="coach" data-tabbtn="coach"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v10.5H10l-6 4z"/></svg>Coach</button>
       </nav>
@@ -1298,7 +1243,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 
 <script>
 (function(){
-  var SCREENS=[['gate','The gate','Face ID opens the House'],['today','Today','Your day, at a glance'],['reveal','New results','Your results, as a letter'],['results','Results','Everything, in one place'],['detail','One marker','Plain words and your trend'],['book','Book','Your coach, in three taps'],['booked','Booked','The confirmation'],['coach','Coach','Message Marcus'],['plan','Plan','Four parts, one place'],['protocol','Protocols','Every protocol, at a glance'],['vitamins','Vitamins','Your stacks and your next box'],['eat','Meals','The week, and one shopping list'],['move','Training','The week, tick by tick'],['session','Session','One workout'],['journal','Journal','Education, every week'],['story','Story','A Journal read'],['profile','Membership','What you have, what you have used']];
+  var SCREENS=[['gate','The gate','Face ID opens the House'],['today','Today','Your day, at a glance'],['reveal','New results','Your results, as a letter'],['results','Results','Everything, in one place'],['detail','One marker','Plain words and your trend'],['book','Book','Your coach, in three taps'],['booked','Booked','The confirmation'],['coach','Coach','Message Marcus'],['plan','Protocol','Treatment, Move and Eat'],['protocol','Treatment','What you take, and why'],['move','Move','The week, tick by tick'],['session','Session','One workout'],['eat','Eat','The week, and one shopping list'],['journal','Journal','Education, every week'],['story','Story','A Journal read'],['profile','Membership','What you have, what you have used']];
   var screen=document.getElementById('screen'), tabs=document.getElementById('tabs'), idx=document.getElementById('index');
   var NO_TABS={gate:1,reveal:1,book:1,booked:1,story:1};
   var cur='gate', hist=[];
@@ -1386,7 +1331,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
   function cur(){var s=$('.scr.on');return s?s.id.slice(2):'today';}
 
   /* ---------- one record of what is done, shared by every screen ---------- */
-  var KEY='hol-day-v1';
+  var KEY='hol-day-v2';
   var DEFAULT=['p-e2','v-am','m-1-b','m-1-l','t-0','m-0-b','m-0-l','m-0-d'];
   var done={};
   try{var sv=JSON.parse(localStorage.getItem(KEY)||'null');(sv||DEFAULT).forEach(function(k){done[k]=1;});}catch(e){DEFAULT.forEach(function(k){done[k]=1;});}
@@ -1485,6 +1430,13 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
     var btn=d.key?'<button class="btn btn-bone'+(done[d.key]?' added':'')+'" data-eat="'+d.key+'">'+(done[d.key]?'Done for today':(d.key.charAt(0)==='v'?'Mark the stack as taken':'Mark as done'))+'</button>':'';
     openSheet('<div class="sh-img" style="height:220px"><img src="'+IMG[d.img]+'" alt="" style="object-position:50% 45%"></div><div class="sh-body"><p class="sub" style="margin:0 0 4px;color:var(--gold-soft)">'+d.k+'</p><h2>'+d.n+'</h2><p class="sub">'+d.w+'</p><h3>Why you are taking it</h3><p style="font-size:15px;line-height:1.55">'+d.why+'</p><h3>Good to know</h3><p style="font-size:15px;line-height:1.55;color:var(--muted)">'+d.note+'</p>'+btn+'</div>',true);
   }
+  var STACK={
+    am:{n:'Morning stack',k:'Vitamins, from Halden, an HoL partner brand',w:'With breakfast',key:'v-am',items:['d3','o3'],left:'4 days left. Your refill arrives Thursday.'},
+    pm:{n:'Evening stack',k:'Supplements, from Saltgrass, an HoL partner brand',w:'With dinner',key:'v-pm',items:['mg','lt'],left:'4 days left. Your refill arrives Thursday.'}
+  };
+  function stackSheet(k){var s=STACK[k];
+    openSheet('<div class="sh-img" style="height:220px"><img src="'+IMG.vitamins+'" alt="" style="object-position:50% 50%"></div><div class="sh-body"><p class="sub" style="margin:0 0 4px;color:var(--gold-soft)">'+s.k+'</p><h2>'+s.n+'</h2><p class="sub">'+s.w+'. '+s.left+'</p><h3>What&rsquo;s in it</h3><ul class="stl">'+s.items.map(function(i){var d=WHY[i];return '<li><button data-why="'+i+'"><b>'+d.n+'</b><span>'+d.w+'</span></button></li>'}).join('')+'</ul><button class="btn btn-bone'+(done[s.key]?' added':'')+'" data-eat="'+s.key+'">'+(done[s.key]?'Done for today':'Mark the stack as taken')+'</button></div>',true);
+  }
   var PROTO={
     hrt:{n:'Hormone therapy',by:'Dr Anna Reyes',since:'February',why:'For the broken sleep and hot flushes you told Dr Reyes about. Your symptoms are checked at every results day, and the dose is only changed by her.',steps:[['Every morning','Estradiol gel, 2 pumps'],['Every night','Progesterone, 100 mg']],next:'Review with your February results'},
     heart:{n:'Heart health',by:'Dr Reyes and Marcus',since:'August',why:'Your ApoB was 1.30 in August, higher than Dr Reyes wants for your age and family history. In November it was 1.10. The aim is under 0.90 by next August.',steps:[['Every morning','Morning stack: vitamin D3, omega 3'],['Most dinners','Oily fish and fibre, from your meals'],['Twice a week','Zone 2, from your training'],['From Thursday','Psyllium husk before dinner']],next:'Retest with your February bloods'},
@@ -1558,12 +1510,12 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
   function startSess(i){SI=i;if(cur()!=='session')openSess(i);mi=0;ms=0;sessRender();$('#sess').classList.add('on');}
   $('#startBtn').onclick=function(){startSess(SI);};
   $('#sNext').onclick=function(){var s=SESS[SI],m=s.moves[mi];if(!m.t&&ms<m.sets){ms++;sessRender();return;}if(mi<s.moves.length-1){mi++;ms=0;sessRender();return;}
-    $('#sess').classList.remove('on');$$('#moves .tick').forEach(function(t){t.classList.add('done')});setKey('t-'+SI,true);toast('Session done. Ticked off on Today and Training.');};
+    $('#sess').classList.remove('on');$$('#moves .tick').forEach(function(t){t.classList.add('done')});setKey('t-'+SI,true);toast('Session done. Ticked off on Today and Move.');};
   $('#sX').onclick=function(){$('#sess').classList.remove('on')};
 
   /* ---------- counting ---------- */
-  var DAY=['p-e2','v-am','m-1-b','m-1-l','t-1','m-1-d','v-pm','p-rx','p-sleep'];
-  var CAT={p:['p-e2','p-rx','p-sleep'],v:['v-am','v-pm'],m:['m-1-b','m-1-l','m-1-d'],t:['t-1']};
+  var DAY=['p-e2','v-am','m-1-b','m-1-l','t-1','m-1-d','v-pm','p-rx'];
+  var CAT={p:['p-e2','v-am','v-pm','p-rx'],m:['m-1-b','m-1-l','m-1-d'],t:['t-1']};
   function n(list){return list.filter(function(k){return done[k]}).length;}
   function count(){
     readDom();save();
@@ -1574,16 +1526,12 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
     $$('#yd .row').forEach(function(r){var t=r.querySelector('[data-sync]');r.classList.toggle('isdone',!!(t&&done[t.dataset.sync]));});
     $$('#yd .ydg').forEach(function(g){g.classList.toggle('alldone',!g.querySelector('.row:not(.isdone)'));});
     $('#ydClear').classList.toggle('on',all);
-    var pp=n(CAT.p);$('#pmProto').innerHTML='Today: <em>'+pp+' of 3 done</em>';
-    var vv=n(CAT.v);$('#pmVit').innerHTML='Today: <em>'+(vv===2?'both stacks taken':vv+' of 2 stacks taken')+'</em>';
+    var pp=n(CAT.p),pt=pp===4?'All 4 taken today':pp+' of 4 taken';$('#pmProto').innerHTML='Today: <em>'+pt+'</em>';$('#prCount').textContent=pt;
     $('#pmMeal').innerHTML=done['m-1-d']?'Tonight: <em>miso salmon, eaten</em>':'Tonight: <em>miso salmon</em>';
-    var sc=sessCount();$('#pmTrain').innerHTML='This week: <em>'+sc[0]+' of '+sc[1]+' sessions done</em>';
+    var sc=sessCount();$('#pmTrain').innerHTML=done['t-1']?'Today: <em>lower body, done</em>':'Today: <em>lower body, 40 min</em>';
     $('#trCount').textContent=sc[0]+' of '+sc[1]+' done this week';
-    var PK={hrt:['p-e2','p-rx'],heart:['v-am','m-1-d'],sleep:['v-pm','p-sleep']};
-    $$('[data-pcount]').forEach(function(e){var l=PK[e.dataset.pcount],k=n(l);e.textContent=k+' of '+l.length+' done today';e.classList.toggle('ok',k===l.length);});
-    $$('[data-vst]').forEach(function(e){var on=!!done[e.dataset.vst];e.textContent=on?'Taken today':(e.dataset.vst==='v-am'?'Due with breakfast':'Due with dinner');e.classList.toggle('ok',on);});
     var wk=0;WEEK.forEach(function(_,dd){'bld'.split('').forEach(function(s){if(done['m-'+dd+'-'+s])wk++;});});$('#shopSub').textContent='Every ingredient for all 21 meals, in one list. '+wk+' of 21 meals eaten so far.';
-    var last=$('#recDots i:last-child');if(last)last.className=all?'':'n';$('#recLbl').innerHTML=all?'<b>27 of 28 days</b> complete':'<b>26 of 27 days</b> complete';
+    var tAll=pp===4,last=$('#recDots i:last-child');if(last)last.className=tAll?'':'n';$('#recLbl').innerHTML=tAll?'<b>27 of 28 days</b> complete':'<b>26 of 27 days</b> complete';
     $$('[data-eat]').forEach(function(b){var on=!!done[b.dataset.eat];b.classList.toggle('added',on);});
     if($('#startBtn'))startLabel();
   }
@@ -1600,6 +1548,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
     t=e.target.closest('[data-shop]'); if(t){shopSheet();return;}
     t=e.target.closest('[data-start]'); if(t){startSess(TT);return;}
     t=e.target.closest('[data-sess]'); if(t){openSess(+t.dataset.sess);go('session');return;}
+    t=e.target.closest('[data-stack]'); if(t){stackSheet(t.dataset.stack);return;}
     t=e.target.closest('[data-proto]'); if(t){protoSheet(t.dataset.proto);return;}
     t=e.target.closest('[data-why]'); if(t){whySheet(t.dataset.why);return;}
     t=e.target.closest('[data-recipe]'); if(t){recipe(t.dataset.recipe,t);return;}
@@ -1655,7 +1604,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
       requestAnimationFrame(moveLine);
       if(opts&&opts.still||reduce)return;
       if(id==='detail'){detailIn(sec);var tk=dTok;setTimeout(function(){if(tk===dTok)$('.d-val b',sec).textContent='1.1';},2400);}
-      if(id==='vitamins')shipArm(sec);
+      if(id==='protocol')shipArm(sec);
     }
   };
   window.addEventListener('resize',moveLine);
