@@ -638,10 +638,6 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 /* ================= MOTION 2, 3 and 6 ================= */
 :root{--e:cubic-bezier(.2,.7,.2,1)}
 /* 2. rooms: the screen you leave drifts past you, the next one comes into focus */
-.scr.leaving{visibility:visible!important;opacity:1;z-index:1;pointer-events:none;animation:leave .62s cubic-bezier(.4,0,.2,1) forwards}
-@keyframes leave{to{opacity:0;transform:scale(1.045);filter:blur(5px)}}
-.scr.on.enter{animation:room2 1s var(--e) both}
-@keyframes room2{from{opacity:0;transform:scale(.965);filter:blur(6px)}55%{filter:blur(0)}to{opacity:1;transform:none;filter:none}}
 .tabline{position:absolute;top:-1px;left:0;width:26px;height:2px;z-index:2;background:var(--gold-soft);transition:transform .6s var(--e);pointer-events:none}
 
 /* 6. delivery: the route draws to where your box is, then it moves */
@@ -661,7 +657,6 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
 .ship .now.lit .runner{animation:run 2.8s ease-in-out 1.5s infinite}
 @keyframes run{0%{top:17px;opacity:0}15%{opacity:1}75%{opacity:1}100%{top:calc(100% - 6px);opacity:0}}
 
-@media (prefers-reduced-motion:reduce){.scr.leaving{display:none}.scr.on.enter{animation:none}}
 </style>
 </head>
 <body>
@@ -1087,7 +1082,7 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
     var next=document.getElementById('s-'+id); if(!next||id===cur&&!opts.force) return;
     var prev=document.getElementById('s-'+cur);
     if(!opts.back&&cur!==id) hist.push(cur);
-    if(prev){prev.classList.remove('on','enter');if(!opts.still&&prev!==next&&!document.body.classList.contains('noanim')){prev.classList.add('leaving');setTimeout(function(){prev.classList.remove('leaving')},700);}}
+    if(prev){prev.classList.remove('on','enter');}
     next.classList.remove('enter'); void next.offsetWidth;
     next.classList.add('on'); if(!opts.still) next.classList.add('enter');
     next.scrollTop=0;
@@ -1278,6 +1273,8 @@ body.m .sess .x{top:calc(env(safe-area-inset-top) + 12px)}
     }
   };
   window.addEventListener('resize',moveLine);
+  /* get every photo ready in the background, so no screen has to draw its photo mid-change */
+  setTimeout(function(){$$('img').forEach(function(i){try{i.loading='eager';if(i.decode)i.decode().catch(function(){});}catch(e){}});},1200);
 })();
 </script>
 </body>
